@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.IO.Pipes;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace DiabasePrintingWizard
 {
     public partial class FrmMain : Form
     {
+        public static readonly NumberFormatInfo numberFormat = CultureInfo.CreateSpecificCulture("en-US").NumberFormat;
+
         private Duet.Observer observer;
         private List<Duet.MachineInfo> boards = new List<Duet.MachineInfo>();
 
@@ -35,6 +38,7 @@ namespace DiabasePrintingWizard
 
         public FrmMain()
         {
+            numberFormat.NumberGroupSeparator = "";
             InitializeComponent();
             dgvCustomActions.AutoGenerateColumns = false;
             dgvCustomActions.DataSource = overrideRules;
@@ -1219,5 +1223,10 @@ namespace DiabasePrintingWizard
             DoUpload(SelectedMachine.IPAddress);
         }
         #endregion
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
