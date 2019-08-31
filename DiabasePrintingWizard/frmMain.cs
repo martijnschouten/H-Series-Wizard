@@ -120,6 +120,7 @@ namespace DiabasePrintingWizard
                         Type = (ToolType)cboTool1.SelectedIndex,
                         PreheatTime = nudPreheat1.Value,
                         StandbyTemperature = nudTemp1.Value,
+                        CleaningInterval = nudInterval1.Value,
                         AutoClean = chkAutoClean1.Checked
                     },
                     new ToolSettings
@@ -127,6 +128,7 @@ namespace DiabasePrintingWizard
                         Type = (ToolType)cboTool2.SelectedIndex,
                         PreheatTime = nudPreheat2.Value,
                         StandbyTemperature = nudTemp2.Value,
+                        CleaningInterval = nudInterval2.Value,
                         AutoClean = chkAutoClean2.Checked
                     },
                     new ToolSettings
@@ -134,6 +136,7 @@ namespace DiabasePrintingWizard
                         Type = (ToolType)cboTool3.SelectedIndex,
                         PreheatTime = nudPreheat3.Value,
                         StandbyTemperature = nudTemp3.Value,
+                        CleaningInterval = nudInterval3.Value,
                         AutoClean = chkAutoClean3.Checked
                     },
                     new ToolSettings
@@ -141,6 +144,7 @@ namespace DiabasePrintingWizard
                         Type = (ToolType)cboTool4.SelectedIndex,
                         PreheatTime = nudPreheat4.Value,
                         StandbyTemperature = nudTemp4.Value,
+                        CleaningInterval = nudInterval4.Value,
                         AutoClean = chkAutoClean4.Checked
                     },
                     new ToolSettings
@@ -148,6 +152,7 @@ namespace DiabasePrintingWizard
                         Type = (ToolType)cboTool5.SelectedIndex,
                         PreheatTime = nudPreheat5.Value,
                         StandbyTemperature = nudTemp5.Value,
+                        CleaningInterval = nudInterval5.Value,
                         AutoClean = chkAutoClean5.Checked
                     }
                 },
@@ -162,22 +167,27 @@ namespace DiabasePrintingWizard
                 cboTool1.SelectedIndex = (int)value.Tools[0].Type;
                 nudPreheat1.Value = value.Tools[0].PreheatTime;
                 nudTemp1.Value = value.Tools[0].StandbyTemperature;
+                nudInterval1.Value = value.Tools[0].CleaningInterval;
                 chkAutoClean1.Checked = value.Tools[0].AutoClean;
                 cboTool2.SelectedIndex = (int)value.Tools[1].Type;
                 nudPreheat2.Value = value.Tools[1].PreheatTime;
                 nudTemp2.Value = value.Tools[1].StandbyTemperature;
+                nudInterval2.Value = value.Tools[1].CleaningInterval;
                 chkAutoClean2.Checked = value.Tools[1].AutoClean;
                 cboTool3.SelectedIndex = (int)value.Tools[2].Type;
                 nudPreheat3.Value = value.Tools[2].PreheatTime;
                 nudTemp3.Value = value.Tools[2].StandbyTemperature;
+                nudInterval3.Value = value.Tools[2].CleaningInterval;
                 chkAutoClean3.Checked = value.Tools[2].AutoClean;
                 cboTool4.SelectedIndex = (int)value.Tools[3].Type;
                 nudPreheat4.Value = value.Tools[3].PreheatTime;
                 nudTemp4.Value = value.Tools[3].StandbyTemperature;
+                nudInterval4.Value = value.Tools[3].CleaningInterval;
                 chkAutoClean4.Checked = value.Tools[3].AutoClean;
                 cboTool5.SelectedIndex = (int)value.Tools[4].Type;
                 nudPreheat5.Value = value.Tools[4].PreheatTime;
                 nudTemp5.Value = value.Tools[4].StandbyTemperature;
+                nudInterval5.Value = value.Tools[4].CleaningInterval;
                 chkAutoClean5.Checked = value.Tools[4].AutoClean;
                 chkTopUseOwnSettings.Checked = value.UseOwnSettings;
                 chkTopGenerateSupport.Checked = value.GenerateSpecialSupport;

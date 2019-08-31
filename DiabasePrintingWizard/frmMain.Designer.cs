@@ -30,6 +30,64 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.awContent = new AdvancedWizardControl.Wizard.AdvancedWizard();
+            this.awpMachineProperties = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.tlpHeads = new System.Windows.Forms.TableLayoutPanel();
+            this.cboTool1 = new System.Windows.Forms.ComboBox();
+            this.gbTool3 = new System.Windows.Forms.GroupBox();
+            this.nudInterval3 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblS1 = new System.Windows.Forms.Label();
+            this.nudPreheat3 = new System.Windows.Forms.NumericUpDown();
+            this.lblPreheat3 = new System.Windows.Forms.Label();
+            this.lblC1 = new System.Windows.Forms.Label();
+            this.chkAutoClean3 = new System.Windows.Forms.CheckBox();
+            this.lblTemp3 = new System.Windows.Forms.Label();
+            this.nudTemp3 = new System.Windows.Forms.NumericUpDown();
+            this.cboTool2 = new System.Windows.Forms.ComboBox();
+            this.gbTool5 = new System.Windows.Forms.GroupBox();
+            this.nudInterval5 = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.nudPreheat5 = new System.Windows.Forms.NumericUpDown();
+            this.lblPreheat5 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.chkAutoClean5 = new System.Windows.Forms.CheckBox();
+            this.lblTemp5 = new System.Windows.Forms.Label();
+            this.nudTemp5 = new System.Windows.Forms.NumericUpDown();
+            this.cboTool3 = new System.Windows.Forms.ComboBox();
+            this.gbTool4 = new System.Windows.Forms.GroupBox();
+            this.nudInterval4 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.nudPreheat4 = new System.Windows.Forms.NumericUpDown();
+            this.lblPreheat4 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.chkAutoClean4 = new System.Windows.Forms.CheckBox();
+            this.lblTemp4 = new System.Windows.Forms.Label();
+            this.nudTemp4 = new System.Windows.Forms.NumericUpDown();
+            this.cboTool4 = new System.Windows.Forms.ComboBox();
+            this.gbTool1 = new System.Windows.Forms.GroupBox();
+            this.nudInterval1 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nudPreheat1 = new System.Windows.Forms.NumericUpDown();
+            this.lblPreheat1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chkAutoClean1 = new System.Windows.Forms.CheckBox();
+            this.lblTemp1 = new System.Windows.Forms.Label();
+            this.nudTemp1 = new System.Windows.Forms.NumericUpDown();
+            this.cboTool5 = new System.Windows.Forms.ComboBox();
+            this.gbTool2 = new System.Windows.Forms.GroupBox();
+            this.nudInterval2 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nudPreheat2 = new System.Windows.Forms.NumericUpDown();
+            this.lblPreheat2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chkAutoClean2 = new System.Windows.Forms.CheckBox();
+            this.lblTemp2 = new System.Windows.Forms.Label();
+            this.nudTemp2 = new System.Windows.Forms.NumericUpDown();
             this.awpWelcome = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
             this.lblVersion = new System.Windows.Forms.Label();
             this.gbType = new System.Windows.Forms.GroupBox();
@@ -91,54 +149,6 @@
             this.chkBottomUseOwnSettings = new System.Windows.Forms.CheckBox();
             this.chkBottomUnwrap = new System.Windows.Forms.CheckBox();
             this.lblBottomFiles = new System.Windows.Forms.Label();
-            this.awpMachineProperties = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.tlpHeads = new System.Windows.Forms.TableLayoutPanel();
-            this.cboTool1 = new System.Windows.Forms.ComboBox();
-            this.gbTool3 = new System.Windows.Forms.GroupBox();
-            this.lblS1 = new System.Windows.Forms.Label();
-            this.nudPreheat3 = new System.Windows.Forms.NumericUpDown();
-            this.lblPreheat3 = new System.Windows.Forms.Label();
-            this.lblC1 = new System.Windows.Forms.Label();
-            this.chkAutoClean3 = new System.Windows.Forms.CheckBox();
-            this.lblTemp3 = new System.Windows.Forms.Label();
-            this.nudTemp3 = new System.Windows.Forms.NumericUpDown();
-            this.cboTool2 = new System.Windows.Forms.ComboBox();
-            this.gbTool5 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.nudPreheat5 = new System.Windows.Forms.NumericUpDown();
-            this.lblPreheat5 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.chkAutoClean5 = new System.Windows.Forms.CheckBox();
-            this.lblTemp5 = new System.Windows.Forms.Label();
-            this.nudTemp5 = new System.Windows.Forms.NumericUpDown();
-            this.cboTool3 = new System.Windows.Forms.ComboBox();
-            this.gbTool4 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.nudPreheat4 = new System.Windows.Forms.NumericUpDown();
-            this.lblPreheat4 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.chkAutoClean4 = new System.Windows.Forms.CheckBox();
-            this.lblTemp4 = new System.Windows.Forms.Label();
-            this.nudTemp4 = new System.Windows.Forms.NumericUpDown();
-            this.cboTool4 = new System.Windows.Forms.ComboBox();
-            this.gbTool1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudPreheat1 = new System.Windows.Forms.NumericUpDown();
-            this.lblPreheat1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.chkAutoClean1 = new System.Windows.Forms.CheckBox();
-            this.lblTemp1 = new System.Windows.Forms.Label();
-            this.nudTemp1 = new System.Windows.Forms.NumericUpDown();
-            this.cboTool5 = new System.Windows.Forms.ComboBox();
-            this.gbTool2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.nudPreheat2 = new System.Windows.Forms.NumericUpDown();
-            this.lblPreheat2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.chkAutoClean2 = new System.Windows.Forms.CheckBox();
-            this.lblTemp2 = new System.Windows.Forms.Label();
-            this.nudTemp2 = new System.Windows.Forms.NumericUpDown();
             this.awpProgress = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
             this.btnUploadPrint = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
@@ -158,6 +168,28 @@
             this.sfdGCode = new System.Windows.Forms.SaveFileDialog();
             this.sfdFactory = new System.Windows.Forms.SaveFileDialog();
             this.awContent.SuspendLayout();
+            this.awpMachineProperties.SuspendLayout();
+            this.tlpHeads.SuspendLayout();
+            this.gbTool3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp3)).BeginInit();
+            this.gbTool5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp5)).BeginInit();
+            this.gbTool4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp4)).BeginInit();
+            this.gbTool1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp1)).BeginInit();
+            this.gbTool2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp2)).BeginInit();
             this.awpWelcome.SuspendLayout();
             this.gbType.SuspendLayout();
             this.gbMachine.SuspendLayout();
@@ -176,23 +208,6 @@
             this.gbBottomFiles.SuspendLayout();
             this.gbBottomSlicing.SuspendLayout();
             this.tlpBottomFileButtons.SuspendLayout();
-            this.awpMachineProperties.SuspendLayout();
-            this.tlpHeads.SuspendLayout();
-            this.gbTool3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp3)).BeginInit();
-            this.gbTool5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp5)).BeginInit();
-            this.gbTool4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp4)).BeginInit();
-            this.gbTool1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp1)).BeginInit();
-            this.gbTool2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp2)).BeginInit();
             this.awpProgress.SuspendLayout();
             this.pnlProgress.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -201,16 +216,16 @@
             // 
             // awContent
             // 
-            this.awContent.BackButtonEnabled = false;
+            this.awContent.BackButtonEnabled = true;
             this.awContent.BackButtonText = "< Back";
             this.awContent.ButtonLayout = AdvancedWizardControl.Enums.ButtonLayoutKind.Default;
             this.awContent.ButtonsVisible = false;
             this.awContent.CancelButtonText = "&Cancel";
+            this.awContent.Controls.Add(this.awpMachineProperties);
             this.awContent.Controls.Add(this.awpWelcome);
-            this.awContent.Controls.Add(this.awpActions);
             this.awContent.Controls.Add(this.awpTopSide);
             this.awContent.Controls.Add(this.awpBottomSide);
-            this.awContent.Controls.Add(this.awpMachineProperties);
+            this.awContent.Controls.Add(this.awpActions);
             this.awContent.Controls.Add(this.awpProgress);
             this.awContent.CurrentPageIsFinishPage = false;
             this.awContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -226,7 +241,7 @@
             this.awContent.NextButtonEnabled = true;
             this.awContent.NextButtonText = "Next >";
             this.awContent.ProcessKeys = false;
-            this.awContent.Size = new System.Drawing.Size(586, 384);
+            this.awContent.Size = new System.Drawing.Size(660, 422);
             this.awContent.TabIndex = 11;
             this.awContent.TouchScreen = true;
             this.awContent.WizardPages.Add(this.awpWelcome);
@@ -236,6 +251,823 @@
             this.awContent.WizardPages.Add(this.awpActions);
             this.awContent.WizardPages.Add(this.awpProgress);
             // 
+            // awpMachineProperties
+            // 
+            this.awpMachineProperties.Controls.Add(this.lblWelcome);
+            this.awpMachineProperties.Controls.Add(this.tlpHeads);
+            this.awpMachineProperties.Header = false;
+            this.awpMachineProperties.HeaderBackgroundColor = System.Drawing.Color.White;
+            this.awpMachineProperties.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.awpMachineProperties.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpMachineProperties.HeaderImage")));
+            this.awpMachineProperties.HeaderImageVisible = true;
+            this.awpMachineProperties.HeaderTitle = "Post Processing";
+            this.awpMachineProperties.Location = new System.Drawing.Point(0, 0);
+            this.awpMachineProperties.Margin = new System.Windows.Forms.Padding(2);
+            this.awpMachineProperties.Name = "awpMachineProperties";
+            this.awpMachineProperties.PreviousPage = 0;
+            this.awpMachineProperties.Size = new System.Drawing.Size(586, 384);
+            this.awpMachineProperties.SubTitle = "Your page description goes here";
+            this.awpMachineProperties.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
+            this.awpMachineProperties.TabIndex = 2;
+            this.awpMachineProperties.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpMachineProperties_PageShow);
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Location = new System.Drawing.Point(7, 108);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(305, 13);
+            this.lblWelcome.TabIndex = 21;
+            this.lblWelcome.Text = "Please choose your preferences for the manufacturing process:";
+            // 
+            // tlpHeads
+            // 
+            this.tlpHeads.ColumnCount = 5;
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.Controls.Add(this.cboTool1, 0, 0);
+            this.tlpHeads.Controls.Add(this.gbTool3, 0, 1);
+            this.tlpHeads.Controls.Add(this.cboTool2, 1, 0);
+            this.tlpHeads.Controls.Add(this.gbTool5, 0, 1);
+            this.tlpHeads.Controls.Add(this.cboTool3, 2, 0);
+            this.tlpHeads.Controls.Add(this.gbTool4, 0, 1);
+            this.tlpHeads.Controls.Add(this.cboTool4, 3, 0);
+            this.tlpHeads.Controls.Add(this.gbTool1, 0, 1);
+            this.tlpHeads.Controls.Add(this.cboTool5, 4, 0);
+            this.tlpHeads.Controls.Add(this.gbTool2, 0, 1);
+            this.tlpHeads.Location = new System.Drawing.Point(9, 124);
+            this.tlpHeads.Margin = new System.Windows.Forms.Padding(2);
+            this.tlpHeads.Name = "tlpHeads";
+            this.tlpHeads.RowCount = 2;
+            this.tlpHeads.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpHeads.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpHeads.Size = new System.Drawing.Size(568, 245);
+            this.tlpHeads.TabIndex = 20;
+            // 
+            // cboTool1
+            // 
+            this.cboTool1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool1.FormattingEnabled = true;
+            this.cboTool1.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool1.Location = new System.Drawing.Point(7, 2);
+            this.cboTool1.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
+            this.cboTool1.Name = "cboTool1";
+            this.cboTool1.Size = new System.Drawing.Size(99, 21);
+            this.cboTool1.TabIndex = 5;
+            this.cboTool1.SelectedIndexChanged += new System.EventHandler(this.CboTool1_SelectedIndexChanged);
+            // 
+            // gbTool3
+            // 
+            this.gbTool3.Controls.Add(this.nudInterval3);
+            this.gbTool3.Controls.Add(this.label5);
+            this.gbTool3.Controls.Add(this.lblS1);
+            this.gbTool3.Controls.Add(this.nudPreheat3);
+            this.gbTool3.Controls.Add(this.lblPreheat3);
+            this.gbTool3.Controls.Add(this.lblC1);
+            this.gbTool3.Controls.Add(this.chkAutoClean3);
+            this.gbTool3.Controls.Add(this.lblTemp3);
+            this.gbTool3.Controls.Add(this.nudTemp3);
+            this.gbTool3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool3.Enabled = false;
+            this.gbTool3.Location = new System.Drawing.Point(233, 32);
+            this.gbTool3.Margin = new System.Windows.Forms.Padding(7);
+            this.gbTool3.Name = "gbTool3";
+            this.gbTool3.Padding = new System.Windows.Forms.Padding(2);
+            this.gbTool3.Size = new System.Drawing.Size(99, 206);
+            this.gbTool3.TabIndex = 0;
+            this.gbTool3.TabStop = false;
+            this.gbTool3.Text = "Tool 3";
+            // 
+            // nudInterval3
+            // 
+            this.nudInterval3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudInterval3.Location = new System.Drawing.Point(7, 145);
+            this.nudInterval3.Margin = new System.Windows.Forms.Padding(2);
+            this.nudInterval3.Name = "nudInterval3";
+            this.nudInterval3.Size = new System.Drawing.Size(73, 20);
+            this.nudInterval3.TabIndex = 12;
+            this.nudInterval3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 128);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Cleaning Interval:";
+            // 
+            // lblS1
+            // 
+            this.lblS1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblS1.AutoSize = true;
+            this.lblS1.Location = new System.Drawing.Point(83, 99);
+            this.lblS1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblS1.Name = "lblS1";
+            this.lblS1.Size = new System.Drawing.Size(12, 13);
+            this.lblS1.TabIndex = 6;
+            this.lblS1.Text = "s";
+            // 
+            // nudPreheat3
+            // 
+            this.nudPreheat3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat3.Location = new System.Drawing.Point(7, 97);
+            this.nudPreheat3.Margin = new System.Windows.Forms.Padding(2);
+            this.nudPreheat3.Name = "nudPreheat3";
+            this.nudPreheat3.Size = new System.Drawing.Size(74, 20);
+            this.nudPreheat3.TabIndex = 5;
+            this.nudPreheat3.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat3
+            // 
+            this.lblPreheat3.AutoSize = true;
+            this.lblPreheat3.Location = new System.Drawing.Point(4, 80);
+            this.lblPreheat3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreheat3.Name = "lblPreheat3";
+            this.lblPreheat3.Size = new System.Drawing.Size(87, 13);
+            this.lblPreheat3.TabIndex = 4;
+            this.lblPreheat3.Text = "Preheating Time:";
+            // 
+            // lblC1
+            // 
+            this.lblC1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblC1.AutoSize = true;
+            this.lblC1.Location = new System.Drawing.Point(81, 51);
+            this.lblC1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblC1.Name = "lblC1";
+            this.lblC1.Size = new System.Drawing.Size(14, 13);
+            this.lblC1.TabIndex = 3;
+            this.lblC1.Text = "C";
+            // 
+            // chkAutoClean3
+            // 
+            this.chkAutoClean3.AutoSize = true;
+            this.chkAutoClean3.Location = new System.Drawing.Point(7, 171);
+            this.chkAutoClean3.Margin = new System.Windows.Forms.Padding(2);
+            this.chkAutoClean3.Name = "chkAutoClean3";
+            this.chkAutoClean3.Size = new System.Drawing.Size(78, 17);
+            this.chkAutoClean3.TabIndex = 2;
+            this.chkAutoClean3.Text = "Auto-Clean";
+            this.chkAutoClean3.UseVisualStyleBackColor = true;
+            // 
+            // lblTemp3
+            // 
+            this.lblTemp3.AutoSize = true;
+            this.lblTemp3.Location = new System.Drawing.Point(4, 19);
+            this.lblTemp3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTemp3.Name = "lblTemp3";
+            this.lblTemp3.Size = new System.Drawing.Size(70, 26);
+            this.lblTemp3.TabIndex = 1;
+            this.lblTemp3.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp3
+            // 
+            this.nudTemp3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp3.DecimalPlaces = 1;
+            this.nudTemp3.Location = new System.Drawing.Point(7, 49);
+            this.nudTemp3.Margin = new System.Windows.Forms.Padding(2);
+            this.nudTemp3.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp3.Name = "nudTemp3";
+            this.nudTemp3.Size = new System.Drawing.Size(72, 20);
+            this.nudTemp3.TabIndex = 0;
+            this.nudTemp3.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // cboTool2
+            // 
+            this.cboTool2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool2.FormattingEnabled = true;
+            this.cboTool2.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool2.Location = new System.Drawing.Point(120, 2);
+            this.cboTool2.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
+            this.cboTool2.Name = "cboTool2";
+            this.cboTool2.Size = new System.Drawing.Size(99, 21);
+            this.cboTool2.TabIndex = 6;
+            this.cboTool2.SelectedIndexChanged += new System.EventHandler(this.CboTool2_SelectedIndexChanged);
+            // 
+            // gbTool5
+            // 
+            this.gbTool5.Controls.Add(this.nudInterval5);
+            this.gbTool5.Controls.Add(this.label9);
+            this.gbTool5.Controls.Add(this.label14);
+            this.gbTool5.Controls.Add(this.nudPreheat5);
+            this.gbTool5.Controls.Add(this.lblPreheat5);
+            this.gbTool5.Controls.Add(this.label16);
+            this.gbTool5.Controls.Add(this.chkAutoClean5);
+            this.gbTool5.Controls.Add(this.lblTemp5);
+            this.gbTool5.Controls.Add(this.nudTemp5);
+            this.gbTool5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool5.Enabled = false;
+            this.gbTool5.Location = new System.Drawing.Point(459, 32);
+            this.gbTool5.Margin = new System.Windows.Forms.Padding(7);
+            this.gbTool5.Name = "gbTool5";
+            this.gbTool5.Padding = new System.Windows.Forms.Padding(2);
+            this.gbTool5.Size = new System.Drawing.Size(102, 206);
+            this.gbTool5.TabIndex = 13;
+            this.gbTool5.TabStop = false;
+            this.gbTool5.Text = "Tool 5";
+            // 
+            // nudInterval5
+            // 
+            this.nudInterval5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudInterval5.Location = new System.Drawing.Point(7, 145);
+            this.nudInterval5.Margin = new System.Windows.Forms.Padding(2);
+            this.nudInterval5.Name = "nudInterval5";
+            this.nudInterval5.Size = new System.Drawing.Size(73, 20);
+            this.nudInterval5.TabIndex = 10;
+            this.nudInterval5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 128);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Cleaning Interval:";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(85, 99);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(12, 13);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "s";
+            // 
+            // nudPreheat5
+            // 
+            this.nudPreheat5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat5.Location = new System.Drawing.Point(7, 97);
+            this.nudPreheat5.Margin = new System.Windows.Forms.Padding(2);
+            this.nudPreheat5.Name = "nudPreheat5";
+            this.nudPreheat5.Size = new System.Drawing.Size(75, 20);
+            this.nudPreheat5.TabIndex = 5;
+            this.nudPreheat5.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat5
+            // 
+            this.lblPreheat5.AutoSize = true;
+            this.lblPreheat5.Location = new System.Drawing.Point(4, 80);
+            this.lblPreheat5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreheat5.Name = "lblPreheat5";
+            this.lblPreheat5.Size = new System.Drawing.Size(87, 13);
+            this.lblPreheat5.TabIndex = 4;
+            this.lblPreheat5.Text = "Preheating Time:";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(85, 51);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(14, 13);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "C";
+            // 
+            // chkAutoClean5
+            // 
+            this.chkAutoClean5.AutoSize = true;
+            this.chkAutoClean5.Location = new System.Drawing.Point(7, 171);
+            this.chkAutoClean5.Margin = new System.Windows.Forms.Padding(2);
+            this.chkAutoClean5.Name = "chkAutoClean5";
+            this.chkAutoClean5.Size = new System.Drawing.Size(78, 17);
+            this.chkAutoClean5.TabIndex = 2;
+            this.chkAutoClean5.Text = "Auto-Clean";
+            this.chkAutoClean5.UseVisualStyleBackColor = true;
+            // 
+            // lblTemp5
+            // 
+            this.lblTemp5.AutoSize = true;
+            this.lblTemp5.Location = new System.Drawing.Point(4, 19);
+            this.lblTemp5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTemp5.Name = "lblTemp5";
+            this.lblTemp5.Size = new System.Drawing.Size(70, 26);
+            this.lblTemp5.TabIndex = 1;
+            this.lblTemp5.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp5
+            // 
+            this.nudTemp5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp5.DecimalPlaces = 1;
+            this.nudTemp5.Location = new System.Drawing.Point(7, 49);
+            this.nudTemp5.Margin = new System.Windows.Forms.Padding(2);
+            this.nudTemp5.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp5.Name = "nudTemp5";
+            this.nudTemp5.Size = new System.Drawing.Size(75, 20);
+            this.nudTemp5.TabIndex = 0;
+            this.nudTemp5.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // cboTool3
+            // 
+            this.cboTool3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool3.FormattingEnabled = true;
+            this.cboTool3.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool3.Location = new System.Drawing.Point(233, 2);
+            this.cboTool3.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
+            this.cboTool3.Name = "cboTool3";
+            this.cboTool3.Size = new System.Drawing.Size(99, 21);
+            this.cboTool3.TabIndex = 7;
+            this.cboTool3.SelectedIndexChanged += new System.EventHandler(this.CboTool3_SelectedIndexChanged);
+            // 
+            // gbTool4
+            // 
+            this.gbTool4.Controls.Add(this.nudInterval4);
+            this.gbTool4.Controls.Add(this.label7);
+            this.gbTool4.Controls.Add(this.label10);
+            this.gbTool4.Controls.Add(this.nudPreheat4);
+            this.gbTool4.Controls.Add(this.lblPreheat4);
+            this.gbTool4.Controls.Add(this.label12);
+            this.gbTool4.Controls.Add(this.chkAutoClean4);
+            this.gbTool4.Controls.Add(this.lblTemp4);
+            this.gbTool4.Controls.Add(this.nudTemp4);
+            this.gbTool4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool4.Enabled = false;
+            this.gbTool4.Location = new System.Drawing.Point(346, 32);
+            this.gbTool4.Margin = new System.Windows.Forms.Padding(7);
+            this.gbTool4.Name = "gbTool4";
+            this.gbTool4.Padding = new System.Windows.Forms.Padding(2);
+            this.gbTool4.Size = new System.Drawing.Size(99, 206);
+            this.gbTool4.TabIndex = 12;
+            this.gbTool4.TabStop = false;
+            this.gbTool4.Text = "Tool 4";
+            // 
+            // nudInterval4
+            // 
+            this.nudInterval4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudInterval4.Location = new System.Drawing.Point(7, 145);
+            this.nudInterval4.Margin = new System.Windows.Forms.Padding(2);
+            this.nudInterval4.Name = "nudInterval4";
+            this.nudInterval4.Size = new System.Drawing.Size(73, 20);
+            this.nudInterval4.TabIndex = 14;
+            this.nudInterval4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 128);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Cleaning Interval:";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(81, 99);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(12, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "s";
+            // 
+            // nudPreheat4
+            // 
+            this.nudPreheat4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat4.Location = new System.Drawing.Point(7, 97);
+            this.nudPreheat4.Margin = new System.Windows.Forms.Padding(2);
+            this.nudPreheat4.Name = "nudPreheat4";
+            this.nudPreheat4.Size = new System.Drawing.Size(74, 20);
+            this.nudPreheat4.TabIndex = 5;
+            this.nudPreheat4.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat4
+            // 
+            this.lblPreheat4.AutoSize = true;
+            this.lblPreheat4.Location = new System.Drawing.Point(4, 80);
+            this.lblPreheat4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreheat4.Name = "lblPreheat4";
+            this.lblPreheat4.Size = new System.Drawing.Size(87, 13);
+            this.lblPreheat4.TabIndex = 4;
+            this.lblPreheat4.Text = "Preheating Time:";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(81, 51);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(14, 13);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "C";
+            // 
+            // chkAutoClean4
+            // 
+            this.chkAutoClean4.AutoSize = true;
+            this.chkAutoClean4.Location = new System.Drawing.Point(7, 171);
+            this.chkAutoClean4.Margin = new System.Windows.Forms.Padding(2);
+            this.chkAutoClean4.Name = "chkAutoClean4";
+            this.chkAutoClean4.Size = new System.Drawing.Size(78, 17);
+            this.chkAutoClean4.TabIndex = 2;
+            this.chkAutoClean4.Text = "Auto-Clean";
+            this.chkAutoClean4.UseVisualStyleBackColor = true;
+            // 
+            // lblTemp4
+            // 
+            this.lblTemp4.AutoSize = true;
+            this.lblTemp4.Location = new System.Drawing.Point(4, 19);
+            this.lblTemp4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTemp4.Name = "lblTemp4";
+            this.lblTemp4.Size = new System.Drawing.Size(70, 26);
+            this.lblTemp4.TabIndex = 1;
+            this.lblTemp4.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp4
+            // 
+            this.nudTemp4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp4.DecimalPlaces = 1;
+            this.nudTemp4.Location = new System.Drawing.Point(7, 49);
+            this.nudTemp4.Margin = new System.Windows.Forms.Padding(2);
+            this.nudTemp4.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp4.Name = "nudTemp4";
+            this.nudTemp4.Size = new System.Drawing.Size(74, 20);
+            this.nudTemp4.TabIndex = 0;
+            this.nudTemp4.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // cboTool4
+            // 
+            this.cboTool4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool4.FormattingEnabled = true;
+            this.cboTool4.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool4.Location = new System.Drawing.Point(346, 2);
+            this.cboTool4.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
+            this.cboTool4.Name = "cboTool4";
+            this.cboTool4.Size = new System.Drawing.Size(99, 21);
+            this.cboTool4.TabIndex = 8;
+            this.cboTool4.SelectedIndexChanged += new System.EventHandler(this.CboTool4_SelectedIndexChanged);
+            // 
+            // gbTool1
+            // 
+            this.gbTool1.Controls.Add(this.nudInterval1);
+            this.gbTool1.Controls.Add(this.label1);
+            this.gbTool1.Controls.Add(this.label2);
+            this.gbTool1.Controls.Add(this.nudPreheat1);
+            this.gbTool1.Controls.Add(this.lblPreheat1);
+            this.gbTool1.Controls.Add(this.label4);
+            this.gbTool1.Controls.Add(this.chkAutoClean1);
+            this.gbTool1.Controls.Add(this.lblTemp1);
+            this.gbTool1.Controls.Add(this.nudTemp1);
+            this.gbTool1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool1.Enabled = false;
+            this.gbTool1.Location = new System.Drawing.Point(7, 32);
+            this.gbTool1.Margin = new System.Windows.Forms.Padding(7);
+            this.gbTool1.Name = "gbTool1";
+            this.gbTool1.Padding = new System.Windows.Forms.Padding(2);
+            this.gbTool1.Size = new System.Drawing.Size(99, 206);
+            this.gbTool1.TabIndex = 10;
+            this.gbTool1.TabStop = false;
+            this.gbTool1.Text = "Tool 1";
+            // 
+            // nudInterval1
+            // 
+            this.nudInterval1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudInterval1.Location = new System.Drawing.Point(8, 145);
+            this.nudInterval1.Margin = new System.Windows.Forms.Padding(2);
+            this.nudInterval1.Name = "nudInterval1";
+            this.nudInterval1.Size = new System.Drawing.Size(73, 20);
+            this.nudInterval1.TabIndex = 8;
+            this.nudInterval1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 128);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Cleaning Interval:";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(82, 99);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(12, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "s";
+            // 
+            // nudPreheat1
+            // 
+            this.nudPreheat1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat1.Location = new System.Drawing.Point(7, 97);
+            this.nudPreheat1.Margin = new System.Windows.Forms.Padding(2);
+            this.nudPreheat1.Name = "nudPreheat1";
+            this.nudPreheat1.Size = new System.Drawing.Size(73, 20);
+            this.nudPreheat1.TabIndex = 5;
+            this.nudPreheat1.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat1
+            // 
+            this.lblPreheat1.AutoSize = true;
+            this.lblPreheat1.Location = new System.Drawing.Point(4, 80);
+            this.lblPreheat1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreheat1.Name = "lblPreheat1";
+            this.lblPreheat1.Size = new System.Drawing.Size(87, 13);
+            this.lblPreheat1.TabIndex = 4;
+            this.lblPreheat1.Text = "Preheating Time:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(81, 51);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "C";
+            // 
+            // chkAutoClean1
+            // 
+            this.chkAutoClean1.AutoSize = true;
+            this.chkAutoClean1.Location = new System.Drawing.Point(7, 171);
+            this.chkAutoClean1.Margin = new System.Windows.Forms.Padding(2);
+            this.chkAutoClean1.Name = "chkAutoClean1";
+            this.chkAutoClean1.Size = new System.Drawing.Size(78, 17);
+            this.chkAutoClean1.TabIndex = 2;
+            this.chkAutoClean1.Text = "Auto-Clean";
+            this.chkAutoClean1.UseVisualStyleBackColor = true;
+            // 
+            // lblTemp1
+            // 
+            this.lblTemp1.AutoSize = true;
+            this.lblTemp1.Location = new System.Drawing.Point(4, 19);
+            this.lblTemp1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTemp1.Name = "lblTemp1";
+            this.lblTemp1.Size = new System.Drawing.Size(70, 26);
+            this.lblTemp1.TabIndex = 1;
+            this.lblTemp1.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp1
+            // 
+            this.nudTemp1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp1.DecimalPlaces = 1;
+            this.nudTemp1.Location = new System.Drawing.Point(7, 49);
+            this.nudTemp1.Margin = new System.Windows.Forms.Padding(2);
+            this.nudTemp1.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp1.Name = "nudTemp1";
+            this.nudTemp1.Size = new System.Drawing.Size(73, 20);
+            this.nudTemp1.TabIndex = 0;
+            this.nudTemp1.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // cboTool5
+            // 
+            this.cboTool5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool5.FormattingEnabled = true;
+            this.cboTool5.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool5.Location = new System.Drawing.Point(459, 2);
+            this.cboTool5.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
+            this.cboTool5.Name = "cboTool5";
+            this.cboTool5.Size = new System.Drawing.Size(102, 21);
+            this.cboTool5.TabIndex = 9;
+            this.cboTool5.SelectedIndexChanged += new System.EventHandler(this.CboTool5_SelectedIndexChanged);
+            // 
+            // gbTool2
+            // 
+            this.gbTool2.Controls.Add(this.nudInterval2);
+            this.gbTool2.Controls.Add(this.label3);
+            this.gbTool2.Controls.Add(this.label6);
+            this.gbTool2.Controls.Add(this.nudPreheat2);
+            this.gbTool2.Controls.Add(this.lblPreheat2);
+            this.gbTool2.Controls.Add(this.label8);
+            this.gbTool2.Controls.Add(this.chkAutoClean2);
+            this.gbTool2.Controls.Add(this.lblTemp2);
+            this.gbTool2.Controls.Add(this.nudTemp2);
+            this.gbTool2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool2.Enabled = false;
+            this.gbTool2.Location = new System.Drawing.Point(120, 32);
+            this.gbTool2.Margin = new System.Windows.Forms.Padding(7);
+            this.gbTool2.Name = "gbTool2";
+            this.gbTool2.Padding = new System.Windows.Forms.Padding(2);
+            this.gbTool2.Size = new System.Drawing.Size(99, 206);
+            this.gbTool2.TabIndex = 11;
+            this.gbTool2.TabStop = false;
+            this.gbTool2.Text = "Tool 2";
+            // 
+            // nudInterval2
+            // 
+            this.nudInterval2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudInterval2.Location = new System.Drawing.Point(7, 144);
+            this.nudInterval2.Margin = new System.Windows.Forms.Padding(2);
+            this.nudInterval2.Name = "nudInterval2";
+            this.nudInterval2.Size = new System.Drawing.Size(73, 20);
+            this.nudInterval2.TabIndex = 10;
+            this.nudInterval2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 127);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Cleaning Interval:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(83, 99);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(12, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "s";
+            // 
+            // nudPreheat2
+            // 
+            this.nudPreheat2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat2.Location = new System.Drawing.Point(7, 97);
+            this.nudPreheat2.Margin = new System.Windows.Forms.Padding(2);
+            this.nudPreheat2.Name = "nudPreheat2";
+            this.nudPreheat2.Size = new System.Drawing.Size(74, 20);
+            this.nudPreheat2.TabIndex = 5;
+            this.nudPreheat2.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat2
+            // 
+            this.lblPreheat2.AutoSize = true;
+            this.lblPreheat2.Location = new System.Drawing.Point(4, 80);
+            this.lblPreheat2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreheat2.Name = "lblPreheat2";
+            this.lblPreheat2.Size = new System.Drawing.Size(87, 13);
+            this.lblPreheat2.TabIndex = 4;
+            this.lblPreheat2.Text = "Preheating Time:";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(81, 51);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(14, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "C";
+            // 
+            // chkAutoClean2
+            // 
+            this.chkAutoClean2.AutoSize = true;
+            this.chkAutoClean2.Location = new System.Drawing.Point(7, 171);
+            this.chkAutoClean2.Margin = new System.Windows.Forms.Padding(2);
+            this.chkAutoClean2.Name = "chkAutoClean2";
+            this.chkAutoClean2.Size = new System.Drawing.Size(78, 17);
+            this.chkAutoClean2.TabIndex = 2;
+            this.chkAutoClean2.Text = "Auto-Clean";
+            this.chkAutoClean2.UseVisualStyleBackColor = true;
+            // 
+            // lblTemp2
+            // 
+            this.lblTemp2.AutoSize = true;
+            this.lblTemp2.Location = new System.Drawing.Point(4, 19);
+            this.lblTemp2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTemp2.Name = "lblTemp2";
+            this.lblTemp2.Size = new System.Drawing.Size(70, 26);
+            this.lblTemp2.TabIndex = 1;
+            this.lblTemp2.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp2
+            // 
+            this.nudTemp2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp2.DecimalPlaces = 1;
+            this.nudTemp2.Location = new System.Drawing.Point(7, 49);
+            this.nudTemp2.Margin = new System.Windows.Forms.Padding(2);
+            this.nudTemp2.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp2.Name = "nudTemp2";
+            this.nudTemp2.Size = new System.Drawing.Size(74, 20);
+            this.nudTemp2.TabIndex = 0;
+            this.nudTemp2.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
             // awpWelcome
             // 
             this.awpWelcome.Controls.Add(this.lblVersion);
@@ -243,7 +1075,6 @@
             this.awpWelcome.Controls.Add(this.gbMachine);
             this.awpWelcome.Controls.Add(this.gbGeometry);
             this.awpWelcome.Controls.Add(this.lblDescription);
-            this.awpWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awpWelcome.Header = false;
             this.awpWelcome.HeaderBackgroundColor = System.Drawing.Color.White;
             this.awpWelcome.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -262,12 +1093,11 @@
             // 
             // lblVersion
             // 
-            this.lblVersion.AutoSize = false;
             this.lblVersion.Location = new System.Drawing.Point(471, 106);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(100, 13);
             this.lblVersion.TabIndex = 30;
-            this.lblVersion.Text = "vDEV";
+            this.lblVersion.Text = "NIFTy";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gbType
@@ -396,7 +1226,7 @@
             // 
             // lblDescription
             // 
-            this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescription.AutoSize = true;
             this.lblDescription.Location = new System.Drawing.Point(11, 110);
@@ -412,7 +1242,6 @@
             this.awpActions.Controls.Add(this.gbIDRotaryPrinting);
             this.awpActions.Controls.Add(this.gbIslandCombining);
             this.awpActions.Controls.Add(this.gbRules);
-            this.awpActions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awpActions.Header = true;
             this.awpActions.HeaderBackgroundColor = System.Drawing.Color.White;
             this.awpActions.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -421,7 +1250,7 @@
             this.awpActions.HeaderTitle = "Welcome to Advanced Wizard";
             this.awpActions.Location = new System.Drawing.Point(0, 0);
             this.awpActions.Name = "awpActions";
-            this.awpActions.PreviousPage = 0;
+            this.awpActions.PreviousPage = 3;
             this.awpActions.Size = new System.Drawing.Size(586, 384);
             this.awpActions.SubTitle = "Your page description goes here";
             this.awpActions.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
@@ -565,7 +1394,6 @@
             // 
             this.awpTopSide.Controls.Add(this.gbTopFiles);
             this.awpTopSide.Controls.Add(this.gbTopSlicing);
-            this.awpTopSide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awpTopSide.Header = true;
             this.awpTopSide.HeaderBackgroundColor = System.Drawing.Color.White;
             this.awpTopSide.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -575,7 +1403,7 @@
             this.awpTopSide.Location = new System.Drawing.Point(0, 0);
             this.awpTopSide.Margin = new System.Windows.Forms.Padding(2);
             this.awpTopSide.Name = "awpTopSide";
-            this.awpTopSide.PreviousPage = 0;
+            this.awpTopSide.PreviousPage = 1;
             this.awpTopSide.Size = new System.Drawing.Size(586, 384);
             this.awpTopSide.SubTitle = "Your page description goes here";
             this.awpTopSide.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
@@ -799,7 +1627,6 @@
             // 
             this.awpBottomSide.Controls.Add(this.gbBottomFiles);
             this.awpBottomSide.Controls.Add(this.gbBottomSlicing);
-            this.awpBottomSide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awpBottomSide.Header = true;
             this.awpBottomSide.HeaderBackgroundColor = System.Drawing.Color.White;
             this.awpBottomSide.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -1029,689 +1856,6 @@
             this.lblBottomFiles.TabIndex = 11;
             this.lblBottomFiles.Text = "List of Input Files:";
             // 
-            // awpMachineProperties
-            // 
-            this.awpMachineProperties.Controls.Add(this.lblWelcome);
-            this.awpMachineProperties.Controls.Add(this.tlpHeads);
-            this.awpMachineProperties.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.awpMachineProperties.Header = false;
-            this.awpMachineProperties.HeaderBackgroundColor = System.Drawing.Color.White;
-            this.awpMachineProperties.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.awpMachineProperties.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpMachineProperties.HeaderImage")));
-            this.awpMachineProperties.HeaderImageVisible = true;
-            this.awpMachineProperties.HeaderTitle = "Post Processing";
-            this.awpMachineProperties.Location = new System.Drawing.Point(0, 0);
-            this.awpMachineProperties.Margin = new System.Windows.Forms.Padding(2);
-            this.awpMachineProperties.Name = "awpMachineProperties";
-            this.awpMachineProperties.PreviousPage = 0;
-            this.awpMachineProperties.Size = new System.Drawing.Size(586, 384);
-            this.awpMachineProperties.SubTitle = "Your page description goes here";
-            this.awpMachineProperties.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
-            this.awpMachineProperties.TabIndex = 2;
-            this.awpMachineProperties.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpMachineProperties_PageShow);
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(7, 108);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(305, 13);
-            this.lblWelcome.TabIndex = 21;
-            this.lblWelcome.Text = "Please choose your preferences for the manufacturing process:";
-            // 
-            // tlpHeads
-            // 
-            this.tlpHeads.ColumnCount = 5;
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.Controls.Add(this.cboTool1, 0, 0);
-            this.tlpHeads.Controls.Add(this.gbTool3, 0, 1);
-            this.tlpHeads.Controls.Add(this.cboTool2, 1, 0);
-            this.tlpHeads.Controls.Add(this.gbTool5, 0, 1);
-            this.tlpHeads.Controls.Add(this.cboTool3, 2, 0);
-            this.tlpHeads.Controls.Add(this.gbTool4, 0, 1);
-            this.tlpHeads.Controls.Add(this.cboTool4, 3, 0);
-            this.tlpHeads.Controls.Add(this.gbTool1, 0, 1);
-            this.tlpHeads.Controls.Add(this.cboTool5, 4, 0);
-            this.tlpHeads.Controls.Add(this.gbTool2, 0, 1);
-            this.tlpHeads.Location = new System.Drawing.Point(9, 124);
-            this.tlpHeads.Margin = new System.Windows.Forms.Padding(2);
-            this.tlpHeads.Name = "tlpHeads";
-            this.tlpHeads.RowCount = 2;
-            this.tlpHeads.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpHeads.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeads.Size = new System.Drawing.Size(568, 194);
-            this.tlpHeads.TabIndex = 20;
-            // 
-            // cboTool1
-            // 
-            this.cboTool1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool1.FormattingEnabled = true;
-            this.cboTool1.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool1.Location = new System.Drawing.Point(7, 2);
-            this.cboTool1.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
-            this.cboTool1.Name = "cboTool1";
-            this.cboTool1.Size = new System.Drawing.Size(99, 21);
-            this.cboTool1.TabIndex = 5;
-            this.cboTool1.SelectedIndexChanged += new System.EventHandler(this.CboTool1_SelectedIndexChanged);
-            // 
-            // gbTool3
-            // 
-            this.gbTool3.Controls.Add(this.lblS1);
-            this.gbTool3.Controls.Add(this.nudPreheat3);
-            this.gbTool3.Controls.Add(this.lblPreheat3);
-            this.gbTool3.Controls.Add(this.lblC1);
-            this.gbTool3.Controls.Add(this.chkAutoClean3);
-            this.gbTool3.Controls.Add(this.lblTemp3);
-            this.gbTool3.Controls.Add(this.nudTemp3);
-            this.gbTool3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool3.Enabled = false;
-            this.gbTool3.Location = new System.Drawing.Point(233, 32);
-            this.gbTool3.Margin = new System.Windows.Forms.Padding(7);
-            this.gbTool3.Name = "gbTool3";
-            this.gbTool3.Padding = new System.Windows.Forms.Padding(2);
-            this.gbTool3.Size = new System.Drawing.Size(99, 155);
-            this.gbTool3.TabIndex = 0;
-            this.gbTool3.TabStop = false;
-            this.gbTool3.Text = "Tool 3";
-            // 
-            // lblS1
-            // 
-            this.lblS1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblS1.AutoSize = true;
-            this.lblS1.Location = new System.Drawing.Point(83, 99);
-            this.lblS1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblS1.Name = "lblS1";
-            this.lblS1.Size = new System.Drawing.Size(12, 13);
-            this.lblS1.TabIndex = 6;
-            this.lblS1.Text = "s";
-            // 
-            // nudPreheat3
-            // 
-            this.nudPreheat3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat3.Location = new System.Drawing.Point(7, 97);
-            this.nudPreheat3.Margin = new System.Windows.Forms.Padding(2);
-            this.nudPreheat3.Name = "nudPreheat3";
-            this.nudPreheat3.Size = new System.Drawing.Size(74, 20);
-            this.nudPreheat3.TabIndex = 5;
-            this.nudPreheat3.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat3
-            // 
-            this.lblPreheat3.AutoSize = true;
-            this.lblPreheat3.Location = new System.Drawing.Point(4, 80);
-            this.lblPreheat3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPreheat3.Name = "lblPreheat3";
-            this.lblPreheat3.Size = new System.Drawing.Size(87, 13);
-            this.lblPreheat3.TabIndex = 4;
-            this.lblPreheat3.Text = "Preheating Time:";
-            // 
-            // lblC1
-            // 
-            this.lblC1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblC1.AutoSize = true;
-            this.lblC1.Location = new System.Drawing.Point(81, 51);
-            this.lblC1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblC1.Name = "lblC1";
-            this.lblC1.Size = new System.Drawing.Size(14, 13);
-            this.lblC1.TabIndex = 3;
-            this.lblC1.Text = "C";
-            // 
-            // chkAutoClean3
-            // 
-            this.chkAutoClean3.AutoSize = true;
-            this.chkAutoClean3.Location = new System.Drawing.Point(7, 128);
-            this.chkAutoClean3.Margin = new System.Windows.Forms.Padding(2);
-            this.chkAutoClean3.Name = "chkAutoClean3";
-            this.chkAutoClean3.Size = new System.Drawing.Size(78, 17);
-            this.chkAutoClean3.TabIndex = 2;
-            this.chkAutoClean3.Text = "Auto-Clean";
-            this.chkAutoClean3.UseVisualStyleBackColor = true;
-            // 
-            // lblTemp3
-            // 
-            this.lblTemp3.AutoSize = true;
-            this.lblTemp3.Location = new System.Drawing.Point(4, 19);
-            this.lblTemp3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTemp3.Name = "lblTemp3";
-            this.lblTemp3.Size = new System.Drawing.Size(70, 26);
-            this.lblTemp3.TabIndex = 1;
-            this.lblTemp3.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp3
-            // 
-            this.nudTemp3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp3.DecimalPlaces = 1;
-            this.nudTemp3.Location = new System.Drawing.Point(7, 49);
-            this.nudTemp3.Margin = new System.Windows.Forms.Padding(2);
-            this.nudTemp3.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp3.Name = "nudTemp3";
-            this.nudTemp3.Size = new System.Drawing.Size(72, 20);
-            this.nudTemp3.TabIndex = 0;
-            this.nudTemp3.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // cboTool2
-            // 
-            this.cboTool2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool2.FormattingEnabled = true;
-            this.cboTool2.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool2.Location = new System.Drawing.Point(120, 2);
-            this.cboTool2.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
-            this.cboTool2.Name = "cboTool2";
-            this.cboTool2.Size = new System.Drawing.Size(99, 21);
-            this.cboTool2.TabIndex = 6;
-            this.cboTool2.SelectedIndexChanged += new System.EventHandler(this.CboTool2_SelectedIndexChanged);
-            // 
-            // gbTool5
-            // 
-            this.gbTool5.Controls.Add(this.label14);
-            this.gbTool5.Controls.Add(this.nudPreheat5);
-            this.gbTool5.Controls.Add(this.lblPreheat5);
-            this.gbTool5.Controls.Add(this.label16);
-            this.gbTool5.Controls.Add(this.chkAutoClean5);
-            this.gbTool5.Controls.Add(this.lblTemp5);
-            this.gbTool5.Controls.Add(this.nudTemp5);
-            this.gbTool5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool5.Enabled = false;
-            this.gbTool5.Location = new System.Drawing.Point(459, 32);
-            this.gbTool5.Margin = new System.Windows.Forms.Padding(7);
-            this.gbTool5.Name = "gbTool5";
-            this.gbTool5.Padding = new System.Windows.Forms.Padding(2);
-            this.gbTool5.Size = new System.Drawing.Size(102, 155);
-            this.gbTool5.TabIndex = 13;
-            this.gbTool5.TabStop = false;
-            this.gbTool5.Text = "Tool 5";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(85, 99);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(12, 13);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "s";
-            // 
-            // nudPreheat5
-            // 
-            this.nudPreheat5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat5.Location = new System.Drawing.Point(7, 97);
-            this.nudPreheat5.Margin = new System.Windows.Forms.Padding(2);
-            this.nudPreheat5.Name = "nudPreheat5";
-            this.nudPreheat5.Size = new System.Drawing.Size(75, 20);
-            this.nudPreheat5.TabIndex = 5;
-            this.nudPreheat5.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat5
-            // 
-            this.lblPreheat5.AutoSize = true;
-            this.lblPreheat5.Location = new System.Drawing.Point(4, 80);
-            this.lblPreheat5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPreheat5.Name = "lblPreheat5";
-            this.lblPreheat5.Size = new System.Drawing.Size(87, 13);
-            this.lblPreheat5.TabIndex = 4;
-            this.lblPreheat5.Text = "Preheating Time:";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(85, 51);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(14, 13);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "C";
-            // 
-            // chkAutoClean5
-            // 
-            this.chkAutoClean5.AutoSize = true;
-            this.chkAutoClean5.Location = new System.Drawing.Point(7, 128);
-            this.chkAutoClean5.Margin = new System.Windows.Forms.Padding(2);
-            this.chkAutoClean5.Name = "chkAutoClean5";
-            this.chkAutoClean5.Size = new System.Drawing.Size(78, 17);
-            this.chkAutoClean5.TabIndex = 2;
-            this.chkAutoClean5.Text = "Auto-Clean";
-            this.chkAutoClean5.UseVisualStyleBackColor = true;
-            // 
-            // lblTemp5
-            // 
-            this.lblTemp5.AutoSize = true;
-            this.lblTemp5.Location = new System.Drawing.Point(4, 19);
-            this.lblTemp5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTemp5.Name = "lblTemp5";
-            this.lblTemp5.Size = new System.Drawing.Size(70, 26);
-            this.lblTemp5.TabIndex = 1;
-            this.lblTemp5.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp5
-            // 
-            this.nudTemp5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp5.DecimalPlaces = 1;
-            this.nudTemp5.Location = new System.Drawing.Point(7, 49);
-            this.nudTemp5.Margin = new System.Windows.Forms.Padding(2);
-            this.nudTemp5.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp5.Name = "nudTemp5";
-            this.nudTemp5.Size = new System.Drawing.Size(75, 20);
-            this.nudTemp5.TabIndex = 0;
-            this.nudTemp5.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // cboTool3
-            // 
-            this.cboTool3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool3.FormattingEnabled = true;
-            this.cboTool3.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool3.Location = new System.Drawing.Point(233, 2);
-            this.cboTool3.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
-            this.cboTool3.Name = "cboTool3";
-            this.cboTool3.Size = new System.Drawing.Size(99, 21);
-            this.cboTool3.TabIndex = 7;
-            this.cboTool3.SelectedIndexChanged += new System.EventHandler(this.CboTool3_SelectedIndexChanged);
-            // 
-            // gbTool4
-            // 
-            this.gbTool4.Controls.Add(this.label10);
-            this.gbTool4.Controls.Add(this.nudPreheat4);
-            this.gbTool4.Controls.Add(this.lblPreheat4);
-            this.gbTool4.Controls.Add(this.label12);
-            this.gbTool4.Controls.Add(this.chkAutoClean4);
-            this.gbTool4.Controls.Add(this.lblTemp4);
-            this.gbTool4.Controls.Add(this.nudTemp4);
-            this.gbTool4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool4.Enabled = false;
-            this.gbTool4.Location = new System.Drawing.Point(346, 32);
-            this.gbTool4.Margin = new System.Windows.Forms.Padding(7);
-            this.gbTool4.Name = "gbTool4";
-            this.gbTool4.Padding = new System.Windows.Forms.Padding(2);
-            this.gbTool4.Size = new System.Drawing.Size(99, 155);
-            this.gbTool4.TabIndex = 12;
-            this.gbTool4.TabStop = false;
-            this.gbTool4.Text = "Tool 4";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(81, 99);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(12, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "s";
-            // 
-            // nudPreheat4
-            // 
-            this.nudPreheat4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat4.Location = new System.Drawing.Point(7, 97);
-            this.nudPreheat4.Margin = new System.Windows.Forms.Padding(2);
-            this.nudPreheat4.Name = "nudPreheat4";
-            this.nudPreheat4.Size = new System.Drawing.Size(74, 20);
-            this.nudPreheat4.TabIndex = 5;
-            this.nudPreheat4.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat4
-            // 
-            this.lblPreheat4.AutoSize = true;
-            this.lblPreheat4.Location = new System.Drawing.Point(4, 80);
-            this.lblPreheat4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPreheat4.Name = "lblPreheat4";
-            this.lblPreheat4.Size = new System.Drawing.Size(87, 13);
-            this.lblPreheat4.TabIndex = 4;
-            this.lblPreheat4.Text = "Preheating Time:";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(81, 51);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 13);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "C";
-            // 
-            // chkAutoClean4
-            // 
-            this.chkAutoClean4.AutoSize = true;
-            this.chkAutoClean4.Location = new System.Drawing.Point(7, 128);
-            this.chkAutoClean4.Margin = new System.Windows.Forms.Padding(2);
-            this.chkAutoClean4.Name = "chkAutoClean4";
-            this.chkAutoClean4.Size = new System.Drawing.Size(78, 17);
-            this.chkAutoClean4.TabIndex = 2;
-            this.chkAutoClean4.Text = "Auto-Clean";
-            this.chkAutoClean4.UseVisualStyleBackColor = true;
-            // 
-            // lblTemp4
-            // 
-            this.lblTemp4.AutoSize = true;
-            this.lblTemp4.Location = new System.Drawing.Point(4, 19);
-            this.lblTemp4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTemp4.Name = "lblTemp4";
-            this.lblTemp4.Size = new System.Drawing.Size(70, 26);
-            this.lblTemp4.TabIndex = 1;
-            this.lblTemp4.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp4
-            // 
-            this.nudTemp4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp4.DecimalPlaces = 1;
-            this.nudTemp4.Location = new System.Drawing.Point(7, 49);
-            this.nudTemp4.Margin = new System.Windows.Forms.Padding(2);
-            this.nudTemp4.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp4.Name = "nudTemp4";
-            this.nudTemp4.Size = new System.Drawing.Size(74, 20);
-            this.nudTemp4.TabIndex = 0;
-            this.nudTemp4.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // cboTool4
-            // 
-            this.cboTool4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool4.FormattingEnabled = true;
-            this.cboTool4.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool4.Location = new System.Drawing.Point(346, 2);
-            this.cboTool4.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
-            this.cboTool4.Name = "cboTool4";
-            this.cboTool4.Size = new System.Drawing.Size(99, 21);
-            this.cboTool4.TabIndex = 8;
-            this.cboTool4.SelectedIndexChanged += new System.EventHandler(this.CboTool4_SelectedIndexChanged);
-            // 
-            // gbTool1
-            // 
-            this.gbTool1.Controls.Add(this.label2);
-            this.gbTool1.Controls.Add(this.nudPreheat1);
-            this.gbTool1.Controls.Add(this.lblPreheat1);
-            this.gbTool1.Controls.Add(this.label4);
-            this.gbTool1.Controls.Add(this.chkAutoClean1);
-            this.gbTool1.Controls.Add(this.lblTemp1);
-            this.gbTool1.Controls.Add(this.nudTemp1);
-            this.gbTool1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool1.Enabled = false;
-            this.gbTool1.Location = new System.Drawing.Point(7, 32);
-            this.gbTool1.Margin = new System.Windows.Forms.Padding(7);
-            this.gbTool1.Name = "gbTool1";
-            this.gbTool1.Padding = new System.Windows.Forms.Padding(2);
-            this.gbTool1.Size = new System.Drawing.Size(99, 155);
-            this.gbTool1.TabIndex = 10;
-            this.gbTool1.TabStop = false;
-            this.gbTool1.Text = "Tool 1";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 99);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "s";
-            // 
-            // nudPreheat1
-            // 
-            this.nudPreheat1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat1.Location = new System.Drawing.Point(7, 97);
-            this.nudPreheat1.Margin = new System.Windows.Forms.Padding(2);
-            this.nudPreheat1.Name = "nudPreheat1";
-            this.nudPreheat1.Size = new System.Drawing.Size(73, 20);
-            this.nudPreheat1.TabIndex = 5;
-            this.nudPreheat1.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat1
-            // 
-            this.lblPreheat1.AutoSize = true;
-            this.lblPreheat1.Location = new System.Drawing.Point(4, 80);
-            this.lblPreheat1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPreheat1.Name = "lblPreheat1";
-            this.lblPreheat1.Size = new System.Drawing.Size(87, 13);
-            this.lblPreheat1.TabIndex = 4;
-            this.lblPreheat1.Text = "Preheating Time:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(81, 51);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "C";
-            // 
-            // chkAutoClean1
-            // 
-            this.chkAutoClean1.AutoSize = true;
-            this.chkAutoClean1.Location = new System.Drawing.Point(7, 128);
-            this.chkAutoClean1.Margin = new System.Windows.Forms.Padding(2);
-            this.chkAutoClean1.Name = "chkAutoClean1";
-            this.chkAutoClean1.Size = new System.Drawing.Size(78, 17);
-            this.chkAutoClean1.TabIndex = 2;
-            this.chkAutoClean1.Text = "Auto-Clean";
-            this.chkAutoClean1.UseVisualStyleBackColor = true;
-            // 
-            // lblTemp1
-            // 
-            this.lblTemp1.AutoSize = true;
-            this.lblTemp1.Location = new System.Drawing.Point(4, 19);
-            this.lblTemp1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTemp1.Name = "lblTemp1";
-            this.lblTemp1.Size = new System.Drawing.Size(70, 26);
-            this.lblTemp1.TabIndex = 1;
-            this.lblTemp1.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp1
-            // 
-            this.nudTemp1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp1.DecimalPlaces = 1;
-            this.nudTemp1.Location = new System.Drawing.Point(7, 49);
-            this.nudTemp1.Margin = new System.Windows.Forms.Padding(2);
-            this.nudTemp1.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp1.Name = "nudTemp1";
-            this.nudTemp1.Size = new System.Drawing.Size(73, 20);
-            this.nudTemp1.TabIndex = 0;
-            this.nudTemp1.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // cboTool5
-            // 
-            this.cboTool5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool5.FormattingEnabled = true;
-            this.cboTool5.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool5.Location = new System.Drawing.Point(459, 2);
-            this.cboTool5.Margin = new System.Windows.Forms.Padding(7, 2, 7, 2);
-            this.cboTool5.Name = "cboTool5";
-            this.cboTool5.Size = new System.Drawing.Size(102, 21);
-            this.cboTool5.TabIndex = 9;
-            this.cboTool5.SelectedIndexChanged += new System.EventHandler(this.CboTool5_SelectedIndexChanged);
-            // 
-            // gbTool2
-            // 
-            this.gbTool2.Controls.Add(this.label6);
-            this.gbTool2.Controls.Add(this.nudPreheat2);
-            this.gbTool2.Controls.Add(this.lblPreheat2);
-            this.gbTool2.Controls.Add(this.label8);
-            this.gbTool2.Controls.Add(this.chkAutoClean2);
-            this.gbTool2.Controls.Add(this.lblTemp2);
-            this.gbTool2.Controls.Add(this.nudTemp2);
-            this.gbTool2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool2.Enabled = false;
-            this.gbTool2.Location = new System.Drawing.Point(120, 32);
-            this.gbTool2.Margin = new System.Windows.Forms.Padding(7);
-            this.gbTool2.Name = "gbTool2";
-            this.gbTool2.Padding = new System.Windows.Forms.Padding(2);
-            this.gbTool2.Size = new System.Drawing.Size(99, 155);
-            this.gbTool2.TabIndex = 11;
-            this.gbTool2.TabStop = false;
-            this.gbTool2.Text = "Tool 2";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(83, 99);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(12, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "s";
-            // 
-            // nudPreheat2
-            // 
-            this.nudPreheat2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat2.Location = new System.Drawing.Point(7, 97);
-            this.nudPreheat2.Margin = new System.Windows.Forms.Padding(2);
-            this.nudPreheat2.Name = "nudPreheat2";
-            this.nudPreheat2.Size = new System.Drawing.Size(74, 20);
-            this.nudPreheat2.TabIndex = 5;
-            this.nudPreheat2.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat2
-            // 
-            this.lblPreheat2.AutoSize = true;
-            this.lblPreheat2.Location = new System.Drawing.Point(4, 80);
-            this.lblPreheat2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPreheat2.Name = "lblPreheat2";
-            this.lblPreheat2.Size = new System.Drawing.Size(87, 13);
-            this.lblPreheat2.TabIndex = 4;
-            this.lblPreheat2.Text = "Preheating Time:";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(81, 51);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(14, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "C";
-            // 
-            // chkAutoClean2
-            // 
-            this.chkAutoClean2.AutoSize = true;
-            this.chkAutoClean2.Location = new System.Drawing.Point(7, 128);
-            this.chkAutoClean2.Margin = new System.Windows.Forms.Padding(2);
-            this.chkAutoClean2.Name = "chkAutoClean2";
-            this.chkAutoClean2.Size = new System.Drawing.Size(78, 17);
-            this.chkAutoClean2.TabIndex = 2;
-            this.chkAutoClean2.Text = "Auto-Clean";
-            this.chkAutoClean2.UseVisualStyleBackColor = true;
-            // 
-            // lblTemp2
-            // 
-            this.lblTemp2.AutoSize = true;
-            this.lblTemp2.Location = new System.Drawing.Point(4, 19);
-            this.lblTemp2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTemp2.Name = "lblTemp2";
-            this.lblTemp2.Size = new System.Drawing.Size(70, 26);
-            this.lblTemp2.TabIndex = 1;
-            this.lblTemp2.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp2
-            // 
-            this.nudTemp2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp2.DecimalPlaces = 1;
-            this.nudTemp2.Location = new System.Drawing.Point(7, 49);
-            this.nudTemp2.Margin = new System.Windows.Forms.Padding(2);
-            this.nudTemp2.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp2.Name = "nudTemp2";
-            this.nudTemp2.Size = new System.Drawing.Size(74, 20);
-            this.nudTemp2.TabIndex = 0;
-            this.nudTemp2.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
             // awpProgress
             // 
             this.awpProgress.Controls.Add(this.btnUploadPrint);
@@ -1719,7 +1863,6 @@
             this.awpProgress.Controls.Add(this.btnSave);
             this.awpProgress.Controls.Add(this.pnlProgress);
             this.awpProgress.Controls.Add(this.lblPleaseStandBy);
-            this.awpProgress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.awpProgress.Header = true;
             this.awpProgress.HeaderBackgroundColor = System.Drawing.Color.White;
             this.awpProgress.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -1837,7 +1980,7 @@
             this.btnNext.Enabled = false;
             this.btnNext.Image = global::DiabasePrintingWizard.Properties.Resources.Forward_16x;
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNext.Location = new System.Drawing.Point(491, 8);
+            this.btnNext.Location = new System.Drawing.Point(565, 8);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(88, 32);
@@ -1854,7 +1997,7 @@
             this.btnBack.Enabled = false;
             this.btnBack.Image = global::DiabasePrintingWizard.Properties.Resources.Backward_16x;
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBack.Location = new System.Drawing.Point(400, 8);
+            this.btnBack.Location = new System.Drawing.Point(474, 8);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(88, 32);
@@ -1885,15 +2028,14 @@
             this.pnlButtons.Controls.Add(this.btnBack);
             this.pnlButtons.Controls.Add(this.btnNext);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 335);
+            this.pnlButtons.Location = new System.Drawing.Point(0, 373);
             this.pnlButtons.Margin = new System.Windows.Forms.Padding(2);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(586, 49);
+            this.pnlButtons.Size = new System.Drawing.Size(660, 49);
             this.pnlButtons.TabIndex = 12;
             // 
             // pbBanner
             // 
-            this.pbBanner.Dock = System.Windows.Forms.DockStyle.Top;
             this.pbBanner.Image = global::DiabasePrintingWizard.Properties.Resources.LogoOnLeftforBlackBackgorund;
             this.pbBanner.Location = new System.Drawing.Point(0, 0);
             this.pbBanner.Margin = new System.Windows.Forms.Padding(2);
@@ -1933,7 +2075,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(586, 384);
+            this.ClientSize = new System.Drawing.Size(660, 422);
             this.Controls.Add(this.pbBanner);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.awContent);
@@ -1948,6 +2090,34 @@
             this.Deactivate += new System.EventHandler(this.FrmMain_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.awContent.ResumeLayout(false);
+            this.awpMachineProperties.ResumeLayout(false);
+            this.awpMachineProperties.PerformLayout();
+            this.tlpHeads.ResumeLayout(false);
+            this.gbTool3.ResumeLayout(false);
+            this.gbTool3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp3)).EndInit();
+            this.gbTool5.ResumeLayout(false);
+            this.gbTool5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp5)).EndInit();
+            this.gbTool4.ResumeLayout(false);
+            this.gbTool4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp4)).EndInit();
+            this.gbTool1.ResumeLayout(false);
+            this.gbTool1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp1)).EndInit();
+            this.gbTool2.ResumeLayout(false);
+            this.gbTool2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInterval2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTemp2)).EndInit();
             this.awpWelcome.ResumeLayout(false);
             this.awpWelcome.PerformLayout();
             this.gbType.ResumeLayout(false);
@@ -1975,29 +2145,6 @@
             this.gbBottomSlicing.ResumeLayout(false);
             this.gbBottomSlicing.PerformLayout();
             this.tlpBottomFileButtons.ResumeLayout(false);
-            this.awpMachineProperties.ResumeLayout(false);
-            this.awpMachineProperties.PerformLayout();
-            this.tlpHeads.ResumeLayout(false);
-            this.gbTool3.ResumeLayout(false);
-            this.gbTool3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp3)).EndInit();
-            this.gbTool5.ResumeLayout(false);
-            this.gbTool5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp5)).EndInit();
-            this.gbTool4.ResumeLayout(false);
-            this.gbTool4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp4)).EndInit();
-            this.gbTool1.ResumeLayout(false);
-            this.gbTool1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp1)).EndInit();
-            this.gbTool2.ResumeLayout(false);
-            this.gbTool2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPreheat2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTemp2)).EndInit();
             this.awpProgress.ResumeLayout(false);
             this.awpProgress.PerformLayout();
             this.pnlProgress.ResumeLayout(false);
@@ -2138,6 +2285,16 @@
         private System.Windows.Forms.GroupBox gbIslandCombining;
         private System.Windows.Forms.CheckBox cbIslandCombining;
         private System.Windows.Forms.NumericUpDown nudModelID;
+        private System.Windows.Forms.NumericUpDown nudInterval3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown nudInterval5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown nudInterval4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown nudInterval1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown nudInterval2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

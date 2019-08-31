@@ -17,6 +17,8 @@
 
         public decimal StandbyTemperature { get; set; }
 
+        public decimal CleaningInterval { get; set; }
+
         public bool AutoClean { get; set; }
     }
 
