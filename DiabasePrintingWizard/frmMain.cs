@@ -16,6 +16,7 @@ namespace DiabasePrintingWizard
 {
     public partial class FrmMain : Form
     {
+        public static readonly string version = "v1.0.2-dev";
         public static readonly NumberFormatInfo numberFormat = CultureInfo.CreateSpecificCulture("en-US").NumberFormat;
 
         private Duet.Observer observer;
@@ -40,6 +41,7 @@ namespace DiabasePrintingWizard
         {
             numberFormat.NumberGroupSeparator = "";
             InitializeComponent();
+            lblVersion.Text = version;
             dgvCustomActions.AutoGenerateColumns = false;
             dgvCustomActions.DataSource = overrideRules;
 
@@ -249,6 +251,12 @@ namespace DiabasePrintingWizard
             }
             else if (awContent.CurrentPage == awpActions)
             {
+                if (this.nudModelID.Enabled && this.nudModelID.Value < 0)
+                {
+                    MessageBox.Show("Inner diameter has to be >= 0.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.nudModelID.Focus();
+                    return;
+                }
                 StartPostProcessor();
             }
             else
@@ -712,7 +720,8 @@ namespace DiabasePrintingWizard
                             {
                                 InnerRadius = innerRadius
                             };
-                        } else if (innerRadius < rotaryPrintingSettings.InnerRadius)
+                        }
+                        else if (innerRadius < rotaryPrintingSettings.InnerRadius)
                         {
                             rotaryPrintingSettings.InnerRadius = innerRadius;
                         }
@@ -799,6 +808,19 @@ namespace DiabasePrintingWizard
         #endregion
 
         #region Rules
+
+
+        private void AwpActions_PageShow(object sender, AdvancedWizardControl.EventArguments.WizardPageEventArgs e)
+        {
+            this.nudModelID.Enabled = this.rbRotary.Checked && this.rotaryPrintingSettings == null;
+            if (this.rotaryPrintingSettings != null)
+            {
+                this.nudModelID.Value = (decimal)rotaryPrintingSettings.InnerRadius;
+            }
+            btnBack.Enabled = true;
+            btnNext.Enabled = true;
+        }
+
         private void DgvCustomActions_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             DataGridViewColumn selectedColumn = dgvCustomActions.CurrentCell?.OwningColumn;
@@ -919,27 +941,9 @@ namespace DiabasePrintingWizard
                 sides = "rotary";
                 if (rotaryPrintingSettings == null)
                 {
-                    string idStr = "";
-                    var result = ShowInputDialog(ref idStr);
-                    if (result != DialogResult.OK)
-                    {
-                        topAdditiveFile?.Close();
-                        topSubstractiveFile?.Close();
-                        bottomAdditiveFile?.Close();
-                        MessageBox.Show("Inner diameter of model not available", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (!double.TryParse(idStr, out double id))
-                    {
-                        topAdditiveFile?.Close();
-                        topSubstractiveFile?.Close();
-                        bottomAdditiveFile?.Close();
-                        MessageBox.Show($"Not a valid number {idStr}", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
                     rotaryPrintingSettings = new RotaryPrintingSettings
                     {
-                        InnerRadius = Math.Round(id / 2, 3)
+                        InnerRadius = Math.Round((double)this.nudModelID.Value / 2, 3)
                     };
                 }
             }
@@ -976,6 +980,7 @@ namespace DiabasePrintingWizard
             Progress<int> maxProgress = new Progress<int>(SetMaxProgress);
             Progress<int> totalProgress = new Progress<int>(SetTotalProgress);
             SettingsContainer currentSettings = Settings;
+            currentSettings.IslandCombining = this.cbIslandCombining.Checked;
             Duet.MachineInfo machineInfo = SelectedMachine;
             Task.Run(async () =>
             {
@@ -1032,59 +1037,6 @@ namespace DiabasePrintingWizard
             btnCancel.Enabled = true;
 
             postProcessingTask = null;
-        }
-
-        private static DialogResult ShowInputDialog(ref string input)
-        {
-            System.Drawing.Size size = new System.Drawing.Size(200, 70);
-            Form inputBox = new Form
-            {
-                FormBorderStyle = FormBorderStyle.FixedDialog,
-                ClientSize = size,
-                Text = "Enter Inner Diameter of Model"
-            };
-
-            Label label = new Label()
-            {
-                AutoSize = true,
-                Text = "Inner Diameter in mm"
-            };
-            inputBox.Controls.Add(label);
-
-            TextBox textBox = new TextBox
-            {
-                Size = new System.Drawing.Size(size.Width - 10, 23),
-                Location = new System.Drawing.Point(5, 15),
-                Text = input
-            };
-            inputBox.Controls.Add(textBox);
-
-            Button okButton = new Button
-            {
-                DialogResult = DialogResult.OK,
-                Name = "okButton",
-                Size = new System.Drawing.Size(75, 23),
-                Text = "&OK",
-                Location = new System.Drawing.Point(size.Width - 80 - 80, 39)
-            };
-            inputBox.Controls.Add(okButton);
-
-            Button cancelButton = new Button
-            {
-                DialogResult = DialogResult.Cancel,
-                Name = "cancelButton",
-                Size = new System.Drawing.Size(75, 23),
-                Text = "&Cancel",
-                Location = new System.Drawing.Point(size.Width - 80, 39)
-            };
-            inputBox.Controls.Add(cancelButton);
-
-            inputBox.AcceptButton = okButton;
-            inputBox.CancelButton = cancelButton;
-
-            DialogResult result = inputBox.ShowDialog();
-            input = textBox.Text;
-            return result;
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -1223,10 +1175,5 @@ namespace DiabasePrintingWizard
             DoUpload(SelectedMachine.IPAddress);
         }
         #endregion
-
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
