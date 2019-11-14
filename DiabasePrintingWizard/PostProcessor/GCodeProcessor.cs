@@ -47,7 +47,7 @@ namespace DiabasePrintingWizard
 
             layers = new List<GCodeLayer>();
             toolPrimed = new List<bool>();
-            for (int i = 0; i < preferences.Tools.Length; i++)
+            for (int i = 0; i <= preferences.Tools.Length; i++)
             {
                 toolPrimed.Add(false);
             }
@@ -195,10 +195,10 @@ namespace DiabasePrintingWizard
                             {
                                 int? pParam = line.GetIValue('P');
                                 double? sParam = line.GetFValue('S');
-                                if (pParam.HasValue && pParam.Value > 0 && pParam.Value <= settings.Tools.Length && sParam.HasValue)
+                                if (pParam.HasValue && pParam.Value >= 0 && pParam.Value < settings.Tools.Length && sParam.HasValue)
                                 {
                                     // G10 P... S...
-                                    settings.Tools[pParam.Value - 1].ActiveTemperature = (decimal)sParam.Value;
+                                    settings.Tools[pParam.Value].ActiveTemperature = (decimal)sParam.Value;
                                 }
                             }
                             else if (gCode == 28)
@@ -220,9 +220,9 @@ namespace DiabasePrintingWizard
                                 {
                                     double? sParam = line.GetFValue('S');
                                     int? tParam = line.GetIValue('T');
-                                    if (sParam.HasValue && tParam.HasValue && tParam.Value > 0 && tParam.Value <= settings.Tools.Length)
+                                    if (sParam.HasValue && tParam.HasValue && tParam.Value >= 0 && tParam.Value < settings.Tools.Length)
                                     {
-                                        ToolSettings toolSettings = settings.Tools[tParam.Value - 1];
+                                        ToolSettings toolSettings = settings.Tools[tParam.Value];
                                         if (toolSettings.Type == ToolType.Nozzle)
                                         {
                                             if (toolSettings.ActiveTemperature <= 0m)
@@ -245,10 +245,10 @@ namespace DiabasePrintingWizard
                                 int? tCode = line.GetIValue('T');
                                 if (tCode.HasValue)
                                 {
-                                    if (tCode > 0 && tCode <= settings.Tools.Length)
+                                    if (tCode >= 0 && tCode < settings.Tools.Length)
                                     {
                                         usedTools.Add(tCode.Value);
-                                        if (settings.Tools[tCode.Value - 1].Type == ToolType.Nozzle)
+                                        if (settings.Tools[tCode.Value].Type == ToolType.Nozzle)
                                         {
                                             // Keep track of tools in use. Tool change sequences are inserted by the post-processor
                                             if (segment.Lines.Count <= 1)
@@ -447,7 +447,7 @@ namespace DiabasePrintingWizard
                 {
                     if (startWithLowestTool)
                     {
-                        for (int toolNumber = 1; toolNumber <= settings.Tools.Length; toolNumber++)
+                        for (int toolNumber = 0; toolNumber < settings.Tools.Length; toolNumber++)
                         {
                             // Go from T1-T5
                             GCodeSegment segment = CombineSegments(layer, toolNumber, ref currentTool, ref activeRule);
@@ -456,7 +456,7 @@ namespace DiabasePrintingWizard
                     }
                     else
                     {
-                        for (int toolNumber = settings.Tools.Length; toolNumber >= 1; toolNumber--)
+                        for (int toolNumber = settings.Tools.Length-1; toolNumber >= 0; toolNumber--)
                         {
                             // Go from T5-T1
                             GCodeSegment segment = CombineSegments(layer, toolNumber, ref currentTool, ref activeRule);
@@ -684,7 +684,7 @@ namespace DiabasePrintingWizard
                         if (line.Content.EndsWith(ToolChangeMarker, StringComparison.InvariantCulture))
                         {
                             // Take into account tool change times
-                            var tool = settings.Tools[segment.Tool - 1];
+                            var tool = settings.Tools[segment.Tool];
 
                             // See if we need to use preheating for this tool
                             if (tool.PreheatTime > 0.0m)
@@ -708,7 +708,7 @@ namespace DiabasePrintingWizard
                             {
                                 var pParam = line.GetIValue('P');
                                 var rParam = line.GetIValue('R');
-                                if (pParam.HasValue && rParam.HasValue && pParam > 0 && pParam <= settings.Tools.Length)
+                                if (pParam.HasValue && rParam.HasValue && pParam >= 0 && pParam < settings.Tools.Length)
                                 {
                                     if (preheatCounters.ContainsKey(pParam.Value))
                                     {
@@ -721,7 +721,7 @@ namespace DiabasePrintingWizard
                             // Check if any of the tools we want to preheat has had enough time to do so yet
                             foreach (var toolNumber in preheatCounters.Keys.ToList())
                             {
-                                var tool = settings.Tools[toolNumber - 1];
+                                var tool = settings.Tools[toolNumber];
                                 var totalTimeSpent = preheatCounters[toolNumber] + timeSpent;
                                 if (totalTimeSpent > (double)tool.PreheatTime)
                                 {
@@ -752,7 +752,7 @@ namespace DiabasePrintingWizard
                         int? pParam = line.GetIValue('P');
                         if (pParam.HasValue && preheatCounters.ContainsKey(pParam.Value))
                         {
-                            ToolSettings tool = settings.Tools[pParam.Value - 1];
+                            ToolSettings tool = settings.Tools[pParam.Value];
                             var activeTemp = tool.ActiveTemperature.ToString(FrmMain.numberFormat);
                             line.Content = $"G10 P{pParam} R{activeTemp} S{activeTemp}";
                             preheatCounters.Remove(pParam.Value);
@@ -765,7 +765,7 @@ namespace DiabasePrintingWizard
         // Perform island combination for a given tool on a given layer returning a segment for the selected tool
         private GCodeSegment CombineSegments(GCodeLayer layer, int toolNumber, ref int currentTool, ref OverrideRule activeRule, int startSegment = 0)
         {
-            if (settings.Tools[toolNumber - 1].Type != ToolType.Nozzle)
+            if (settings.Tools[toolNumber].Type != ToolType.Nozzle)
             {
                 // Don't bother with unconfigured tools
                 return null;
@@ -820,7 +820,7 @@ namespace DiabasePrintingWizard
                     if (primeTool && line.GetFValue('E').HasValue)
                     {
                         replacementLines.Add(new GCodeLine($"G1 E{toolChangeRetractionDistance.ToString("F2", FrmMain.numberFormat)} F{toolChangeRetractionSpeed.ToString(FrmMain.numberFormat)}", toolChangeRetractionSpeed / 60.0));
-                        toolPrimed[currentTool - 1] = true;
+                        toolPrimed[currentTool] = true;
                         primeTool = false;
                     }
 
@@ -839,7 +839,7 @@ namespace DiabasePrintingWizard
 
                         AddToolChange(replacementLines, currentTool, toolNumber);
                         currentTool = toolNumber;
-                        primeTool = !toolPrimed[currentTool - 1];
+                        primeTool = !toolPrimed[currentTool];
 
                         // Make sure we go to the height of the current layer after tool change but only before the first extrusion (see above)
                         ensureUnhopAfterToolChange = true;
@@ -886,16 +886,16 @@ namespace DiabasePrintingWizard
 
         private void AddToolChange(List<GCodeLine> lines, int oldToolNumber, int newToolNumber)
         {
-            if (oldToolNumber > 0 && oldToolNumber <= settings.Tools.Length)
+            if (oldToolNumber >= 0 && oldToolNumber < settings.Tools.Length)
             {
-                ToolSettings oldTool = settings.Tools[oldToolNumber - 1];
+                ToolSettings oldTool = settings.Tools[oldToolNumber];
                 if (oldTool.PreheatTime > 0m)
                 {
                     lines.Add(new GCodeLine($"G10 P{oldToolNumber} R{oldTool.StandbyTemperature.ToString(FrmMain.numberFormat)}"));
                 }
             }
 
-            ToolSettings newTool = settings.Tools[newToolNumber - 1];
+            ToolSettings newTool = settings.Tools[newToolNumber];
             if (newTool.Cleaning == CleaningMode.Always
                 || (newTool.Cleaning == CleaningMode.Interval && (newTool.ToolChangeCounter % newTool.Interval) == 0)
                 || (newTool.Cleaning == CleaningMode.Once && !newTool.CleanOnceDone))

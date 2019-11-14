@@ -140,6 +140,14 @@ namespace DiabasePrintingWizard
                 {
                     new ToolSettings
                     {
+                        Type = ToolType.Nozzle,
+                        PreheatTime = 0,
+                        StandbyTemperature = 0,
+                        Cleaning = CleaningMode.Off,
+                        Interval = 0
+                    },
+                    new ToolSettings
+                    {
                         Type = (ToolType)cboTool1.SelectedIndex,
                         PreheatTime = nudPreheat1.Value,
                         StandbyTemperature = nudTemp1.Value,
@@ -187,31 +195,31 @@ namespace DiabasePrintingWizard
             set
             {
                 chkConfigureManually.Checked = value.ConfigureManually;
-                cboTool1.SelectedIndex = (int)value.Tools[0].Type;
-                nudPreheat1.Value = value.Tools[0].PreheatTime;
-                nudTemp1.Value = value.Tools[0].StandbyTemperature;
-                cboCleaning1.SelectedItem = value.Tools[0].Cleaning.ToString();
-                nudXChanges1.Value = value.Tools[0].Interval;
-                cboTool2.SelectedIndex = (int)value.Tools[1].Type;
-                nudPreheat2.Value = value.Tools[1].PreheatTime;
-                nudTemp2.Value = value.Tools[1].StandbyTemperature;
-                cboCleaning2.SelectedItem = value.Tools[1].Cleaning.ToString();
-                nudXChanges2.Value = value.Tools[1].Interval;
-                cboTool3.SelectedIndex = (int)value.Tools[2].Type;
-                nudPreheat3.Value = value.Tools[2].PreheatTime;
-                nudTemp3.Value = value.Tools[2].StandbyTemperature;
-                cboCleaning3.SelectedItem = value.Tools[2].Cleaning.ToString();
-                nudXChanges3.Value = value.Tools[2].Interval;
-                cboTool4.SelectedIndex = (int)value.Tools[3].Type;
-                nudPreheat4.Value = value.Tools[3].PreheatTime;
-                nudTemp4.Value = value.Tools[3].StandbyTemperature;
-                cboCleaning4.SelectedItem = value.Tools[3].Cleaning.ToString();
-                nudXChanges4.Value = value.Tools[3].Interval;
-                cboTool5.SelectedIndex = (int)value.Tools[4].Type;
-                nudPreheat5.Value = value.Tools[4].PreheatTime;
-                nudTemp5.Value = value.Tools[4].StandbyTemperature;
-                cboCleaning5.SelectedItem = value.Tools[4].Cleaning.ToString();
-                nudXChanges5.Value = value.Tools[4].Interval;
+                cboTool1.SelectedIndex = (int)value.Tools[1].Type;
+                nudPreheat1.Value = value.Tools[1].PreheatTime;
+                nudTemp1.Value = value.Tools[1].StandbyTemperature;
+                cboCleaning1.SelectedItem = value.Tools[1].Cleaning.ToString();
+                nudXChanges1.Value = value.Tools[1].Interval;
+                cboTool2.SelectedIndex = (int)value.Tools[2].Type;
+                nudPreheat2.Value = value.Tools[2].PreheatTime;
+                nudTemp2.Value = value.Tools[2].StandbyTemperature;
+                cboCleaning2.SelectedItem = value.Tools[2].Cleaning.ToString();
+                nudXChanges2.Value = value.Tools[2].Interval;
+                cboTool3.SelectedIndex = (int)value.Tools[3].Type;
+                nudPreheat3.Value = value.Tools[3].PreheatTime;
+                nudTemp3.Value = value.Tools[3].StandbyTemperature;
+                cboCleaning3.SelectedItem = value.Tools[3].Cleaning.ToString();
+                nudXChanges3.Value = value.Tools[3].Interval;
+                cboTool4.SelectedIndex = (int)value.Tools[4].Type;
+                nudPreheat4.Value = value.Tools[4].PreheatTime;
+                nudTemp4.Value = value.Tools[4].StandbyTemperature;
+                cboCleaning4.SelectedItem = value.Tools[4].Cleaning.ToString();
+                nudXChanges4.Value = value.Tools[4].Interval;
+                cboTool5.SelectedIndex = (int)value.Tools[5].Type;
+                nudPreheat5.Value = value.Tools[5].PreheatTime;
+                nudTemp5.Value = value.Tools[5].StandbyTemperature;
+                cboCleaning5.SelectedItem = value.Tools[5].Cleaning.ToString();
+                nudXChanges5.Value = value.Tools[5].Interval;
                 chkTopUseOwnSettings.Checked = value.UseOwnSettings;
                 chkTopGenerateSupport.Checked = value.GenerateSpecialSupport;
             }
@@ -1324,6 +1332,11 @@ namespace DiabasePrintingWizard
             lblXChanges51.Enabled = enable;
             nudXChanges5.Enabled = enable;
             lblXChanges52.Enabled = enable;
+        }
+
+        private void lblVersion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
