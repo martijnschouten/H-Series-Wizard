@@ -16,7 +16,7 @@ namespace DiabasePrintingWizard
 {
     public partial class FrmMain : Form
     {
-        public static readonly string version = "v1.0.2-dev";
+        public static readonly string version = "v1.0.5-dev";
         public static readonly NumberFormatInfo numberFormat = CultureInfo.CreateSpecificCulture("en-US").NumberFormat;
 
         private Duet.Observer observer;
@@ -27,6 +27,7 @@ namespace DiabasePrintingWizard
 
         private string outFilePath;
         private bool outFileSaved = true;
+        private bool debug;
         private Task postProcessingTask;
 
         private Duet.MachineInfo SelectedMachine
@@ -37,8 +38,9 @@ namespace DiabasePrintingWizard
 
         private BindingList<OverrideRule> overrideRules = new BindingList<OverrideRule>();
 
-        public FrmMain()
+        public FrmMain(string filename, bool debug)
         {
+            this.debug = debug;
             numberFormat.NumberGroupSeparator = "";
             InitializeComponent();
             lblVersion.Text = version;
@@ -58,11 +60,32 @@ namespace DiabasePrintingWizard
             // Initialize IPC subsystem
             InitIPC();
 
+            InitCleaningComboBoxes();
+
             // Load settings
             if (Properties.Settings.Default.Storage != "")
             {
                 Settings = JsonConvert.DeserializeObject<SettingsContainer>(Properties.Settings.Default.Storage);
             }
+
+            if (filename != null) {
+                txtTopFileAdditive.Text = filename;
+            }
+        }
+
+        private void InitCleaningComboBoxes()
+        {
+            cboCleaning1.Items.AddRange(Enum.GetNames(typeof(CleaningMode)));
+            cboCleaning2.Items.AddRange(Enum.GetNames(typeof(CleaningMode)));
+            cboCleaning3.Items.AddRange(Enum.GetNames(typeof(CleaningMode)));
+            cboCleaning4.Items.AddRange(Enum.GetNames(typeof(CleaningMode)));
+            cboCleaning5.Items.AddRange(Enum.GetNames(typeof(CleaningMode)));
+
+            cboCleaning1.SelectedIndex = 0;
+            cboCleaning2.SelectedIndex = 0;
+            cboCleaning3.SelectedIndex = 0;
+            cboCleaning4.SelectedIndex = 0;
+            cboCleaning5.SelectedIndex = 0;
         }
 
         private void FrmMain_Deactivate(object sender, EventArgs e)
@@ -86,7 +109,7 @@ namespace DiabasePrintingWizard
                 DialogResult result = MessageBox.Show("You have neither uploaded nor saved your post-processed G-Code file yet. Would you like to save it before you exit?", Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    btnSave.PerformClick();
+                    btnSaveAs.PerformClick();
                     if (!outFileSaved)
                     {
                         e.Cancel = true;
@@ -120,40 +143,40 @@ namespace DiabasePrintingWizard
                         Type = (ToolType)cboTool1.SelectedIndex,
                         PreheatTime = nudPreheat1.Value,
                         StandbyTemperature = nudTemp1.Value,
-                        CleaningInterval = nudInterval1.Value,
-                        AutoClean = chkAutoClean1.Checked
+                        Cleaning = GetCleaningMode(cboCleaning1),
+                        Interval = nudXChanges1.Value
                     },
                     new ToolSettings
                     {
                         Type = (ToolType)cboTool2.SelectedIndex,
                         PreheatTime = nudPreheat2.Value,
                         StandbyTemperature = nudTemp2.Value,
-                        CleaningInterval = nudInterval2.Value,
-                        AutoClean = chkAutoClean2.Checked
+                        Cleaning = GetCleaningMode(cboCleaning2),
+                        Interval = nudXChanges2.Value
                     },
                     new ToolSettings
                     {
                         Type = (ToolType)cboTool3.SelectedIndex,
                         PreheatTime = nudPreheat3.Value,
                         StandbyTemperature = nudTemp3.Value,
-                        CleaningInterval = nudInterval3.Value,
-                        AutoClean = chkAutoClean3.Checked
+                        Cleaning = GetCleaningMode(cboCleaning3),
+                        Interval = nudXChanges3.Value
                     },
                     new ToolSettings
                     {
                         Type = (ToolType)cboTool4.SelectedIndex,
                         PreheatTime = nudPreheat4.Value,
                         StandbyTemperature = nudTemp4.Value,
-                        CleaningInterval = nudInterval4.Value,
-                        AutoClean = chkAutoClean4.Checked
+                        Cleaning = GetCleaningMode(cboCleaning4),
+                        Interval = nudXChanges4.Value
                     },
                     new ToolSettings
                     {
                         Type = (ToolType)cboTool5.SelectedIndex,
                         PreheatTime = nudPreheat5.Value,
                         StandbyTemperature = nudTemp5.Value,
-                        CleaningInterval = nudInterval5.Value,
-                        AutoClean = chkAutoClean5.Checked
+                        Cleaning = GetCleaningMode(cboCleaning5),
+                        Interval = nudXChanges5.Value
                     }
                 },
                 UseOwnSettings = chkTopUseOwnSettings.Checked,
@@ -167,28 +190,28 @@ namespace DiabasePrintingWizard
                 cboTool1.SelectedIndex = (int)value.Tools[0].Type;
                 nudPreheat1.Value = value.Tools[0].PreheatTime;
                 nudTemp1.Value = value.Tools[0].StandbyTemperature;
-                nudInterval1.Value = value.Tools[0].CleaningInterval;
-                chkAutoClean1.Checked = value.Tools[0].AutoClean;
+                cboCleaning1.SelectedItem = value.Tools[0].Cleaning.ToString();
+                nudXChanges1.Value = value.Tools[0].Interval;
                 cboTool2.SelectedIndex = (int)value.Tools[1].Type;
                 nudPreheat2.Value = value.Tools[1].PreheatTime;
                 nudTemp2.Value = value.Tools[1].StandbyTemperature;
-                nudInterval2.Value = value.Tools[1].CleaningInterval;
-                chkAutoClean2.Checked = value.Tools[1].AutoClean;
+                cboCleaning2.SelectedItem = value.Tools[1].Cleaning.ToString();
+                nudXChanges2.Value = value.Tools[1].Interval;
                 cboTool3.SelectedIndex = (int)value.Tools[2].Type;
                 nudPreheat3.Value = value.Tools[2].PreheatTime;
                 nudTemp3.Value = value.Tools[2].StandbyTemperature;
-                nudInterval3.Value = value.Tools[2].CleaningInterval;
-                chkAutoClean3.Checked = value.Tools[2].AutoClean;
+                cboCleaning3.SelectedItem = value.Tools[2].Cleaning.ToString();
+                nudXChanges3.Value = value.Tools[2].Interval;
                 cboTool4.SelectedIndex = (int)value.Tools[3].Type;
                 nudPreheat4.Value = value.Tools[3].PreheatTime;
                 nudTemp4.Value = value.Tools[3].StandbyTemperature;
-                nudInterval4.Value = value.Tools[3].CleaningInterval;
-                chkAutoClean4.Checked = value.Tools[3].AutoClean;
+                cboCleaning4.SelectedItem = value.Tools[3].Cleaning.ToString();
+                nudXChanges4.Value = value.Tools[3].Interval;
                 cboTool5.SelectedIndex = (int)value.Tools[4].Type;
                 nudPreheat5.Value = value.Tools[4].PreheatTime;
                 nudTemp5.Value = value.Tools[4].StandbyTemperature;
-                nudInterval5.Value = value.Tools[4].CleaningInterval;
-                chkAutoClean5.Checked = value.Tools[4].AutoClean;
+                cboCleaning5.SelectedItem = value.Tools[4].Cleaning.ToString();
+                nudXChanges5.Value = value.Tools[4].Interval;
                 chkTopUseOwnSettings.Checked = value.UseOwnSettings;
                 chkTopGenerateSupport.Checked = value.GenerateSpecialSupport;
             }
@@ -339,7 +362,7 @@ namespace DiabasePrintingWizard
                     cboTool5.Items.RemoveAt(2);
                 }
             }
-
+            
             // Attempt auto-configuration of the selected machine
             if (chkConfigureManually.Checked)
             {
@@ -965,7 +988,7 @@ namespace DiabasePrintingWizard
                 outFile = new FileStream(outFilePath, FileMode.OpenOrCreate, FileAccess.Write);
 
                 StreamWriter sw = new StreamWriter(outFile);
-                sw.WriteLine($"; Toolpath generated by Diabase Printing Wizard on {DateTime.Now}");
+                sw.WriteLine($"; Toolpath generated by Diabase Printing Wizard {version} on {DateTime.Now}");
                 sw.WriteLine($"; Manufacturing method: {method} ({sides})");
                 sw.Flush();
             }
@@ -992,13 +1015,14 @@ namespace DiabasePrintingWizard
             SettingsContainer currentSettings = Settings;
             currentSettings.IslandCombining = this.cbIslandCombining.Checked;
             Duet.MachineInfo machineInfo = SelectedMachine;
+            WriteSettings(outFile, currentSettings, machineInfo, overrideRules);
             Task.Run(async () =>
             {
                 await Task.Delay(250);
                 postProcessingTask = PostProcessor.CreateTask(topAdditiveFile, topSubstractiveFile,
                     bottomAdditiveFile, bottomSubstractiveFile,
                     outFile, currentSettings, overrideRules, machineInfo,
-                    textProgress, progress, maxProgress, totalProgress);
+                    textProgress, progress, maxProgress, totalProgress, debug);
                 try
                 {
                     await postProcessingTask;
@@ -1009,6 +1033,56 @@ namespace DiabasePrintingWizard
                 }
                 Invoke((Action)PostProcessingComplete);
             });
+        }
+
+        private void WriteSettings(FileStream outFile, SettingsContainer currentSettings, Duet.MachineInfo machineInfo, BindingList<OverrideRule> overrideRules)
+        {
+            StreamWriter sw = new StreamWriter(outFile);
+
+            // General settings
+            sw.WriteLine(";  General Settings");
+            sw.WriteLine($";    Configure manually: {currentSettings.ConfigureManually}");
+            sw.WriteLine($";    Use own settings: {currentSettings.UseOwnSettings}");
+            sw.WriteLine($";    Generate special support: {currentSettings.GenerateSpecialSupport}");
+            if (currentSettings.RotaryPrinting != null)
+            {
+                sw.WriteLine($";    Rotary printing: true");
+                sw.WriteLine($";    Inner radius: {currentSettings.RotaryPrinting.InnerRadius.ToString("F2", numberFormat)}mm");
+            }
+            sw.WriteLine($";    Island combining: {currentSettings.IslandCombining}");
+            sw.WriteLine(";");
+
+            // Tool settings
+            sw.WriteLine(";  Tool Settings");
+            for (var i = 0; i < currentSettings.Tools.Length; i++)
+            {
+                var ts = currentSettings.Tools[i];
+                sw.WriteLine($";    Tool {i+1}");
+                sw.WriteLine($";      Type: {ts.Type}");
+                sw.WriteLine($";      Preheat time: {ts.PreheatTime}");
+                sw.WriteLine($";      Active temperature: {ts.ActiveTemperature}");
+                sw.WriteLine($";      Standby temperature: {ts.StandbyTemperature}");
+                sw.WriteLine($";      Cleaning: {ts.Cleaning.ToString()}{((ts.Cleaning == CleaningMode.Interval) ? $" every {ts.Interval} change(s)" : "")}");
+                sw.WriteLine(";");
+
+            }
+
+            // Override rules
+            if (overrideRules.Count > 0)
+            {
+                sw.WriteLine(";  Override rules");
+                foreach (OverrideRule or in overrideRules)
+                {
+                    sw.WriteLine($";    Tool: {or.Tool}");
+                    sw.WriteLine($";    Layer: {or.Layer}");
+                    sw.WriteLine($";    Region: {or.Region}");
+                    sw.WriteLine($";    Speed factor: {or.SpeedFactor.ToString("F1", numberFormat)}");
+                    sw.WriteLine($";    Extrusion factor: {or.ExtrusionFactor.ToString("F1", numberFormat)}");
+                    sw.WriteLine(";");
+                }
+            }
+
+            sw.Flush();
         }
 
         private void SetTextProgress(string value) => lblProgress.Text = value;
@@ -1040,7 +1114,8 @@ namespace DiabasePrintingWizard
                 btnCancel.Text = "Exit";
                 btnUpload.Visible = true;
                 btnUploadPrint.Visible = true;
-                btnSave.Visible = true;
+                btnSaveAs.Visible = true;
+                btnSaveOverwrite.Visible = true;
                 outFileSaved = false;
                 SystemSounds.Beep.Play();
             }
@@ -1063,6 +1138,19 @@ namespace DiabasePrintingWizard
                 {
                     MessageBox.Show("Error: Failed to copy output file to selected file path!\r\n\r\n" + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+        private void btnSaveOverwrite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                File.Copy(outFilePath, txtTopFileAdditive.Text, true);
+                outFileSaved = true;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: Failed to copy output file to selected file path!\r\n\r\n" + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1185,5 +1273,57 @@ namespace DiabasePrintingWizard
             DoUpload(SelectedMachine.IPAddress);
         }
         #endregion
+
+        private CleaningMode GetCleaningMode(ComboBox source)
+        {
+            if (source.SelectedIndex > -1)
+            {
+                return (CleaningMode)Enum.Parse(typeof(CleaningMode), source.SelectedItem.ToString());
+            }
+            else
+            {
+                return CleaningMode.Off;
+            }
+        }
+        
+        private void cboCleaning1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var enable = GetCleaningMode(cboCleaning1) == CleaningMode.Interval;
+            lblXChanges11.Enabled = enable;
+            nudXChanges1.Enabled = enable;
+            lblXChanges12.Enabled = enable;
+        }
+
+        private void cboCleaning2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var enable = GetCleaningMode(cboCleaning2) == CleaningMode.Interval;
+            lblXChanges21.Enabled = enable;
+            nudXChanges2.Enabled = enable;
+            lblXChanges22.Enabled = enable;
+        }
+
+        private void cboCleaning3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var enable = GetCleaningMode(cboCleaning3) == CleaningMode.Interval;
+            lblXChanges31.Enabled = enable;
+            nudXChanges3.Enabled = enable;
+            lblXChanges32.Enabled = enable;
+        }
+
+        private void cboCleaning4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var enable = GetCleaningMode(cboCleaning4) == CleaningMode.Interval;
+            lblXChanges41.Enabled = enable;
+            nudXChanges4.Enabled = enable;
+            lblXChanges42.Enabled = enable;
+        }
+
+        private void cboCleaning5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var enable = GetCleaningMode(cboCleaning5) == CleaningMode.Interval;
+            lblXChanges51.Enabled = enable;
+            nudXChanges5.Enabled = enable;
+            lblXChanges52.Enabled = enable;
+        }
     }
 }
