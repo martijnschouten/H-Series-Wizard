@@ -100,11 +100,7 @@ namespace DiabasePrintingWizard
                             // Get the Z height. S3D provides it via the comment except before the end
                             string lastParameter = lineBuffer.Split(' ').Last();
                             double zHeight = (lastParameter == "end") ? double.NaN : double.Parse(lastParameter, FrmMain.numberFormat);
-<<<<<<< HEAD
                             if (lineBuffer.StartsWith("; layer 1, Z =", StringComparison.InvariantCulture))
-=======
-                            if (lineBuffer.StartsWith("; layer 1, Z ="))
->>>>>>> dev
                             {
                                 firstLayerHeight = zHeight;
                             }
@@ -227,19 +223,11 @@ namespace DiabasePrintingWizard
                                             if (toolSettings.ActiveTemperature <= 0m)
                                             {
                                                 toolSettings.ActiveTemperature = (decimal)sParam.Value;
-<<<<<<< HEAD
                                                 segment.AddLine($"G10 P{tParam} R{toolSettings.StandbyTemperature.ToString(FrmMain.numberFormat)} S{toolSettings.ActiveTemperature.ToString(FrmMain.numberFormat)}");
                                             }
                                             else
                                             {
                                                 segment.AddLine($"G10 P{tParam} S{sParam.Value.ToString(FrmMain.numberFormat)}");
-=======
-                                                segment.AddLine($"G10 P{tParam} R{toolSettings.StandbyTemperature} S{toolSettings.ActiveTemperature}".ToString(FrmMain.numberFormat));
-                                            }
-                                            else
-                                            {
-                                                segment.AddLine($"G10 P{tParam} S{sParam}".ToString(FrmMain.numberFormat));
->>>>>>> dev
                                             }
                                         }
                                         writeLine = false;
@@ -611,11 +599,7 @@ namespace DiabasePrintingWizard
                                 if (totalTimeSpent > (double)tool.PreheatTime)
                                 {
                                     // We've been doing enough stuff to generate a good G10 code
-<<<<<<< HEAD
                                     segment.Lines.Insert(lineIndex, new GCodeLine($"G10 P{toolNumber} R{tool.ActiveTemperature.ToString(FrmMain.numberFormat)}"));
-=======
-                                    segment.Lines.Insert(lineIndex, new GCodeLine($"G10 P{toolNumber} R{tool.ActiveTemperature}".ToString(FrmMain.numberFormat)));
->>>>>>> dev
                                     preheatCounters.Remove(toolNumber);
                                 }
                                 else
@@ -643,31 +627,19 @@ namespace DiabasePrintingWizard
                             {
                                 // Replace the command setting the tool to standby temp if it will be next anyway
                                 segment.Lines.RemoveAt(i);
-<<<<<<< HEAD
                                 segment.Lines.Insert(i, new GCodeLine($"G10 P{toolNumber} R{tool.ActiveTemperature.ToString(FrmMain.numberFormat)}"));
-=======
-                                segment.Lines.Insert(i, new GCodeLine($"G10 P{toolNumber} R{tool.ActiveTemperature}".ToString(FrmMain.numberFormat)));
->>>>>>> dev
                                 break;
                             }
                             else if (content.StartsWith("T", StringComparison.InvariantCulture) || content.StartsWith("M98 P\"tprime", StringComparison.InvariantCulture))
                             {
                                 // Insert command for preheating right before Tnnn or the priming macro
-<<<<<<< HEAD
                                 segment.Lines.Insert(i, new GCodeLine($"G10 P{toolNumber} R{tool.ActiveTemperature.ToString(FrmMain.numberFormat)}"));
-=======
-                                segment.Lines.Insert(i, new GCodeLine($"G10 P{toolNumber} R{tool.ActiveTemperature}".ToString(FrmMain.numberFormat)));
->>>>>>> dev
                                 break;
                             }
                         }
 
                         // Since we had not enough time inside the segment add a M109 Snnn at the end of the segment to wait for min temp
-<<<<<<< HEAD
                         segment.Lines.Add(new GCodeLine($"M109 S{tool.ActiveTemperature.ToString(FrmMain.numberFormat)} T{toolNumber}"));
-=======
-                        segment.Lines.Add(new GCodeLine($"M109 S{tool.ActiveTemperature} T{toolNumber}".ToString(FrmMain.numberFormat)));
->>>>>>> dev
 
                         preheatCounters.Remove(toolNumber);
                     }
@@ -687,12 +659,8 @@ namespace DiabasePrintingWizard
                         if (pParam != null && preheatCounters.ContainsKey(pParam.Value))
                         {
                             ToolSettings tool = settings.Tools[pParam.Value - 1];
-<<<<<<< HEAD
                             var activeTemp = tool.ActiveTemperature.ToString(FrmMain.numberFormat);
                             line.Content = $"G10 P{pParam} R{activeTemp} S{activeTemp}";
-=======
-                            line.Content = $"G10 P{pParam} R{tool.ActiveTemperature} S{tool.ActiveTemperature}".ToString(FrmMain.numberFormat);
->>>>>>> dev
                             preheatCounters.Remove(pParam.Value);
                         }
                     }
@@ -725,11 +693,6 @@ namespace DiabasePrintingWizard
 
             List<GCodeLine> replacementLines = new List<GCodeLine>();
             double currentZ = 0.0;
-<<<<<<< HEAD
-=======
-            bool primeTool = false;
-            bool toolChangeHappened = false;
->>>>>>> dev
             Coordinate lastPosition = null;
             foreach (GCodeSegment segment in layer.Segments)
             {
@@ -762,7 +725,6 @@ namespace DiabasePrintingWizard
                         double? zPosition = line.GetFValue('Z');
                         if (zPosition.HasValue)
                         {
-<<<<<<< HEAD
                             currentZ = zPosition.Value;
 
                             // Since we have a Z height in this line we don't have to insert an artificial one
@@ -775,46 +737,6 @@ namespace DiabasePrintingWizard
                             replacementLines.Add(new GCodeLine($"G1 Z{layer.ZHeight.ToString("F3", FrmMain.numberFormat)} F{(line.Feedrate * 60.0).ToString("F0", FrmMain.numberFormat)}"));
                             currentZ = layer.ZHeight;
                             ensureUnhopAfterToolChange = false;
-=======
-                            // Keep track of the current Z position
-                            double? zPosition = line.GetFValue('Z');
-                            if (zPosition.HasValue) { 
-                                currentZ = zPosition.Value;
-                                if (toolChangeHappened)
-                                {
-                                    toolChangeHappened = false;
-                                }
-                            }
-
-                            // Make sure to un-hop before the first extrusion if required
-                            if (!double.IsNaN(layer.ZHeight) && line.GetFValue('E').HasValue && (currentZ != layer.ZHeight || toolChangeHappened))
-                            {
-                                replacementLines.Add(new GCodeLine($"G1 Z{layer.ZHeight.ToString("F3", FrmMain.numberFormat)} F{(line.Feedrate * 60.0).ToString("F0", FrmMain.numberFormat)}"));
-                                currentZ = layer.ZHeight;
-                                toolChangeHappened = false;
-                            }
-
-                            // Add next movement of the segment
-                            replacementLines.Add(line);
-
-                            // Insert potential tool changes after first G0/G1 code
-                            if (toolNumber != currentTool)
-                            {
-                                AddToolChange(replacementLines, currentTool, toolNumber);
-                                currentTool = toolNumber;
-                                primeTool = !toolPrimed[currentTool - 1];
-
-                                // Make sure we go to the height of the current layer after tool change but only before the first extrusion (see above)
-                                toolChangeHappened = true;
-                            }
-                            else if (primeTool)
-                            {
-                                // Prime tool after the following G0/G1 code
-                                replacementLines.Add(new GCodeLine($"G1 E{toolChangeRetractionDistance.ToString("F2", FrmMain.numberFormat)} F{toolChangeRetractionSpeed}".ToString(FrmMain.numberFormat), toolChangeRetractionSpeed / 60.0));
-                                toolPrimed[currentTool - 1] = true;
-                                primeTool = false;
-                            }
->>>>>>> dev
                         }
 
                         // Prime tool before first extrusion
@@ -831,34 +753,12 @@ namespace DiabasePrintingWizard
                         // Insert potential tool changes after first G0/G1 code
                         if (toolNumber != currentTool)
                         {
-<<<<<<< HEAD
                             AddToolChange(replacementLines, currentTool, toolNumber,layer.Number);
                             currentTool = toolNumber;
                             primeTool = !toolPrimed[currentTool - 1];
 
                             // Make sure we go to the height of the current layer after tool change but only before the first extrusion (see above)
                             ensureUnhopAfterToolChange = true;
-=======
-                            if (rule == null)
-                            {
-                                // Reset speed and/or extrusion factor
-                                if (activeRule.SpeedFactor != 100) { replacementLines.Add(new GCodeLine("M220 S100")); }
-                                if (activeRule.ExtrusionFactor != 100) { replacementLines.Add(new GCodeLine("M221 S100")); }
-                            }
-                            else
-                            {
-                                // Apply new speed and/or extrusion factor
-                                if ((activeRule == null && rule.SpeedFactor != 100) || (activeRule != null && activeRule.SpeedFactor != rule.SpeedFactor))
-                                {
-                                    replacementLines.Add(new GCodeLine($"M220 S{rule.SpeedFactor}".ToString(FrmMain.numberFormat)));
-                                }
-                                if ((activeRule == null && rule.ExtrusionFactor != 100) || (activeRule != null && activeRule.ExtrusionFactor != rule.ExtrusionFactor))
-                                {
-                                    replacementLines.Add(new GCodeLine($"M221 S{rule.ExtrusionFactor}".ToString(FrmMain.numberFormat)));
-                                }
-                            }
-                            activeRule = rule;
->>>>>>> dev
                         }
                     }
                 }
@@ -908,11 +808,7 @@ namespace DiabasePrintingWizard
                 ToolSettings oldTool = settings.Tools[oldToolNumber - 1];
                 if (oldTool.PreheatTime > 0m)
                 {
-<<<<<<< HEAD
                     lines.Add(new GCodeLine($"G10 P{oldToolNumber} R{oldTool.StandbyTemperature.ToString(FrmMain.numberFormat)}"));
-=======
-                    lines.Add(new GCodeLine($"G10 P{oldToolNumber} R{oldTool.StandbyTemperature}".ToString(FrmMain.numberFormat)));
->>>>>>> dev
                 }
             }
 

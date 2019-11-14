@@ -16,10 +16,7 @@ namespace DiabasePrintingWizard
 {
     public partial class FrmMain : Form
     {
-<<<<<<< HEAD
         public static readonly string version = "v1.0.2-dev";
-=======
->>>>>>> dev
         public static readonly NumberFormatInfo numberFormat = CultureInfo.CreateSpecificCulture("en-US").NumberFormat;
 
         private Duet.Observer observer;
