@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text;
+using System.Collections.Generic;
 
 namespace DiabasePrintingWizard
 {
@@ -71,6 +72,40 @@ namespace DiabasePrintingWizard
             }
             return null;
         }
+
+        public List<double> GetArrayValue(char startChr, char seperator, bool decimalNumber)
+        {
+            List<double> values = new List<double>();
+            bool started = false;
+            string expression = "";
+            foreach (char c in Content)
+            {
+                if (c == startChr)
+                {
+                    started = true;
+                }
+                if (started)
+                {
+                    if (c == seperator)
+                    {
+                        double.TryParse(expression, out double result);
+                        values.Add(result);
+                        expression = "";
+                    }
+                    else if(c == '-'||char.IsDigit(c)|| (decimalNumber && c == '.'))
+                    {
+                        expression += c;
+                    }
+                }
+            }
+            if(started && (expression != ""))
+            {
+                double.TryParse(expression, out double result);
+                values.Add(result);
+            }
+            return values;
+        }
+
 
         private bool FindParameter(char chr, out string expression, bool decimalNumber, bool allowCommentLine = false)
         {
