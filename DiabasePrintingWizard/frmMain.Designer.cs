@@ -30,19 +30,54 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.awContent = new AdvancedWizardControl.Wizard.AdvancedWizard();
-            this.awpWelcome = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
-            this.lblVersion = new System.Windows.Forms.Label();
-            this.gbType = new System.Windows.Forms.GroupBox();
-            this.rbAdditiveSubstractive = new System.Windows.Forms.RadioButton();
-            this.rbAdditive = new System.Windows.Forms.RadioButton();
-            this.gbMachine = new System.Windows.Forms.GroupBox();
-            this.lstMachine = new System.Windows.Forms.ListBox();
-            this.chkConfigureManually = new System.Windows.Forms.CheckBox();
-            this.gbGeometry = new System.Windows.Forms.GroupBox();
-            this.rbRotary = new System.Windows.Forms.RadioButton();
-            this.rbTwoSided = new System.Windows.Forms.RadioButton();
-            this.rbOneSided = new System.Windows.Forms.RadioButton();
-            this.lblDescription = new System.Windows.Forms.Label();
+            this.awpActions = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
+            this.gbIDRotaryPrinting = new System.Windows.Forms.GroupBox();
+            this.nudModelID = new System.Windows.Forms.NumericUpDown();
+            this.gbIslandCombining = new System.Windows.Forms.GroupBox();
+            this.cbIslandCombining = new System.Windows.Forms.CheckBox();
+            this.gbRules = new System.Windows.Forms.GroupBox();
+            this.dgvCustomActions = new System.Windows.Forms.DataGridView();
+            this.dgcTool = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcLayer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcRegion = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcSpeedFactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcExtrusionFactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.awpBottomSide = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
+            this.gbBottomFiles = new System.Windows.Forms.GroupBox();
+            this.btnBottomBrowseSubstractive = new System.Windows.Forms.Button();
+            this.btnBottomBrowseAdditive = new System.Windows.Forms.Button();
+            this.txtBottomFileSubstractive = new System.Windows.Forms.TextBox();
+            this.lblBottomFileSubstractive = new System.Windows.Forms.Label();
+            this.txtBottomFileAdditive = new System.Windows.Forms.TextBox();
+            this.lblBottomFileAdditive = new System.Windows.Forms.Label();
+            this.gbBottomSlicing = new System.Windows.Forms.GroupBox();
+            this.chkBottomGenerateSupport = new System.Windows.Forms.CheckBox();
+            this.btnBottomSlice = new System.Windows.Forms.Button();
+            this.tlpBottomFileButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btnBottomRemoveFiles = new System.Windows.Forms.Button();
+            this.btnBottomAddFiles = new System.Windows.Forms.Button();
+            this.lstBottomInputFiles = new System.Windows.Forms.ListBox();
+            this.chkBottomUseOwnSettings = new System.Windows.Forms.CheckBox();
+            this.chkBottomUnwrap = new System.Windows.Forms.CheckBox();
+            this.lblBottomFiles = new System.Windows.Forms.Label();
+            this.awpTopSide = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
+            this.gbTopFiles = new System.Windows.Forms.GroupBox();
+            this.btnTopBrowseSubstractive = new System.Windows.Forms.Button();
+            this.btnTopBrowseAdditive = new System.Windows.Forms.Button();
+            this.txtTopFileSubstractive = new System.Windows.Forms.TextBox();
+            this.lblTopFileSubstractive = new System.Windows.Forms.Label();
+            this.txtTopFileAdditive = new System.Windows.Forms.TextBox();
+            this.lblTopFileAdditive = new System.Windows.Forms.Label();
+            this.gbTopSlicing = new System.Windows.Forms.GroupBox();
+            this.chkTopGenerateSupport = new System.Windows.Forms.CheckBox();
+            this.btnTopSlice = new System.Windows.Forms.Button();
+            this.tlpTopFileButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTopRemoveFiles = new System.Windows.Forms.Button();
+            this.btnTopAddFiles = new System.Windows.Forms.Button();
+            this.lstTopInputFiles = new System.Windows.Forms.ListBox();
+            this.chkTopUseOwnSettings = new System.Windows.Forms.CheckBox();
+            this.chkTopUnwrap = new System.Windows.Forms.CheckBox();
+            this.lblTopInputFiles = new System.Windows.Forms.Label();
             this.awpMachineProperties = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.tlpHeads = new System.Windows.Forms.TableLayoutPanel();
@@ -111,24 +146,20 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblTemp2 = new System.Windows.Forms.Label();
             this.nudTemp2 = new System.Windows.Forms.NumericUpDown();
-            this.awpTopSide = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
-            this.gbTopFiles = new System.Windows.Forms.GroupBox();
-            this.btnTopBrowseSubstractive = new System.Windows.Forms.Button();
-            this.btnTopBrowseAdditive = new System.Windows.Forms.Button();
-            this.txtTopFileSubstractive = new System.Windows.Forms.TextBox();
-            this.lblTopFileSubstractive = new System.Windows.Forms.Label();
-            this.txtTopFileAdditive = new System.Windows.Forms.TextBox();
-            this.lblTopFileAdditive = new System.Windows.Forms.Label();
-            this.gbTopSlicing = new System.Windows.Forms.GroupBox();
-            this.chkTopGenerateSupport = new System.Windows.Forms.CheckBox();
-            this.btnTopSlice = new System.Windows.Forms.Button();
-            this.tlpTopFileButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTopRemoveFiles = new System.Windows.Forms.Button();
-            this.btnTopAddFiles = new System.Windows.Forms.Button();
-            this.lstTopInputFiles = new System.Windows.Forms.ListBox();
-            this.chkTopUseOwnSettings = new System.Windows.Forms.CheckBox();
-            this.chkTopUnwrap = new System.Windows.Forms.CheckBox();
-            this.lblTopInputFiles = new System.Windows.Forms.Label();
+            this.awpWelcome = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.gbType = new System.Windows.Forms.GroupBox();
+            this.rbAdditiveSubstractive = new System.Windows.Forms.RadioButton();
+            this.rbAdditive = new System.Windows.Forms.RadioButton();
+            this.gbMachine = new System.Windows.Forms.GroupBox();
+            this.lstMachine = new System.Windows.Forms.ListBox();
+            this.chkConfigureManually = new System.Windows.Forms.CheckBox();
+            this.gbGeometry = new System.Windows.Forms.GroupBox();
+            this.rbRotary = new System.Windows.Forms.RadioButton();
+            this.rbTwoSided = new System.Windows.Forms.RadioButton();
+            this.rbOneSided = new System.Windows.Forms.RadioButton();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.advancedWizardPage1 = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
             this.awpProgress = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
             this.btnSaveOverwrite = new System.Windows.Forms.Button();
             this.btnUploadPrint = new System.Windows.Forms.Button();
@@ -139,36 +170,6 @@
             this.pbTotal = new System.Windows.Forms.ProgressBar();
             this.pbStep = new System.Windows.Forms.ProgressBar();
             this.lblPleaseStandBy = new System.Windows.Forms.Label();
-            this.awpActions = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
-            this.gbIDRotaryPrinting = new System.Windows.Forms.GroupBox();
-            this.nudModelID = new System.Windows.Forms.NumericUpDown();
-            this.gbIslandCombining = new System.Windows.Forms.GroupBox();
-            this.cbIslandCombining = new System.Windows.Forms.CheckBox();
-            this.gbRules = new System.Windows.Forms.GroupBox();
-            this.dgvCustomActions = new System.Windows.Forms.DataGridView();
-            this.dgcTool = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgcLayer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcRegion = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgcSpeedFactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcExtrusionFactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.awpBottomSide = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
-            this.gbBottomFiles = new System.Windows.Forms.GroupBox();
-            this.btnBottomBrowseSubstractive = new System.Windows.Forms.Button();
-            this.btnBottomBrowseAdditive = new System.Windows.Forms.Button();
-            this.txtBottomFileSubstractive = new System.Windows.Forms.TextBox();
-            this.lblBottomFileSubstractive = new System.Windows.Forms.Label();
-            this.txtBottomFileAdditive = new System.Windows.Forms.TextBox();
-            this.lblBottomFileAdditive = new System.Windows.Forms.Label();
-            this.gbBottomSlicing = new System.Windows.Forms.GroupBox();
-            this.chkBottomGenerateSupport = new System.Windows.Forms.CheckBox();
-            this.btnBottomSlice = new System.Windows.Forms.Button();
-            this.tlpBottomFileButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.btnBottomRemoveFiles = new System.Windows.Forms.Button();
-            this.btnBottomAddFiles = new System.Windows.Forms.Button();
-            this.lstBottomInputFiles = new System.Windows.Forms.ListBox();
-            this.chkBottomUseOwnSettings = new System.Windows.Forms.CheckBox();
-            this.chkBottomUnwrap = new System.Windows.Forms.CheckBox();
-            this.lblBottomFiles = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -179,12 +180,21 @@
             this.sfdGCode = new System.Windows.Forms.SaveFileDialog();
             this.sfdFactory = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.advancedWizardPage1 = new AdvancedWizardControl.WizardPages.AdvancedWizardPage();
             this.awContent.SuspendLayout();
-            this.awpWelcome.SuspendLayout();
-            this.gbType.SuspendLayout();
-            this.gbMachine.SuspendLayout();
-            this.gbGeometry.SuspendLayout();
+            this.awpActions.SuspendLayout();
+            this.gbIDRotaryPrinting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudModelID)).BeginInit();
+            this.gbIslandCombining.SuspendLayout();
+            this.gbRules.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomActions)).BeginInit();
+            this.awpBottomSide.SuspendLayout();
+            this.gbBottomFiles.SuspendLayout();
+            this.gbBottomSlicing.SuspendLayout();
+            this.tlpBottomFileButtons.SuspendLayout();
+            this.awpTopSide.SuspendLayout();
+            this.gbTopFiles.SuspendLayout();
+            this.gbTopSlicing.SuspendLayout();
+            this.tlpTopFileButtons.SuspendLayout();
             this.awpMachineProperties.SuspendLayout();
             this.tlpHeads.SuspendLayout();
             this.gbTool3.SuspendLayout();
@@ -207,38 +217,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudXChanges2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreheat2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTemp2)).BeginInit();
-            this.awpTopSide.SuspendLayout();
-            this.gbTopFiles.SuspendLayout();
-            this.gbTopSlicing.SuspendLayout();
-            this.tlpTopFileButtons.SuspendLayout();
+            this.awpWelcome.SuspendLayout();
+            this.gbType.SuspendLayout();
+            this.gbMachine.SuspendLayout();
+            this.gbGeometry.SuspendLayout();
             this.awpProgress.SuspendLayout();
             this.pnlProgress.SuspendLayout();
-            this.awpActions.SuspendLayout();
-            this.gbIDRotaryPrinting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudModelID)).BeginInit();
-            this.gbIslandCombining.SuspendLayout();
-            this.gbRules.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomActions)).BeginInit();
-            this.awpBottomSide.SuspendLayout();
-            this.gbBottomFiles.SuspendLayout();
-            this.gbBottomSlicing.SuspendLayout();
-            this.tlpBottomFileButtons.SuspendLayout();
             this.pnlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBanner)).BeginInit();
             this.SuspendLayout();
             // 
             // awContent
             // 
-            this.awContent.BackButtonEnabled = true;
+            this.awContent.BackButtonEnabled = false;
             this.awContent.BackButtonText = "< Back";
             this.awContent.ButtonLayout = AdvancedWizardControl.Enums.ButtonLayoutKind.Default;
             this.awContent.ButtonsVisible = false;
             this.awContent.CancelButtonText = "&Cancel";
+            this.awContent.Controls.Add(this.awpWelcome);
             this.awContent.Controls.Add(this.awpActions);
             this.awContent.Controls.Add(this.awpBottomSide);
             this.awContent.Controls.Add(this.awpTopSide);
             this.awContent.Controls.Add(this.awpMachineProperties);
-            this.awContent.Controls.Add(this.awpWelcome);
             this.awContent.Controls.Add(this.advancedWizardPage1);
             this.awContent.Controls.Add(this.awpProgress);
             this.awContent.CurrentPageIsFinishPage = false;
@@ -266,1422 +266,6 @@
             this.awContent.WizardPages.Add(this.awpProgress);
             this.awContent.WizardPages.Add(this.advancedWizardPage1);
             // 
-            // awpWelcome
-            // 
-            this.awpWelcome.Controls.Add(this.lblVersion);
-            this.awpWelcome.Controls.Add(this.gbType);
-            this.awpWelcome.Controls.Add(this.gbMachine);
-            this.awpWelcome.Controls.Add(this.gbGeometry);
-            this.awpWelcome.Controls.Add(this.lblDescription);
-            this.awpWelcome.Header = false;
-            this.awpWelcome.HeaderBackgroundColor = System.Drawing.Color.White;
-            this.awpWelcome.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.awpWelcome.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpWelcome.HeaderImage")));
-            this.awpWelcome.HeaderImageVisible = true;
-            this.awpWelcome.HeaderTitle = "Welcome to Advanced Wizard";
-            this.awpWelcome.Location = new System.Drawing.Point(0, 0);
-            this.awpWelcome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.awpWelcome.Name = "awpWelcome";
-            this.awpWelcome.PreviousPage = 0;
-            this.awpWelcome.Size = new System.Drawing.Size(944, 526);
-            this.awpWelcome.SubTitle = "Your page description goes here";
-            this.awpWelcome.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
-            this.awpWelcome.TabIndex = 1;
-            this.awpWelcome.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpWelcome_PageShow);
-            // 
-            // lblVersion
-            // 
-            this.lblVersion.Location = new System.Drawing.Point(781, 119);
-            this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(159, 43);
-            this.lblVersion.TabIndex = 30;
-            this.lblVersion.Text = "v1.05 - NIFTy edition";
-            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
-            // 
-            // gbType
-            // 
-            this.gbType.Controls.Add(this.rbAdditiveSubstractive);
-            this.gbType.Controls.Add(this.rbAdditive);
-            this.gbType.Location = new System.Drawing.Point(620, 219);
-            this.gbType.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
-            this.gbType.Name = "gbType";
-            this.gbType.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbType.Size = new System.Drawing.Size(309, 151);
-            this.gbType.TabIndex = 29;
-            this.gbType.TabStop = false;
-            this.gbType.Text = "Manufacturing Type";
-            // 
-            // rbAdditiveSubstractive
-            // 
-            this.rbAdditiveSubstractive.AutoSize = true;
-            this.rbAdditiveSubstractive.Location = new System.Drawing.Point(23, 82);
-            this.rbAdditiveSubstractive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbAdditiveSubstractive.Name = "rbAdditiveSubstractive";
-            this.rbAdditiveSubstractive.Size = new System.Drawing.Size(173, 38);
-            this.rbAdditiveSubstractive.TabIndex = 9;
-            this.rbAdditiveSubstractive.Text = "Additive + Substractive\r\nManufacturing";
-            this.rbAdditiveSubstractive.UseVisualStyleBackColor = true;
-            // 
-            // rbAdditive
-            // 
-            this.rbAdditive.AutoSize = true;
-            this.rbAdditive.Checked = true;
-            this.rbAdditive.Location = new System.Drawing.Point(23, 41);
-            this.rbAdditive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbAdditive.Name = "rbAdditive";
-            this.rbAdditive.Size = new System.Drawing.Size(213, 21);
-            this.rbAdditive.TabIndex = 8;
-            this.rbAdditive.TabStop = true;
-            this.rbAdditive.Text = "Standard Print (additive only)";
-            this.rbAdditive.UseVisualStyleBackColor = true;
-            // 
-            // gbMachine
-            // 
-            this.gbMachine.Controls.Add(this.lstMachine);
-            this.gbMachine.Controls.Add(this.chkConfigureManually);
-            this.gbMachine.Location = new System.Drawing.Point(15, 219);
-            this.gbMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbMachine.Name = "gbMachine";
-            this.gbMachine.Padding = new System.Windows.Forms.Padding(9, 6, 9, 9);
-            this.gbMachine.Size = new System.Drawing.Size(381, 151);
-            this.gbMachine.TabIndex = 26;
-            this.gbMachine.TabStop = false;
-            this.gbMachine.Text = "Machine";
-            // 
-            // lstMachine
-            // 
-            this.lstMachine.Enabled = false;
-            this.lstMachine.FormattingEnabled = true;
-            this.lstMachine.ItemHeight = 16;
-            this.lstMachine.Items.AddRange(new object[] {
-            "Searching..."});
-            this.lstMachine.Location = new System.Drawing.Point(12, 28);
-            this.lstMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lstMachine.Name = "lstMachine";
-            this.lstMachine.Size = new System.Drawing.Size(267, 84);
-            this.lstMachine.TabIndex = 25;
-            this.lstMachine.SelectedIndexChanged += new System.EventHandler(this.LstMachine_SelectedIndexChanged);
-            // 
-            // chkConfigureManually
-            // 
-            this.chkConfigureManually.AutoSize = true;
-            this.chkConfigureManually.Location = new System.Drawing.Point(12, 118);
-            this.chkConfigureManually.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkConfigureManually.Name = "chkConfigureManually";
-            this.chkConfigureManually.Size = new System.Drawing.Size(151, 21);
-            this.chkConfigureManually.TabIndex = 26;
-            this.chkConfigureManually.Text = "Configure manually";
-            this.chkConfigureManually.UseVisualStyleBackColor = true;
-            this.chkConfigureManually.CheckedChanged += new System.EventHandler(this.ChkConfigureManually_CheckedChanged);
-            // 
-            // gbGeometry
-            // 
-            this.gbGeometry.Controls.Add(this.rbRotary);
-            this.gbGeometry.Controls.Add(this.rbTwoSided);
-            this.gbGeometry.Controls.Add(this.rbOneSided);
-            this.gbGeometry.Location = new System.Drawing.Point(405, 219);
-            this.gbGeometry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGeometry.Name = "gbGeometry";
-            this.gbGeometry.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbGeometry.Size = new System.Drawing.Size(203, 151);
-            this.gbGeometry.TabIndex = 28;
-            this.gbGeometry.TabStop = false;
-            this.gbGeometry.Text = "Geometry";
-            // 
-            // rbRotary
-            // 
-            this.rbRotary.AutoSize = true;
-            this.rbRotary.Location = new System.Drawing.Point(27, 103);
-            this.rbRotary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbRotary.Name = "rbRotary";
-            this.rbRotary.Size = new System.Drawing.Size(71, 21);
-            this.rbRotary.TabIndex = 2;
-            this.rbRotary.Text = "Rotary";
-            this.rbRotary.UseVisualStyleBackColor = true;
-            // 
-            // rbTwoSided
-            // 
-            this.rbTwoSided.AutoSize = true;
-            this.rbTwoSided.Location = new System.Drawing.Point(27, 69);
-            this.rbTwoSided.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbTwoSided.Name = "rbTwoSided";
-            this.rbTwoSided.Size = new System.Drawing.Size(96, 21);
-            this.rbTwoSided.TabIndex = 1;
-            this.rbTwoSided.Text = "Two-Sided";
-            this.rbTwoSided.UseVisualStyleBackColor = true;
-            // 
-            // rbOneSided
-            // 
-            this.rbOneSided.AutoSize = true;
-            this.rbOneSided.Checked = true;
-            this.rbOneSided.Location = new System.Drawing.Point(27, 33);
-            this.rbOneSided.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbOneSided.Name = "rbOneSided";
-            this.rbOneSided.Size = new System.Drawing.Size(97, 21);
-            this.rbOneSided.TabIndex = 0;
-            this.rbOneSided.TabStop = true;
-            this.rbOneSided.Text = "One-Sided";
-            this.rbOneSided.UseVisualStyleBackColor = true;
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(15, 135);
-            this.lblDescription.Margin = new System.Windows.Forms.Padding(0);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(598, 51);
-            this.lblDescription.TabIndex = 14;
-            this.lblDescription.Text = "Welcome to the Diabase toolpath generation wizard!\r\n\r\nPlease follow these instruc" +
-    "tions to generate a new toolpath for a working piece of your choice.";
-            // 
-            // awpMachineProperties
-            // 
-            this.awpMachineProperties.Controls.Add(this.lblWelcome);
-            this.awpMachineProperties.Controls.Add(this.tlpHeads);
-            this.awpMachineProperties.Header = false;
-            this.awpMachineProperties.HeaderBackgroundColor = System.Drawing.Color.White;
-            this.awpMachineProperties.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.awpMachineProperties.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpMachineProperties.HeaderImage")));
-            this.awpMachineProperties.HeaderImageVisible = true;
-            this.awpMachineProperties.HeaderTitle = "Post Processing";
-            this.awpMachineProperties.Location = new System.Drawing.Point(0, 0);
-            this.awpMachineProperties.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.awpMachineProperties.Name = "awpMachineProperties";
-            this.awpMachineProperties.PreviousPage = 0;
-            this.awpMachineProperties.Size = new System.Drawing.Size(944, 526);
-            this.awpMachineProperties.SubTitle = "Your page description goes here";
-            this.awpMachineProperties.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
-            this.awpMachineProperties.TabIndex = 2;
-            this.awpMachineProperties.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpMachineProperties_PageShow);
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(9, 133);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(410, 17);
-            this.lblWelcome.TabIndex = 21;
-            this.lblWelcome.Text = "Please choose your preferences for the manufacturing process:";
-            // 
-            // tlpHeads
-            // 
-            this.tlpHeads.ColumnCount = 5;
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpHeads.Controls.Add(this.cboTool1, 0, 0);
-            this.tlpHeads.Controls.Add(this.gbTool3, 0, 1);
-            this.tlpHeads.Controls.Add(this.cboTool2, 1, 0);
-            this.tlpHeads.Controls.Add(this.gbTool5, 0, 1);
-            this.tlpHeads.Controls.Add(this.cboTool3, 2, 0);
-            this.tlpHeads.Controls.Add(this.gbTool4, 0, 1);
-            this.tlpHeads.Controls.Add(this.cboTool4, 3, 0);
-            this.tlpHeads.Controls.Add(this.gbTool1, 0, 1);
-            this.tlpHeads.Controls.Add(this.cboTool5, 4, 0);
-            this.tlpHeads.Controls.Add(this.gbTool2, 0, 1);
-            this.tlpHeads.Location = new System.Drawing.Point(12, 153);
-            this.tlpHeads.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tlpHeads.Name = "tlpHeads";
-            this.tlpHeads.RowCount = 2;
-            this.tlpHeads.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpHeads.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHeads.Size = new System.Drawing.Size(917, 300);
-            this.tlpHeads.TabIndex = 20;
-            // 
-            // cboTool1
-            // 
-            this.cboTool1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool1.FormattingEnabled = true;
-            this.cboTool1.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool1.Location = new System.Drawing.Point(9, 2);
-            this.cboTool1.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
-            this.cboTool1.Name = "cboTool1";
-            this.cboTool1.Size = new System.Drawing.Size(165, 24);
-            this.cboTool1.TabIndex = 0;
-            this.cboTool1.SelectedIndexChanged += new System.EventHandler(this.CboTool1_SelectedIndexChanged);
-            // 
-            // gbTool3
-            // 
-            this.gbTool3.Controls.Add(this.lblXChanges32);
-            this.gbTool3.Controls.Add(this.nudXChanges3);
-            this.gbTool3.Controls.Add(this.lblXChanges31);
-            this.gbTool3.Controls.Add(this.cboCleaning3);
-            this.gbTool3.Controls.Add(this.lblCleaning3);
-            this.gbTool3.Controls.Add(this.lblS1);
-            this.gbTool3.Controls.Add(this.nudPreheat3);
-            this.gbTool3.Controls.Add(this.lblPreheat3);
-            this.gbTool3.Controls.Add(this.lblC1);
-            this.gbTool3.Controls.Add(this.lblTemp3);
-            this.gbTool3.Controls.Add(this.nudTemp3);
-            this.gbTool3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool3.Enabled = false;
-            this.gbTool3.Location = new System.Drawing.Point(375, 37);
-            this.gbTool3.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
-            this.gbTool3.Name = "gbTool3";
-            this.gbTool3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbTool3.Size = new System.Drawing.Size(165, 254);
-            this.gbTool3.TabIndex = 0;
-            this.gbTool3.TabStop = false;
-            this.gbTool3.Text = "Tool 3";
-            // 
-            // lblXChanges32
-            // 
-            this.lblXChanges32.AutoSize = true;
-            this.lblXChanges32.Enabled = false;
-            this.lblXChanges32.Location = new System.Drawing.Point(99, 218);
-            this.lblXChanges32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges32.Name = "lblXChanges32";
-            this.lblXChanges32.Size = new System.Drawing.Size(55, 17);
-            this.lblXChanges32.TabIndex = 19;
-            this.lblXChanges32.Text = "change";
-            // 
-            // nudXChanges3
-            // 
-            this.nudXChanges3.Enabled = false;
-            this.nudXChanges3.Location = new System.Drawing.Point(51, 215);
-            this.nudXChanges3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nudXChanges3.Name = "nudXChanges3";
-            this.nudXChanges3.Size = new System.Drawing.Size(47, 22);
-            this.nudXChanges3.TabIndex = 14;
-            // 
-            // lblXChanges31
-            // 
-            this.lblXChanges31.AutoSize = true;
-            this.lblXChanges31.Enabled = false;
-            this.lblXChanges31.Location = new System.Drawing.Point(5, 218);
-            this.lblXChanges31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges31.Name = "lblXChanges31";
-            this.lblXChanges31.Size = new System.Drawing.Size(43, 17);
-            this.lblXChanges31.TabIndex = 17;
-            this.lblXChanges31.Text = "every";
-            // 
-            // cboCleaning3
-            // 
-            this.cboCleaning3.FormattingEnabled = true;
-            this.cboCleaning3.Location = new System.Drawing.Point(9, 178);
-            this.cboCleaning3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboCleaning3.Name = "cboCleaning3";
-            this.cboCleaning3.Size = new System.Drawing.Size(143, 24);
-            this.cboCleaning3.TabIndex = 13;
-            this.cboCleaning3.SelectedIndexChanged += new System.EventHandler(this.cboCleaning3_SelectedIndexChanged);
-            // 
-            // lblCleaning3
-            // 
-            this.lblCleaning3.AutoSize = true;
-            this.lblCleaning3.Location = new System.Drawing.Point(5, 158);
-            this.lblCleaning3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCleaning3.Name = "lblCleaning3";
-            this.lblCleaning3.Size = new System.Drawing.Size(67, 17);
-            this.lblCleaning3.TabIndex = 12;
-            this.lblCleaning3.Text = "Cleaning:";
-            // 
-            // lblS1
-            // 
-            this.lblS1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblS1.AutoSize = true;
-            this.lblS1.Location = new System.Drawing.Point(130, 121);
-            this.lblS1.Name = "lblS1";
-            this.lblS1.Size = new System.Drawing.Size(15, 17);
-            this.lblS1.TabIndex = 6;
-            this.lblS1.Text = "s";
-            // 
-            // nudPreheat3
-            // 
-            this.nudPreheat3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat3.Location = new System.Drawing.Point(9, 119);
-            this.nudPreheat3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudPreheat3.Name = "nudPreheat3";
-            this.nudPreheat3.Size = new System.Drawing.Size(116, 22);
-            this.nudPreheat3.TabIndex = 12;
-            this.nudPreheat3.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat3
-            // 
-            this.lblPreheat3.AutoSize = true;
-            this.lblPreheat3.Location = new System.Drawing.Point(5, 98);
-            this.lblPreheat3.Name = "lblPreheat3";
-            this.lblPreheat3.Size = new System.Drawing.Size(116, 17);
-            this.lblPreheat3.TabIndex = 4;
-            this.lblPreheat3.Text = "Preheating Time:";
-            // 
-            // lblC1
-            // 
-            this.lblC1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblC1.AutoSize = true;
-            this.lblC1.Location = new System.Drawing.Point(130, 63);
-            this.lblC1.Name = "lblC1";
-            this.lblC1.Size = new System.Drawing.Size(23, 17);
-            this.lblC1.TabIndex = 3;
-            this.lblC1.Text = "°C";
-            // 
-            // lblTemp3
-            // 
-            this.lblTemp3.AutoSize = true;
-            this.lblTemp3.Location = new System.Drawing.Point(5, 23);
-            this.lblTemp3.Name = "lblTemp3";
-            this.lblTemp3.Size = new System.Drawing.Size(94, 34);
-            this.lblTemp3.TabIndex = 1;
-            this.lblTemp3.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp3
-            // 
-            this.nudTemp3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp3.DecimalPlaces = 1;
-            this.nudTemp3.Location = new System.Drawing.Point(9, 60);
-            this.nudTemp3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudTemp3.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp3.Name = "nudTemp3";
-            this.nudTemp3.Size = new System.Drawing.Size(116, 22);
-            this.nudTemp3.TabIndex = 11;
-            this.nudTemp3.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // cboTool2
-            // 
-            this.cboTool2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool2.FormattingEnabled = true;
-            this.cboTool2.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool2.Location = new System.Drawing.Point(192, 2);
-            this.cboTool2.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
-            this.cboTool2.Name = "cboTool2";
-            this.cboTool2.Size = new System.Drawing.Size(165, 24);
-            this.cboTool2.TabIndex = 5;
-            this.cboTool2.SelectedIndexChanged += new System.EventHandler(this.CboTool2_SelectedIndexChanged);
-            // 
-            // gbTool5
-            // 
-            this.gbTool5.Controls.Add(this.lblXChanges52);
-            this.gbTool5.Controls.Add(this.nudXChanges5);
-            this.gbTool5.Controls.Add(this.lblXChanges51);
-            this.gbTool5.Controls.Add(this.cboCleaning5);
-            this.gbTool5.Controls.Add(this.lblCleaning5);
-            this.gbTool5.Controls.Add(this.label14);
-            this.gbTool5.Controls.Add(this.nudPreheat5);
-            this.gbTool5.Controls.Add(this.lblPreheat5);
-            this.gbTool5.Controls.Add(this.label16);
-            this.gbTool5.Controls.Add(this.lblTemp5);
-            this.gbTool5.Controls.Add(this.nudTemp5);
-            this.gbTool5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool5.Enabled = false;
-            this.gbTool5.Location = new System.Drawing.Point(741, 37);
-            this.gbTool5.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
-            this.gbTool5.Name = "gbTool5";
-            this.gbTool5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbTool5.Size = new System.Drawing.Size(167, 254);
-            this.gbTool5.TabIndex = 13;
-            this.gbTool5.TabStop = false;
-            this.gbTool5.Text = "Tool 5";
-            // 
-            // lblXChanges52
-            // 
-            this.lblXChanges52.AutoSize = true;
-            this.lblXChanges52.Enabled = false;
-            this.lblXChanges52.Location = new System.Drawing.Point(99, 218);
-            this.lblXChanges52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges52.Name = "lblXChanges52";
-            this.lblXChanges52.Size = new System.Drawing.Size(55, 17);
-            this.lblXChanges52.TabIndex = 24;
-            this.lblXChanges52.Text = "change";
-            // 
-            // nudXChanges5
-            // 
-            this.nudXChanges5.Enabled = false;
-            this.nudXChanges5.Location = new System.Drawing.Point(51, 215);
-            this.nudXChanges5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nudXChanges5.Name = "nudXChanges5";
-            this.nudXChanges5.Size = new System.Drawing.Size(47, 22);
-            this.nudXChanges5.TabIndex = 24;
-            // 
-            // lblXChanges51
-            // 
-            this.lblXChanges51.AutoSize = true;
-            this.lblXChanges51.Enabled = false;
-            this.lblXChanges51.Location = new System.Drawing.Point(5, 218);
-            this.lblXChanges51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges51.Name = "lblXChanges51";
-            this.lblXChanges51.Size = new System.Drawing.Size(43, 17);
-            this.lblXChanges51.TabIndex = 22;
-            this.lblXChanges51.Text = "every";
-            // 
-            // cboCleaning5
-            // 
-            this.cboCleaning5.FormattingEnabled = true;
-            this.cboCleaning5.Location = new System.Drawing.Point(9, 178);
-            this.cboCleaning5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboCleaning5.Name = "cboCleaning5";
-            this.cboCleaning5.Size = new System.Drawing.Size(143, 24);
-            this.cboCleaning5.TabIndex = 23;
-            this.cboCleaning5.SelectedIndexChanged += new System.EventHandler(this.cboCleaning5_SelectedIndexChanged);
-            // 
-            // lblCleaning5
-            // 
-            this.lblCleaning5.AutoSize = true;
-            this.lblCleaning5.Location = new System.Drawing.Point(5, 158);
-            this.lblCleaning5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCleaning5.Name = "lblCleaning5";
-            this.lblCleaning5.Size = new System.Drawing.Size(67, 17);
-            this.lblCleaning5.TabIndex = 20;
-            this.lblCleaning5.Text = "Cleaning:";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(128, 121);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 17);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "s";
-            // 
-            // nudPreheat5
-            // 
-            this.nudPreheat5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat5.Location = new System.Drawing.Point(9, 119);
-            this.nudPreheat5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudPreheat5.Name = "nudPreheat5";
-            this.nudPreheat5.Size = new System.Drawing.Size(114, 22);
-            this.nudPreheat5.TabIndex = 22;
-            this.nudPreheat5.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat5
-            // 
-            this.lblPreheat5.AutoSize = true;
-            this.lblPreheat5.Location = new System.Drawing.Point(5, 98);
-            this.lblPreheat5.Name = "lblPreheat5";
-            this.lblPreheat5.Size = new System.Drawing.Size(116, 17);
-            this.lblPreheat5.TabIndex = 4;
-            this.lblPreheat5.Text = "Preheating Time:";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(128, 63);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(23, 17);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "°C";
-            // 
-            // lblTemp5
-            // 
-            this.lblTemp5.AutoSize = true;
-            this.lblTemp5.Location = new System.Drawing.Point(5, 23);
-            this.lblTemp5.Name = "lblTemp5";
-            this.lblTemp5.Size = new System.Drawing.Size(94, 34);
-            this.lblTemp5.TabIndex = 1;
-            this.lblTemp5.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp5
-            // 
-            this.nudTemp5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp5.DecimalPlaces = 1;
-            this.nudTemp5.Location = new System.Drawing.Point(9, 60);
-            this.nudTemp5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudTemp5.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp5.Name = "nudTemp5";
-            this.nudTemp5.Size = new System.Drawing.Size(114, 22);
-            this.nudTemp5.TabIndex = 21;
-            this.nudTemp5.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // cboTool3
-            // 
-            this.cboTool3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool3.FormattingEnabled = true;
-            this.cboTool3.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool3.Location = new System.Drawing.Point(375, 2);
-            this.cboTool3.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
-            this.cboTool3.Name = "cboTool3";
-            this.cboTool3.Size = new System.Drawing.Size(165, 24);
-            this.cboTool3.TabIndex = 10;
-            this.cboTool3.SelectedIndexChanged += new System.EventHandler(this.CboTool3_SelectedIndexChanged);
-            // 
-            // gbTool4
-            // 
-            this.gbTool4.Controls.Add(this.lblXChanges42);
-            this.gbTool4.Controls.Add(this.nudXChanges4);
-            this.gbTool4.Controls.Add(this.lblXChanges41);
-            this.gbTool4.Controls.Add(this.cboCleaning4);
-            this.gbTool4.Controls.Add(this.lblCleaning4);
-            this.gbTool4.Controls.Add(this.label10);
-            this.gbTool4.Controls.Add(this.nudPreheat4);
-            this.gbTool4.Controls.Add(this.lblPreheat4);
-            this.gbTool4.Controls.Add(this.label12);
-            this.gbTool4.Controls.Add(this.lblTemp4);
-            this.gbTool4.Controls.Add(this.nudTemp4);
-            this.gbTool4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool4.Enabled = false;
-            this.gbTool4.Location = new System.Drawing.Point(558, 37);
-            this.gbTool4.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
-            this.gbTool4.Name = "gbTool4";
-            this.gbTool4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbTool4.Size = new System.Drawing.Size(165, 254);
-            this.gbTool4.TabIndex = 12;
-            this.gbTool4.TabStop = false;
-            this.gbTool4.Text = "Tool 4";
-            // 
-            // lblXChanges42
-            // 
-            this.lblXChanges42.AutoSize = true;
-            this.lblXChanges42.Enabled = false;
-            this.lblXChanges42.Location = new System.Drawing.Point(99, 218);
-            this.lblXChanges42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges42.Name = "lblXChanges42";
-            this.lblXChanges42.Size = new System.Drawing.Size(55, 17);
-            this.lblXChanges42.TabIndex = 20;
-            this.lblXChanges42.Text = "change";
-            // 
-            // nudXChanges4
-            // 
-            this.nudXChanges4.Enabled = false;
-            this.nudXChanges4.Location = new System.Drawing.Point(51, 215);
-            this.nudXChanges4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nudXChanges4.Name = "nudXChanges4";
-            this.nudXChanges4.Size = new System.Drawing.Size(47, 22);
-            this.nudXChanges4.TabIndex = 19;
-            // 
-            // lblXChanges41
-            // 
-            this.lblXChanges41.AutoSize = true;
-            this.lblXChanges41.Enabled = false;
-            this.lblXChanges41.Location = new System.Drawing.Point(5, 218);
-            this.lblXChanges41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges41.Name = "lblXChanges41";
-            this.lblXChanges41.Size = new System.Drawing.Size(43, 17);
-            this.lblXChanges41.TabIndex = 18;
-            this.lblXChanges41.Text = "every";
-            // 
-            // cboCleaning4
-            // 
-            this.cboCleaning4.FormattingEnabled = true;
-            this.cboCleaning4.Location = new System.Drawing.Point(9, 178);
-            this.cboCleaning4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboCleaning4.Name = "cboCleaning4";
-            this.cboCleaning4.Size = new System.Drawing.Size(143, 24);
-            this.cboCleaning4.TabIndex = 18;
-            this.cboCleaning4.SelectedIndexChanged += new System.EventHandler(this.cboCleaning4_SelectedIndexChanged);
-            // 
-            // lblCleaning4
-            // 
-            this.lblCleaning4.AutoSize = true;
-            this.lblCleaning4.Location = new System.Drawing.Point(5, 158);
-            this.lblCleaning4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCleaning4.Name = "lblCleaning4";
-            this.lblCleaning4.Size = new System.Drawing.Size(67, 17);
-            this.lblCleaning4.TabIndex = 16;
-            this.lblCleaning4.Text = "Cleaning:";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(130, 121);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(15, 17);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "s";
-            // 
-            // nudPreheat4
-            // 
-            this.nudPreheat4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat4.Location = new System.Drawing.Point(9, 119);
-            this.nudPreheat4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudPreheat4.Name = "nudPreheat4";
-            this.nudPreheat4.Size = new System.Drawing.Size(116, 22);
-            this.nudPreheat4.TabIndex = 17;
-            this.nudPreheat4.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat4
-            // 
-            this.lblPreheat4.AutoSize = true;
-            this.lblPreheat4.Location = new System.Drawing.Point(5, 98);
-            this.lblPreheat4.Name = "lblPreheat4";
-            this.lblPreheat4.Size = new System.Drawing.Size(116, 17);
-            this.lblPreheat4.TabIndex = 4;
-            this.lblPreheat4.Text = "Preheating Time:";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(130, 63);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(23, 17);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "°C";
-            // 
-            // lblTemp4
-            // 
-            this.lblTemp4.AutoSize = true;
-            this.lblTemp4.Location = new System.Drawing.Point(5, 23);
-            this.lblTemp4.Name = "lblTemp4";
-            this.lblTemp4.Size = new System.Drawing.Size(94, 34);
-            this.lblTemp4.TabIndex = 1;
-            this.lblTemp4.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp4
-            // 
-            this.nudTemp4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp4.DecimalPlaces = 1;
-            this.nudTemp4.Location = new System.Drawing.Point(9, 60);
-            this.nudTemp4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudTemp4.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp4.Name = "nudTemp4";
-            this.nudTemp4.Size = new System.Drawing.Size(116, 22);
-            this.nudTemp4.TabIndex = 16;
-            this.nudTemp4.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // cboTool4
-            // 
-            this.cboTool4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool4.FormattingEnabled = true;
-            this.cboTool4.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool4.Location = new System.Drawing.Point(558, 2);
-            this.cboTool4.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
-            this.cboTool4.Name = "cboTool4";
-            this.cboTool4.Size = new System.Drawing.Size(165, 24);
-            this.cboTool4.TabIndex = 15;
-            this.cboTool4.SelectedIndexChanged += new System.EventHandler(this.CboTool4_SelectedIndexChanged);
-            // 
-            // gbTool1
-            // 
-            this.gbTool1.Controls.Add(this.lblXChanges12);
-            this.gbTool1.Controls.Add(this.nudXChanges1);
-            this.gbTool1.Controls.Add(this.lblXChanges11);
-            this.gbTool1.Controls.Add(this.cboCleaning1);
-            this.gbTool1.Controls.Add(this.lblCleaning1);
-            this.gbTool1.Controls.Add(this.label2);
-            this.gbTool1.Controls.Add(this.nudPreheat1);
-            this.gbTool1.Controls.Add(this.lblPreheat1);
-            this.gbTool1.Controls.Add(this.label4);
-            this.gbTool1.Controls.Add(this.lblTemp1);
-            this.gbTool1.Controls.Add(this.nudTemp1);
-            this.gbTool1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool1.Enabled = false;
-            this.gbTool1.Location = new System.Drawing.Point(9, 37);
-            this.gbTool1.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
-            this.gbTool1.Name = "gbTool1";
-            this.gbTool1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbTool1.Size = new System.Drawing.Size(165, 254);
-            this.gbTool1.TabIndex = 10;
-            this.gbTool1.TabStop = false;
-            this.gbTool1.Text = "Tool 1";
-            // 
-            // lblXChanges12
-            // 
-            this.lblXChanges12.AutoSize = true;
-            this.lblXChanges12.Enabled = false;
-            this.lblXChanges12.Location = new System.Drawing.Point(99, 218);
-            this.lblXChanges12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges12.Name = "lblXChanges12";
-            this.lblXChanges12.Size = new System.Drawing.Size(55, 17);
-            this.lblXChanges12.TabIndex = 16;
-            this.lblXChanges12.Text = "change";
-            // 
-            // nudXChanges1
-            // 
-            this.nudXChanges1.Enabled = false;
-            this.nudXChanges1.Location = new System.Drawing.Point(51, 215);
-            this.nudXChanges1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nudXChanges1.Name = "nudXChanges1";
-            this.nudXChanges1.Size = new System.Drawing.Size(47, 22);
-            this.nudXChanges1.TabIndex = 4;
-            // 
-            // lblXChanges11
-            // 
-            this.lblXChanges11.AutoSize = true;
-            this.lblXChanges11.Enabled = false;
-            this.lblXChanges11.Location = new System.Drawing.Point(5, 218);
-            this.lblXChanges11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges11.Name = "lblXChanges11";
-            this.lblXChanges11.Size = new System.Drawing.Size(43, 17);
-            this.lblXChanges11.TabIndex = 14;
-            this.lblXChanges11.Text = "every";
-            // 
-            // cboCleaning1
-            // 
-            this.cboCleaning1.FormattingEnabled = true;
-            this.cboCleaning1.Location = new System.Drawing.Point(9, 178);
-            this.cboCleaning1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboCleaning1.Name = "cboCleaning1";
-            this.cboCleaning1.Size = new System.Drawing.Size(143, 24);
-            this.cboCleaning1.TabIndex = 3;
-            this.cboCleaning1.SelectedIndexChanged += new System.EventHandler(this.cboCleaning1_SelectedIndexChanged);
-            // 
-            // lblCleaning1
-            // 
-            this.lblCleaning1.AutoSize = true;
-            this.lblCleaning1.Location = new System.Drawing.Point(5, 158);
-            this.lblCleaning1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCleaning1.Name = "lblCleaning1";
-            this.lblCleaning1.Size = new System.Drawing.Size(67, 17);
-            this.lblCleaning1.TabIndex = 8;
-            this.lblCleaning1.Text = "Cleaning:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(130, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "s";
-            // 
-            // nudPreheat1
-            // 
-            this.nudPreheat1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat1.Location = new System.Drawing.Point(9, 119);
-            this.nudPreheat1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudPreheat1.Name = "nudPreheat1";
-            this.nudPreheat1.Size = new System.Drawing.Size(116, 22);
-            this.nudPreheat1.TabIndex = 2;
-            this.nudPreheat1.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat1
-            // 
-            this.lblPreheat1.AutoSize = true;
-            this.lblPreheat1.Location = new System.Drawing.Point(5, 98);
-            this.lblPreheat1.Name = "lblPreheat1";
-            this.lblPreheat1.Size = new System.Drawing.Size(116, 17);
-            this.lblPreheat1.TabIndex = 4;
-            this.lblPreheat1.Text = "Preheating Time:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(130, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "°C";
-            // 
-            // lblTemp1
-            // 
-            this.lblTemp1.AutoSize = true;
-            this.lblTemp1.Location = new System.Drawing.Point(5, 23);
-            this.lblTemp1.Name = "lblTemp1";
-            this.lblTemp1.Size = new System.Drawing.Size(94, 34);
-            this.lblTemp1.TabIndex = 1;
-            this.lblTemp1.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp1
-            // 
-            this.nudTemp1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp1.DecimalPlaces = 1;
-            this.nudTemp1.Location = new System.Drawing.Point(9, 60);
-            this.nudTemp1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudTemp1.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp1.Name = "nudTemp1";
-            this.nudTemp1.Size = new System.Drawing.Size(116, 22);
-            this.nudTemp1.TabIndex = 1;
-            this.nudTemp1.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // cboTool5
-            // 
-            this.cboTool5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboTool5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTool5.FormattingEnabled = true;
-            this.cboTool5.Items.AddRange(new object[] {
-            "Not present",
-            "Nozzle",
-            "Spindle"});
-            this.cboTool5.Location = new System.Drawing.Point(741, 2);
-            this.cboTool5.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
-            this.cboTool5.Name = "cboTool5";
-            this.cboTool5.Size = new System.Drawing.Size(167, 24);
-            this.cboTool5.TabIndex = 20;
-            this.cboTool5.SelectedIndexChanged += new System.EventHandler(this.CboTool5_SelectedIndexChanged);
-            // 
-            // gbTool2
-            // 
-            this.gbTool2.Controls.Add(this.lblXChanges22);
-            this.gbTool2.Controls.Add(this.nudXChanges2);
-            this.gbTool2.Controls.Add(this.lblXChanges21);
-            this.gbTool2.Controls.Add(this.cboCleaning2);
-            this.gbTool2.Controls.Add(this.lblCleaning2);
-            this.gbTool2.Controls.Add(this.label6);
-            this.gbTool2.Controls.Add(this.nudPreheat2);
-            this.gbTool2.Controls.Add(this.lblPreheat2);
-            this.gbTool2.Controls.Add(this.label8);
-            this.gbTool2.Controls.Add(this.lblTemp2);
-            this.gbTool2.Controls.Add(this.nudTemp2);
-            this.gbTool2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbTool2.Enabled = false;
-            this.gbTool2.Location = new System.Drawing.Point(192, 37);
-            this.gbTool2.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
-            this.gbTool2.Name = "gbTool2";
-            this.gbTool2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbTool2.Size = new System.Drawing.Size(165, 254);
-            this.gbTool2.TabIndex = 11;
-            this.gbTool2.TabStop = false;
-            this.gbTool2.Text = "Tool 2";
-            // 
-            // lblXChanges22
-            // 
-            this.lblXChanges22.AutoSize = true;
-            this.lblXChanges22.Enabled = false;
-            this.lblXChanges22.Location = new System.Drawing.Point(99, 218);
-            this.lblXChanges22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges22.Name = "lblXChanges22";
-            this.lblXChanges22.Size = new System.Drawing.Size(55, 17);
-            this.lblXChanges22.TabIndex = 19;
-            this.lblXChanges22.Text = "change";
-            // 
-            // nudXChanges2
-            // 
-            this.nudXChanges2.Enabled = false;
-            this.nudXChanges2.Location = new System.Drawing.Point(51, 215);
-            this.nudXChanges2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nudXChanges2.Name = "nudXChanges2";
-            this.nudXChanges2.Size = new System.Drawing.Size(47, 22);
-            this.nudXChanges2.TabIndex = 9;
-            // 
-            // lblXChanges21
-            // 
-            this.lblXChanges21.AutoSize = true;
-            this.lblXChanges21.Enabled = false;
-            this.lblXChanges21.Location = new System.Drawing.Point(5, 218);
-            this.lblXChanges21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblXChanges21.Name = "lblXChanges21";
-            this.lblXChanges21.Size = new System.Drawing.Size(43, 17);
-            this.lblXChanges21.TabIndex = 17;
-            this.lblXChanges21.Text = "every";
-            // 
-            // cboCleaning2
-            // 
-            this.cboCleaning2.FormattingEnabled = true;
-            this.cboCleaning2.Location = new System.Drawing.Point(9, 178);
-            this.cboCleaning2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboCleaning2.Name = "cboCleaning2";
-            this.cboCleaning2.Size = new System.Drawing.Size(143, 24);
-            this.cboCleaning2.TabIndex = 8;
-            this.cboCleaning2.SelectedIndexChanged += new System.EventHandler(this.cboCleaning2_SelectedIndexChanged);
-            // 
-            // lblCleaning2
-            // 
-            this.lblCleaning2.AutoSize = true;
-            this.lblCleaning2.Location = new System.Drawing.Point(5, 158);
-            this.lblCleaning2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCleaning2.Name = "lblCleaning2";
-            this.lblCleaning2.Size = new System.Drawing.Size(67, 17);
-            this.lblCleaning2.TabIndex = 9;
-            this.lblCleaning2.Text = "Cleaning:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(130, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 17);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "s";
-            // 
-            // nudPreheat2
-            // 
-            this.nudPreheat2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudPreheat2.Location = new System.Drawing.Point(9, 119);
-            this.nudPreheat2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudPreheat2.Name = "nudPreheat2";
-            this.nudPreheat2.Size = new System.Drawing.Size(116, 22);
-            this.nudPreheat2.TabIndex = 7;
-            this.nudPreheat2.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            // 
-            // lblPreheat2
-            // 
-            this.lblPreheat2.AutoSize = true;
-            this.lblPreheat2.Location = new System.Drawing.Point(5, 98);
-            this.lblPreheat2.Name = "lblPreheat2";
-            this.lblPreheat2.Size = new System.Drawing.Size(116, 17);
-            this.lblPreheat2.TabIndex = 4;
-            this.lblPreheat2.Text = "Preheating Time:";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(130, 63);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 17);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "°C";
-            // 
-            // lblTemp2
-            // 
-            this.lblTemp2.AutoSize = true;
-            this.lblTemp2.Location = new System.Drawing.Point(5, 23);
-            this.lblTemp2.Name = "lblTemp2";
-            this.lblTemp2.Size = new System.Drawing.Size(94, 34);
-            this.lblTemp2.TabIndex = 1;
-            this.lblTemp2.Text = "Standby\r\nTemperature:";
-            // 
-            // nudTemp2
-            // 
-            this.nudTemp2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTemp2.DecimalPlaces = 1;
-            this.nudTemp2.Location = new System.Drawing.Point(9, 60);
-            this.nudTemp2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudTemp2.Maximum = new decimal(new int[] {
-            290,
-            0,
-            0,
-            0});
-            this.nudTemp2.Name = "nudTemp2";
-            this.nudTemp2.Size = new System.Drawing.Size(116, 22);
-            this.nudTemp2.TabIndex = 6;
-            this.nudTemp2.Value = new decimal(new int[] {
-            175,
-            0,
-            0,
-            0});
-            // 
-            // awpTopSide
-            // 
-            this.awpTopSide.Controls.Add(this.gbTopFiles);
-            this.awpTopSide.Controls.Add(this.gbTopSlicing);
-            this.awpTopSide.Header = true;
-            this.awpTopSide.HeaderBackgroundColor = System.Drawing.Color.White;
-            this.awpTopSide.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.awpTopSide.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpTopSide.HeaderImage")));
-            this.awpTopSide.HeaderImageVisible = true;
-            this.awpTopSide.HeaderTitle = "Welcome to Advanced Wizard";
-            this.awpTopSide.Location = new System.Drawing.Point(0, 0);
-            this.awpTopSide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.awpTopSide.Name = "awpTopSide";
-            this.awpTopSide.PreviousPage = 1;
-            this.awpTopSide.Size = new System.Drawing.Size(944, 526);
-            this.awpTopSide.SubTitle = "Your page description goes here";
-            this.awpTopSide.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
-            this.awpTopSide.TabIndex = 3;
-            this.awpTopSide.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpTopSide_PageShow);
-            // 
-            // gbTopFiles
-            // 
-            this.gbTopFiles.Controls.Add(this.btnTopBrowseSubstractive);
-            this.gbTopFiles.Controls.Add(this.btnTopBrowseAdditive);
-            this.gbTopFiles.Controls.Add(this.txtTopFileSubstractive);
-            this.gbTopFiles.Controls.Add(this.lblTopFileSubstractive);
-            this.gbTopFiles.Controls.Add(this.txtTopFileAdditive);
-            this.gbTopFiles.Controls.Add(this.lblTopFileAdditive);
-            this.gbTopFiles.Location = new System.Drawing.Point(17, 318);
-            this.gbTopFiles.Margin = new System.Windows.Forms.Padding(5, 2, 3, 2);
-            this.gbTopFiles.Name = "gbTopFiles";
-            this.gbTopFiles.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbTopFiles.Size = new System.Drawing.Size(912, 82);
-            this.gbTopFiles.TabIndex = 15;
-            this.gbTopFiles.TabStop = false;
-            this.gbTopFiles.Text = "Manufacturing Files for the Top Side";
-            // 
-            // btnTopBrowseSubstractive
-            // 
-            this.btnTopBrowseSubstractive.Location = new System.Drawing.Point(827, 46);
-            this.btnTopBrowseSubstractive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTopBrowseSubstractive.Name = "btnTopBrowseSubstractive";
-            this.btnTopBrowseSubstractive.Size = new System.Drawing.Size(43, 27);
-            this.btnTopBrowseSubstractive.TabIndex = 16;
-            this.btnTopBrowseSubstractive.Text = "...";
-            this.btnTopBrowseSubstractive.UseVisualStyleBackColor = true;
-            this.btnTopBrowseSubstractive.Click += new System.EventHandler(this.BtnTopBrowseSubstractive_Click);
-            // 
-            // btnTopBrowseAdditive
-            // 
-            this.btnTopBrowseAdditive.Location = new System.Drawing.Point(365, 46);
-            this.btnTopBrowseAdditive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTopBrowseAdditive.Name = "btnTopBrowseAdditive";
-            this.btnTopBrowseAdditive.Size = new System.Drawing.Size(43, 27);
-            this.btnTopBrowseAdditive.TabIndex = 15;
-            this.btnTopBrowseAdditive.Text = "...";
-            this.btnTopBrowseAdditive.UseVisualStyleBackColor = true;
-            this.btnTopBrowseAdditive.Click += new System.EventHandler(this.BtnTopBrowseAdditive_Click);
-            // 
-            // txtTopFileSubstractive
-            // 
-            this.txtTopFileSubstractive.Location = new System.Drawing.Point(475, 47);
-            this.txtTopFileSubstractive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTopFileSubstractive.Name = "txtTopFileSubstractive";
-            this.txtTopFileSubstractive.Size = new System.Drawing.Size(345, 22);
-            this.txtTopFileSubstractive.TabIndex = 14;
-            this.txtTopFileSubstractive.TextChanged += new System.EventHandler(this.TxtTopGCodeFiles_TextChanged);
-            // 
-            // lblTopFileSubstractive
-            // 
-            this.lblTopFileSubstractive.AutoSize = true;
-            this.lblTopFileSubstractive.Location = new System.Drawing.Point(472, 23);
-            this.lblTopFileSubstractive.Name = "lblTopFileSubstractive";
-            this.lblTopFileSubstractive.Size = new System.Drawing.Size(264, 17);
-            this.lblTopFileSubstractive.TabIndex = 13;
-            this.lblTopFileSubstractive.Text = "G-Code File for Substractive Processing:";
-            // 
-            // txtTopFileAdditive
-            // 
-            this.txtTopFileAdditive.Location = new System.Drawing.Point(13, 47);
-            this.txtTopFileAdditive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTopFileAdditive.Name = "txtTopFileAdditive";
-            this.txtTopFileAdditive.Size = new System.Drawing.Size(345, 22);
-            this.txtTopFileAdditive.TabIndex = 12;
-            this.txtTopFileAdditive.TextChanged += new System.EventHandler(this.TxtTopGCodeFiles_TextChanged);
-            // 
-            // lblTopFileAdditive
-            // 
-            this.lblTopFileAdditive.AutoSize = true;
-            this.lblTopFileAdditive.Location = new System.Drawing.Point(11, 23);
-            this.lblTopFileAdditive.Name = "lblTopFileAdditive";
-            this.lblTopFileAdditive.Size = new System.Drawing.Size(236, 17);
-            this.lblTopFileAdditive.TabIndex = 11;
-            this.lblTopFileAdditive.Text = "G-Code File for Additive Processing:";
-            // 
-            // gbTopSlicing
-            // 
-            this.gbTopSlicing.Controls.Add(this.chkTopGenerateSupport);
-            this.gbTopSlicing.Controls.Add(this.btnTopSlice);
-            this.gbTopSlicing.Controls.Add(this.tlpTopFileButtons);
-            this.gbTopSlicing.Controls.Add(this.lstTopInputFiles);
-            this.gbTopSlicing.Controls.Add(this.chkTopUseOwnSettings);
-            this.gbTopSlicing.Controls.Add(this.chkTopUnwrap);
-            this.gbTopSlicing.Controls.Add(this.lblTopInputFiles);
-            this.gbTopSlicing.Location = new System.Drawing.Point(17, 130);
-            this.gbTopSlicing.Margin = new System.Windows.Forms.Padding(3, 2, 5, 2);
-            this.gbTopSlicing.Name = "gbTopSlicing";
-            this.gbTopSlicing.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbTopSlicing.Size = new System.Drawing.Size(912, 175);
-            this.gbTopSlicing.TabIndex = 14;
-            this.gbTopSlicing.TabStop = false;
-            this.gbTopSlicing.Text = "Slicing for the Top Side (optional if you already have a G-Code File)";
-            // 
-            // chkTopGenerateSupport
-            // 
-            this.chkTopGenerateSupport.AutoSize = true;
-            this.chkTopGenerateSupport.Enabled = false;
-            this.chkTopGenerateSupport.Location = new System.Drawing.Point(605, 95);
-            this.chkTopGenerateSupport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkTopGenerateSupport.Name = "chkTopGenerateSupport";
-            this.chkTopGenerateSupport.Size = new System.Drawing.Size(194, 21);
-            this.chkTopGenerateSupport.TabIndex = 21;
-            this.chkTopGenerateSupport.Text = "Generate Special Support";
-            this.chkTopGenerateSupport.UseVisualStyleBackColor = true;
-            this.chkTopGenerateSupport.CheckedChanged += new System.EventHandler(this.ChkTopGenerateSupport_CheckedChanged);
-            // 
-            // btnTopSlice
-            // 
-            this.btnTopSlice.Enabled = false;
-            this.btnTopSlice.Image = ((System.Drawing.Image)(resources.GetObject("btnTopSlice.Image")));
-            this.btnTopSlice.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTopSlice.Location = new System.Drawing.Point(605, 126);
-            this.btnTopSlice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTopSlice.Name = "btnTopSlice";
-            this.btnTopSlice.Size = new System.Drawing.Size(217, 39);
-            this.btnTopSlice.TabIndex = 20;
-            this.btnTopSlice.Text = "Process via Simplify3D®";
-            this.btnTopSlice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTopSlice.UseVisualStyleBackColor = true;
-            this.btnTopSlice.Click += new System.EventHandler(this.BtnSlice_Click);
-            // 
-            // tlpTopFileButtons
-            // 
-            this.tlpTopFileButtons.ColumnCount = 2;
-            this.tlpTopFileButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
-            this.tlpTopFileButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
-            this.tlpTopFileButtons.Controls.Add(this.btnTopRemoveFiles, 0, 0);
-            this.tlpTopFileButtons.Controls.Add(this.btnTopAddFiles, 0, 0);
-            this.tlpTopFileButtons.Location = new System.Drawing.Point(13, 133);
-            this.tlpTopFileButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tlpTopFileButtons.Name = "tlpTopFileButtons";
-            this.tlpTopFileButtons.RowCount = 1;
-            this.tlpTopFileButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpTopFileButtons.Size = new System.Drawing.Size(487, 32);
-            this.tlpTopFileButtons.TabIndex = 19;
-            // 
-            // btnTopRemoveFiles
-            // 
-            this.btnTopRemoveFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTopRemoveFiles.Enabled = false;
-            this.btnTopRemoveFiles.Image = global::DiabasePrintingWizard.Properties.Resources.Remove_8x_16x;
-            this.btnTopRemoveFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTopRemoveFiles.Location = new System.Drawing.Point(246, 0);
-            this.btnTopRemoveFiles.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnTopRemoveFiles.Name = "btnTopRemoveFiles";
-            this.btnTopRemoveFiles.Size = new System.Drawing.Size(241, 32);
-            this.btnTopRemoveFiles.TabIndex = 19;
-            this.btnTopRemoveFiles.Text = "Remove File(s)";
-            this.btnTopRemoveFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTopRemoveFiles.UseVisualStyleBackColor = true;
-            this.btnTopRemoveFiles.Click += new System.EventHandler(this.BtnTopRemoveFiles_Click);
-            // 
-            // btnTopAddFiles
-            // 
-            this.btnTopAddFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTopAddFiles.Image = global::DiabasePrintingWizard.Properties.Resources.Add_thin_10x_16x;
-            this.btnTopAddFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTopAddFiles.Location = new System.Drawing.Point(0, 0);
-            this.btnTopAddFiles.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.btnTopAddFiles.Name = "btnTopAddFiles";
-            this.btnTopAddFiles.Size = new System.Drawing.Size(240, 32);
-            this.btnTopAddFiles.TabIndex = 18;
-            this.btnTopAddFiles.Text = "Add File(s)";
-            this.btnTopAddFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTopAddFiles.UseVisualStyleBackColor = true;
-            this.btnTopAddFiles.Click += new System.EventHandler(this.BtnTopAddFiles_Click);
-            // 
-            // lstTopInputFiles
-            // 
-            this.lstTopInputFiles.FormattingEnabled = true;
-            this.lstTopInputFiles.ItemHeight = 16;
-            this.lstTopInputFiles.Location = new System.Drawing.Point(13, 43);
-            this.lstTopInputFiles.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
-            this.lstTopInputFiles.Name = "lstTopInputFiles";
-            this.lstTopInputFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lstTopInputFiles.Size = new System.Drawing.Size(564, 84);
-            this.lstTopInputFiles.TabIndex = 16;
-            // 
-            // chkTopUseOwnSettings
-            // 
-            this.chkTopUseOwnSettings.AutoSize = true;
-            this.chkTopUseOwnSettings.Location = new System.Drawing.Point(605, 43);
-            this.chkTopUseOwnSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkTopUseOwnSettings.Name = "chkTopUseOwnSettings";
-            this.chkTopUseOwnSettings.Size = new System.Drawing.Size(217, 21);
-            this.chkTopUseOwnSettings.TabIndex = 15;
-            this.chkTopUseOwnSettings.Text = "Use own Simplify3D® settings";
-            this.chkTopUseOwnSettings.UseVisualStyleBackColor = true;
-            this.chkTopUseOwnSettings.CheckedChanged += new System.EventHandler(this.ChkTopUseOwnSettings_CheckedChanged);
-            // 
-            // chkTopUnwrap
-            // 
-            this.chkTopUnwrap.AutoSize = true;
-            this.chkTopUnwrap.Location = new System.Drawing.Point(605, 70);
-            this.chkTopUnwrap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.chkTopUnwrap.Name = "chkTopUnwrap";
-            this.chkTopUnwrap.Size = new System.Drawing.Size(141, 21);
-            this.chkTopUnwrap.TabIndex = 14;
-            this.chkTopUnwrap.Text = "Unwrap STL Files";
-            this.chkTopUnwrap.UseVisualStyleBackColor = true;
-            this.chkTopUnwrap.CheckedChanged += new System.EventHandler(this.ChkTopUnwrap_CheckedChanged);
-            // 
-            // lblTopInputFiles
-            // 
-            this.lblTopInputFiles.AutoSize = true;
-            this.lblTopInputFiles.Location = new System.Drawing.Point(11, 23);
-            this.lblTopInputFiles.Name = "lblTopInputFiles";
-            this.lblTopInputFiles.Size = new System.Drawing.Size(118, 17);
-            this.lblTopInputFiles.TabIndex = 11;
-            this.lblTopInputFiles.Text = "List of Input Files:";
-            // 
-            // awpProgress
-            // 
-            this.awpProgress.Controls.Add(this.btnSaveOverwrite);
-            this.awpProgress.Controls.Add(this.btnUploadPrint);
-            this.awpProgress.Controls.Add(this.btnUpload);
-            this.awpProgress.Controls.Add(this.btnSaveAs);
-            this.awpProgress.Controls.Add(this.pnlProgress);
-            this.awpProgress.Controls.Add(this.lblPleaseStandBy);
-            this.awpProgress.Header = true;
-            this.awpProgress.HeaderBackgroundColor = System.Drawing.Color.White;
-            this.awpProgress.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.awpProgress.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpProgress.HeaderImage")));
-            this.awpProgress.HeaderImageVisible = true;
-            this.awpProgress.HeaderTitle = "Welcome to Advanced Wizard";
-            this.awpProgress.Location = new System.Drawing.Point(0, 0);
-            this.awpProgress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.awpProgress.Name = "awpProgress";
-            this.awpProgress.PreviousPage = 0;
-            this.awpProgress.Size = new System.Drawing.Size(944, 526);
-            this.awpProgress.SubTitle = "Your page description goes here";
-            this.awpProgress.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
-            this.awpProgress.TabIndex = 4;
-            this.awpProgress.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpProgress_PageShow);
-            // 
-            // btnSaveOverwrite
-            // 
-            this.btnSaveOverwrite.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveOverwrite.Image")));
-            this.btnSaveOverwrite.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaveOverwrite.Location = new System.Drawing.Point(645, 332);
-            this.btnSaveOverwrite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSaveOverwrite.Name = "btnSaveOverwrite";
-            this.btnSaveOverwrite.Size = new System.Drawing.Size(141, 38);
-            this.btnSaveOverwrite.TabIndex = 8;
-            this.btnSaveOverwrite.Text = "Save";
-            this.btnSaveOverwrite.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSaveOverwrite.UseVisualStyleBackColor = true;
-            this.btnSaveOverwrite.Visible = false;
-            this.btnSaveOverwrite.Click += new System.EventHandler(this.btnSaveOverwrite_Click);
-            // 
-            // btnUploadPrint
-            // 
-            this.btnUploadPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadPrint.Image")));
-            this.btnUploadPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUploadPrint.Location = new System.Drawing.Point(319, 332);
-            this.btnUploadPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUploadPrint.Name = "btnUploadPrint";
-            this.btnUploadPrint.Size = new System.Drawing.Size(141, 38);
-            this.btnUploadPrint.TabIndex = 7;
-            this.btnUploadPrint.Text = "Upload && Print";
-            this.btnUploadPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUploadPrint.UseVisualStyleBackColor = true;
-            this.btnUploadPrint.Visible = false;
-            this.btnUploadPrint.Click += new System.EventHandler(this.BtnUploadPrint_Click);
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.Image = global::DiabasePrintingWizard.Properties.Resources.UploadFile_16x;
-            this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpload.Location = new System.Drawing.Point(159, 332);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(141, 38);
-            this.btnUpload.TabIndex = 6;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Visible = false;
-            this.btnUpload.Click += new System.EventHandler(this.BtnUpload_Click);
-            // 
-            // btnSaveAs
-            // 
-            this.btnSaveAs.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveAs.Image")));
-            this.btnSaveAs.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaveAs.Location = new System.Drawing.Point(481, 332);
-            this.btnSaveAs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSaveAs.Name = "btnSaveAs";
-            this.btnSaveAs.Size = new System.Drawing.Size(141, 38);
-            this.btnSaveAs.TabIndex = 5;
-            this.btnSaveAs.Text = "Save as...";
-            this.btnSaveAs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSaveAs.UseVisualStyleBackColor = true;
-            this.btnSaveAs.Visible = false;
-            this.btnSaveAs.Click += new System.EventHandler(this.BtnSave_Click);
-            // 
-            // pnlProgress
-            // 
-            this.pnlProgress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlProgress.Controls.Add(this.lblProgress);
-            this.pnlProgress.Controls.Add(this.pbTotal);
-            this.pnlProgress.Controls.Add(this.pbStep);
-            this.pnlProgress.Location = new System.Drawing.Point(29, 182);
-            this.pnlProgress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlProgress.Name = "pnlProgress";
-            this.pnlProgress.Size = new System.Drawing.Size(894, 115);
-            this.pnlProgress.TabIndex = 4;
-            // 
-            // lblProgress
-            // 
-            this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(13, 14);
-            this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(81, 17);
-            this.lblProgress.TabIndex = 5;
-            this.lblProgress.Text = "Initializing...";
-            // 
-            // pbTotal
-            // 
-            this.pbTotal.Location = new System.Drawing.Point(16, 74);
-            this.pbTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbTotal.Name = "pbTotal";
-            this.pbTotal.Size = new System.Drawing.Size(861, 23);
-            this.pbTotal.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pbTotal.TabIndex = 4;
-            // 
-            // pbStep
-            // 
-            this.pbStep.Location = new System.Drawing.Point(16, 38);
-            this.pbStep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbStep.Name = "pbStep";
-            this.pbStep.Size = new System.Drawing.Size(861, 23);
-            this.pbStep.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pbStep.TabIndex = 3;
-            // 
-            // lblPleaseStandBy
-            // 
-            this.lblPleaseStandBy.AutoSize = true;
-            this.lblPleaseStandBy.Location = new System.Drawing.Point(27, 148);
-            this.lblPleaseStandBy.Name = "lblPleaseStandBy";
-            this.lblPleaseStandBy.Size = new System.Drawing.Size(408, 17);
-            this.lblPleaseStandBy.TabIndex = 3;
-            this.lblPleaseStandBy.Text = "Please stand by while your G-Code Files are being processed...";
-            // 
             // awpActions
             // 
             this.awpActions.Controls.Add(this.gbIDRotaryPrinting);
@@ -1694,7 +278,7 @@
             this.awpActions.HeaderImageVisible = true;
             this.awpActions.HeaderTitle = "Welcome to Advanced Wizard";
             this.awpActions.Location = new System.Drawing.Point(0, 0);
-            this.awpActions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.awpActions.Margin = new System.Windows.Forms.Padding(4);
             this.awpActions.Name = "awpActions";
             this.awpActions.PreviousPage = 3;
             this.awpActions.Size = new System.Drawing.Size(944, 526);
@@ -1707,9 +291,9 @@
             // 
             this.gbIDRotaryPrinting.Controls.Add(this.nudModelID);
             this.gbIDRotaryPrinting.Location = new System.Drawing.Point(468, 399);
-            this.gbIDRotaryPrinting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbIDRotaryPrinting.Margin = new System.Windows.Forms.Padding(4);
             this.gbIDRotaryPrinting.Name = "gbIDRotaryPrinting";
-            this.gbIDRotaryPrinting.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbIDRotaryPrinting.Padding = new System.Windows.Forms.Padding(4);
             this.gbIDRotaryPrinting.Size = new System.Drawing.Size(455, 50);
             this.gbIDRotaryPrinting.TabIndex = 0;
             this.gbIDRotaryPrinting.TabStop = false;
@@ -1719,7 +303,7 @@
             // 
             this.nudModelID.DecimalPlaces = 3;
             this.nudModelID.Location = new System.Drawing.Point(15, 20);
-            this.nudModelID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudModelID.Margin = new System.Windows.Forms.Padding(4);
             this.nudModelID.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1739,9 +323,9 @@
             // 
             this.gbIslandCombining.Controls.Add(this.cbIslandCombining);
             this.gbIslandCombining.Location = new System.Drawing.Point(11, 399);
-            this.gbIslandCombining.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbIslandCombining.Margin = new System.Windows.Forms.Padding(4);
             this.gbIslandCombining.Name = "gbIslandCombining";
-            this.gbIslandCombining.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbIslandCombining.Padding = new System.Windows.Forms.Padding(4);
             this.gbIslandCombining.Size = new System.Drawing.Size(449, 50);
             this.gbIslandCombining.TabIndex = 22;
             this.gbIslandCombining.TabStop = false;
@@ -1751,7 +335,7 @@
             // 
             this.cbIslandCombining.AutoSize = true;
             this.cbIslandCombining.Location = new System.Drawing.Point(11, 21);
-            this.cbIslandCombining.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbIslandCombining.Margin = new System.Windows.Forms.Padding(4);
             this.cbIslandCombining.Name = "cbIslandCombining";
             this.cbIslandCombining.Size = new System.Drawing.Size(318, 21);
             this.cbIslandCombining.TabIndex = 0;
@@ -1762,9 +346,9 @@
             // 
             this.gbRules.Controls.Add(this.dgvCustomActions);
             this.gbRules.Location = new System.Drawing.Point(11, 133);
-            this.gbRules.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbRules.Margin = new System.Windows.Forms.Padding(4);
             this.gbRules.Name = "gbRules";
-            this.gbRules.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbRules.Padding = new System.Windows.Forms.Padding(4);
             this.gbRules.Size = new System.Drawing.Size(912, 257);
             this.gbRules.TabIndex = 21;
             this.gbRules.TabStop = false;
@@ -1781,7 +365,7 @@
             this.dgcSpeedFactor,
             this.dgcExtrusionFactor});
             this.dgvCustomActions.Location = new System.Drawing.Point(11, 23);
-            this.dgvCustomActions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCustomActions.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCustomActions.MultiSelect = false;
             this.dgvCustomActions.Name = "dgvCustomActions";
             this.dgvCustomActions.RowHeadersWidth = 51;
@@ -2079,6 +663,1438 @@
             this.lblBottomFiles.TabIndex = 11;
             this.lblBottomFiles.Text = "List of Input Files:";
             // 
+            // awpTopSide
+            // 
+            this.awpTopSide.Controls.Add(this.gbTopFiles);
+            this.awpTopSide.Controls.Add(this.gbTopSlicing);
+            this.awpTopSide.Header = true;
+            this.awpTopSide.HeaderBackgroundColor = System.Drawing.Color.White;
+            this.awpTopSide.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.awpTopSide.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpTopSide.HeaderImage")));
+            this.awpTopSide.HeaderImageVisible = true;
+            this.awpTopSide.HeaderTitle = "Welcome to Advanced Wizard";
+            this.awpTopSide.Location = new System.Drawing.Point(0, 0);
+            this.awpTopSide.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.awpTopSide.Name = "awpTopSide";
+            this.awpTopSide.PreviousPage = 1;
+            this.awpTopSide.Size = new System.Drawing.Size(944, 526);
+            this.awpTopSide.SubTitle = "Your page description goes here";
+            this.awpTopSide.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
+            this.awpTopSide.TabIndex = 3;
+            this.awpTopSide.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpTopSide_PageShow);
+            // 
+            // gbTopFiles
+            // 
+            this.gbTopFiles.Controls.Add(this.btnTopBrowseSubstractive);
+            this.gbTopFiles.Controls.Add(this.btnTopBrowseAdditive);
+            this.gbTopFiles.Controls.Add(this.txtTopFileSubstractive);
+            this.gbTopFiles.Controls.Add(this.lblTopFileSubstractive);
+            this.gbTopFiles.Controls.Add(this.txtTopFileAdditive);
+            this.gbTopFiles.Controls.Add(this.lblTopFileAdditive);
+            this.gbTopFiles.Location = new System.Drawing.Point(17, 318);
+            this.gbTopFiles.Margin = new System.Windows.Forms.Padding(5, 2, 3, 2);
+            this.gbTopFiles.Name = "gbTopFiles";
+            this.gbTopFiles.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTopFiles.Size = new System.Drawing.Size(912, 82);
+            this.gbTopFiles.TabIndex = 15;
+            this.gbTopFiles.TabStop = false;
+            this.gbTopFiles.Text = "Manufacturing Files for the Top Side";
+            // 
+            // btnTopBrowseSubstractive
+            // 
+            this.btnTopBrowseSubstractive.Location = new System.Drawing.Point(827, 46);
+            this.btnTopBrowseSubstractive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTopBrowseSubstractive.Name = "btnTopBrowseSubstractive";
+            this.btnTopBrowseSubstractive.Size = new System.Drawing.Size(43, 27);
+            this.btnTopBrowseSubstractive.TabIndex = 16;
+            this.btnTopBrowseSubstractive.Text = "...";
+            this.btnTopBrowseSubstractive.UseVisualStyleBackColor = true;
+            this.btnTopBrowseSubstractive.Click += new System.EventHandler(this.BtnTopBrowseSubstractive_Click);
+            // 
+            // btnTopBrowseAdditive
+            // 
+            this.btnTopBrowseAdditive.Location = new System.Drawing.Point(365, 46);
+            this.btnTopBrowseAdditive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTopBrowseAdditive.Name = "btnTopBrowseAdditive";
+            this.btnTopBrowseAdditive.Size = new System.Drawing.Size(43, 27);
+            this.btnTopBrowseAdditive.TabIndex = 15;
+            this.btnTopBrowseAdditive.Text = "...";
+            this.btnTopBrowseAdditive.UseVisualStyleBackColor = true;
+            this.btnTopBrowseAdditive.Click += new System.EventHandler(this.BtnTopBrowseAdditive_Click);
+            // 
+            // txtTopFileSubstractive
+            // 
+            this.txtTopFileSubstractive.Location = new System.Drawing.Point(475, 47);
+            this.txtTopFileSubstractive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTopFileSubstractive.Name = "txtTopFileSubstractive";
+            this.txtTopFileSubstractive.Size = new System.Drawing.Size(345, 22);
+            this.txtTopFileSubstractive.TabIndex = 14;
+            this.txtTopFileSubstractive.TextChanged += new System.EventHandler(this.TxtTopGCodeFiles_TextChanged);
+            // 
+            // lblTopFileSubstractive
+            // 
+            this.lblTopFileSubstractive.AutoSize = true;
+            this.lblTopFileSubstractive.Location = new System.Drawing.Point(472, 23);
+            this.lblTopFileSubstractive.Name = "lblTopFileSubstractive";
+            this.lblTopFileSubstractive.Size = new System.Drawing.Size(264, 17);
+            this.lblTopFileSubstractive.TabIndex = 13;
+            this.lblTopFileSubstractive.Text = "G-Code File for Substractive Processing:";
+            // 
+            // txtTopFileAdditive
+            // 
+            this.txtTopFileAdditive.Location = new System.Drawing.Point(13, 47);
+            this.txtTopFileAdditive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTopFileAdditive.Name = "txtTopFileAdditive";
+            this.txtTopFileAdditive.Size = new System.Drawing.Size(345, 22);
+            this.txtTopFileAdditive.TabIndex = 12;
+            this.txtTopFileAdditive.TextChanged += new System.EventHandler(this.TxtTopGCodeFiles_TextChanged);
+            // 
+            // lblTopFileAdditive
+            // 
+            this.lblTopFileAdditive.AutoSize = true;
+            this.lblTopFileAdditive.Location = new System.Drawing.Point(11, 23);
+            this.lblTopFileAdditive.Name = "lblTopFileAdditive";
+            this.lblTopFileAdditive.Size = new System.Drawing.Size(236, 17);
+            this.lblTopFileAdditive.TabIndex = 11;
+            this.lblTopFileAdditive.Text = "G-Code File for Additive Processing:";
+            // 
+            // gbTopSlicing
+            // 
+            this.gbTopSlicing.Controls.Add(this.chkTopGenerateSupport);
+            this.gbTopSlicing.Controls.Add(this.btnTopSlice);
+            this.gbTopSlicing.Controls.Add(this.tlpTopFileButtons);
+            this.gbTopSlicing.Controls.Add(this.lstTopInputFiles);
+            this.gbTopSlicing.Controls.Add(this.chkTopUseOwnSettings);
+            this.gbTopSlicing.Controls.Add(this.chkTopUnwrap);
+            this.gbTopSlicing.Controls.Add(this.lblTopInputFiles);
+            this.gbTopSlicing.Location = new System.Drawing.Point(17, 130);
+            this.gbTopSlicing.Margin = new System.Windows.Forms.Padding(3, 2, 5, 2);
+            this.gbTopSlicing.Name = "gbTopSlicing";
+            this.gbTopSlicing.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTopSlicing.Size = new System.Drawing.Size(912, 175);
+            this.gbTopSlicing.TabIndex = 14;
+            this.gbTopSlicing.TabStop = false;
+            this.gbTopSlicing.Text = "Slicing for the Top Side (optional if you already have a G-Code File)";
+            // 
+            // chkTopGenerateSupport
+            // 
+            this.chkTopGenerateSupport.AutoSize = true;
+            this.chkTopGenerateSupport.Enabled = false;
+            this.chkTopGenerateSupport.Location = new System.Drawing.Point(605, 95);
+            this.chkTopGenerateSupport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkTopGenerateSupport.Name = "chkTopGenerateSupport";
+            this.chkTopGenerateSupport.Size = new System.Drawing.Size(194, 21);
+            this.chkTopGenerateSupport.TabIndex = 21;
+            this.chkTopGenerateSupport.Text = "Generate Special Support";
+            this.chkTopGenerateSupport.UseVisualStyleBackColor = true;
+            this.chkTopGenerateSupport.CheckedChanged += new System.EventHandler(this.ChkTopGenerateSupport_CheckedChanged);
+            // 
+            // btnTopSlice
+            // 
+            this.btnTopSlice.Enabled = false;
+            this.btnTopSlice.Image = ((System.Drawing.Image)(resources.GetObject("btnTopSlice.Image")));
+            this.btnTopSlice.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTopSlice.Location = new System.Drawing.Point(605, 126);
+            this.btnTopSlice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTopSlice.Name = "btnTopSlice";
+            this.btnTopSlice.Size = new System.Drawing.Size(217, 39);
+            this.btnTopSlice.TabIndex = 20;
+            this.btnTopSlice.Text = "Process via Simplify3D®";
+            this.btnTopSlice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTopSlice.UseVisualStyleBackColor = true;
+            this.btnTopSlice.Click += new System.EventHandler(this.BtnSlice_Click);
+            // 
+            // tlpTopFileButtons
+            // 
+            this.tlpTopFileButtons.ColumnCount = 2;
+            this.tlpTopFileButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tlpTopFileButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
+            this.tlpTopFileButtons.Controls.Add(this.btnTopRemoveFiles, 0, 0);
+            this.tlpTopFileButtons.Controls.Add(this.btnTopAddFiles, 0, 0);
+            this.tlpTopFileButtons.Location = new System.Drawing.Point(13, 133);
+            this.tlpTopFileButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpTopFileButtons.Name = "tlpTopFileButtons";
+            this.tlpTopFileButtons.RowCount = 1;
+            this.tlpTopFileButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTopFileButtons.Size = new System.Drawing.Size(487, 32);
+            this.tlpTopFileButtons.TabIndex = 19;
+            // 
+            // btnTopRemoveFiles
+            // 
+            this.btnTopRemoveFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTopRemoveFiles.Enabled = false;
+            this.btnTopRemoveFiles.Image = global::DiabasePrintingWizard.Properties.Resources.Remove_8x_16x;
+            this.btnTopRemoveFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTopRemoveFiles.Location = new System.Drawing.Point(246, 0);
+            this.btnTopRemoveFiles.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnTopRemoveFiles.Name = "btnTopRemoveFiles";
+            this.btnTopRemoveFiles.Size = new System.Drawing.Size(241, 32);
+            this.btnTopRemoveFiles.TabIndex = 19;
+            this.btnTopRemoveFiles.Text = "Remove File(s)";
+            this.btnTopRemoveFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTopRemoveFiles.UseVisualStyleBackColor = true;
+            this.btnTopRemoveFiles.Click += new System.EventHandler(this.BtnTopRemoveFiles_Click);
+            // 
+            // btnTopAddFiles
+            // 
+            this.btnTopAddFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTopAddFiles.Image = global::DiabasePrintingWizard.Properties.Resources.Add_thin_10x_16x;
+            this.btnTopAddFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTopAddFiles.Location = new System.Drawing.Point(0, 0);
+            this.btnTopAddFiles.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnTopAddFiles.Name = "btnTopAddFiles";
+            this.btnTopAddFiles.Size = new System.Drawing.Size(240, 32);
+            this.btnTopAddFiles.TabIndex = 18;
+            this.btnTopAddFiles.Text = "Add File(s)";
+            this.btnTopAddFiles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTopAddFiles.UseVisualStyleBackColor = true;
+            this.btnTopAddFiles.Click += new System.EventHandler(this.BtnTopAddFiles_Click);
+            // 
+            // lstTopInputFiles
+            // 
+            this.lstTopInputFiles.FormattingEnabled = true;
+            this.lstTopInputFiles.ItemHeight = 16;
+            this.lstTopInputFiles.Location = new System.Drawing.Point(13, 43);
+            this.lstTopInputFiles.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
+            this.lstTopInputFiles.Name = "lstTopInputFiles";
+            this.lstTopInputFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lstTopInputFiles.Size = new System.Drawing.Size(564, 84);
+            this.lstTopInputFiles.TabIndex = 16;
+            // 
+            // chkTopUseOwnSettings
+            // 
+            this.chkTopUseOwnSettings.AutoSize = true;
+            this.chkTopUseOwnSettings.Location = new System.Drawing.Point(605, 43);
+            this.chkTopUseOwnSettings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkTopUseOwnSettings.Name = "chkTopUseOwnSettings";
+            this.chkTopUseOwnSettings.Size = new System.Drawing.Size(217, 21);
+            this.chkTopUseOwnSettings.TabIndex = 15;
+            this.chkTopUseOwnSettings.Text = "Use own Simplify3D® settings";
+            this.chkTopUseOwnSettings.UseVisualStyleBackColor = true;
+            this.chkTopUseOwnSettings.CheckedChanged += new System.EventHandler(this.ChkTopUseOwnSettings_CheckedChanged);
+            // 
+            // chkTopUnwrap
+            // 
+            this.chkTopUnwrap.AutoSize = true;
+            this.chkTopUnwrap.Location = new System.Drawing.Point(605, 70);
+            this.chkTopUnwrap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkTopUnwrap.Name = "chkTopUnwrap";
+            this.chkTopUnwrap.Size = new System.Drawing.Size(141, 21);
+            this.chkTopUnwrap.TabIndex = 14;
+            this.chkTopUnwrap.Text = "Unwrap STL Files";
+            this.chkTopUnwrap.UseVisualStyleBackColor = true;
+            this.chkTopUnwrap.CheckedChanged += new System.EventHandler(this.ChkTopUnwrap_CheckedChanged);
+            // 
+            // lblTopInputFiles
+            // 
+            this.lblTopInputFiles.AutoSize = true;
+            this.lblTopInputFiles.Location = new System.Drawing.Point(11, 23);
+            this.lblTopInputFiles.Name = "lblTopInputFiles";
+            this.lblTopInputFiles.Size = new System.Drawing.Size(118, 17);
+            this.lblTopInputFiles.TabIndex = 11;
+            this.lblTopInputFiles.Text = "List of Input Files:";
+            // 
+            // awpMachineProperties
+            // 
+            this.awpMachineProperties.Controls.Add(this.lblWelcome);
+            this.awpMachineProperties.Controls.Add(this.tlpHeads);
+            this.awpMachineProperties.Header = false;
+            this.awpMachineProperties.HeaderBackgroundColor = System.Drawing.Color.White;
+            this.awpMachineProperties.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.awpMachineProperties.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpMachineProperties.HeaderImage")));
+            this.awpMachineProperties.HeaderImageVisible = true;
+            this.awpMachineProperties.HeaderTitle = "Post Processing";
+            this.awpMachineProperties.Location = new System.Drawing.Point(0, 0);
+            this.awpMachineProperties.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.awpMachineProperties.Name = "awpMachineProperties";
+            this.awpMachineProperties.PreviousPage = 0;
+            this.awpMachineProperties.Size = new System.Drawing.Size(944, 526);
+            this.awpMachineProperties.SubTitle = "Your page description goes here";
+            this.awpMachineProperties.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
+            this.awpMachineProperties.TabIndex = 2;
+            this.awpMachineProperties.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpMachineProperties_PageShow);
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Location = new System.Drawing.Point(9, 133);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(410, 17);
+            this.lblWelcome.TabIndex = 21;
+            this.lblWelcome.Text = "Please choose your preferences for the manufacturing process:";
+            // 
+            // tlpHeads
+            // 
+            this.tlpHeads.ColumnCount = 5;
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpHeads.Controls.Add(this.cboTool1, 0, 0);
+            this.tlpHeads.Controls.Add(this.gbTool3, 0, 1);
+            this.tlpHeads.Controls.Add(this.cboTool2, 1, 0);
+            this.tlpHeads.Controls.Add(this.gbTool5, 0, 1);
+            this.tlpHeads.Controls.Add(this.cboTool3, 2, 0);
+            this.tlpHeads.Controls.Add(this.gbTool4, 0, 1);
+            this.tlpHeads.Controls.Add(this.cboTool4, 3, 0);
+            this.tlpHeads.Controls.Add(this.gbTool1, 0, 1);
+            this.tlpHeads.Controls.Add(this.cboTool5, 4, 0);
+            this.tlpHeads.Controls.Add(this.gbTool2, 0, 1);
+            this.tlpHeads.Location = new System.Drawing.Point(12, 153);
+            this.tlpHeads.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpHeads.Name = "tlpHeads";
+            this.tlpHeads.RowCount = 2;
+            this.tlpHeads.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpHeads.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpHeads.Size = new System.Drawing.Size(917, 300);
+            this.tlpHeads.TabIndex = 20;
+            // 
+            // cboTool1
+            // 
+            this.cboTool1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool1.FormattingEnabled = true;
+            this.cboTool1.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool1.Location = new System.Drawing.Point(9, 2);
+            this.cboTool1.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
+            this.cboTool1.Name = "cboTool1";
+            this.cboTool1.Size = new System.Drawing.Size(165, 24);
+            this.cboTool1.TabIndex = 0;
+            this.cboTool1.SelectedIndexChanged += new System.EventHandler(this.CboTool1_SelectedIndexChanged);
+            // 
+            // gbTool3
+            // 
+            this.gbTool3.Controls.Add(this.lblXChanges32);
+            this.gbTool3.Controls.Add(this.nudXChanges3);
+            this.gbTool3.Controls.Add(this.lblXChanges31);
+            this.gbTool3.Controls.Add(this.cboCleaning3);
+            this.gbTool3.Controls.Add(this.lblCleaning3);
+            this.gbTool3.Controls.Add(this.lblS1);
+            this.gbTool3.Controls.Add(this.nudPreheat3);
+            this.gbTool3.Controls.Add(this.lblPreheat3);
+            this.gbTool3.Controls.Add(this.lblC1);
+            this.gbTool3.Controls.Add(this.lblTemp3);
+            this.gbTool3.Controls.Add(this.nudTemp3);
+            this.gbTool3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool3.Enabled = false;
+            this.gbTool3.Location = new System.Drawing.Point(375, 37);
+            this.gbTool3.Margin = new System.Windows.Forms.Padding(9);
+            this.gbTool3.Name = "gbTool3";
+            this.gbTool3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTool3.Size = new System.Drawing.Size(165, 254);
+            this.gbTool3.TabIndex = 0;
+            this.gbTool3.TabStop = false;
+            this.gbTool3.Text = "Tool 3";
+            // 
+            // lblXChanges32
+            // 
+            this.lblXChanges32.AutoSize = true;
+            this.lblXChanges32.Enabled = false;
+            this.lblXChanges32.Location = new System.Drawing.Point(99, 218);
+            this.lblXChanges32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges32.Name = "lblXChanges32";
+            this.lblXChanges32.Size = new System.Drawing.Size(55, 17);
+            this.lblXChanges32.TabIndex = 19;
+            this.lblXChanges32.Text = "change";
+            // 
+            // nudXChanges3
+            // 
+            this.nudXChanges3.Enabled = false;
+            this.nudXChanges3.Location = new System.Drawing.Point(51, 215);
+            this.nudXChanges3.Margin = new System.Windows.Forms.Padding(4);
+            this.nudXChanges3.Name = "nudXChanges3";
+            this.nudXChanges3.Size = new System.Drawing.Size(47, 22);
+            this.nudXChanges3.TabIndex = 14;
+            // 
+            // lblXChanges31
+            // 
+            this.lblXChanges31.AutoSize = true;
+            this.lblXChanges31.Enabled = false;
+            this.lblXChanges31.Location = new System.Drawing.Point(5, 218);
+            this.lblXChanges31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges31.Name = "lblXChanges31";
+            this.lblXChanges31.Size = new System.Drawing.Size(43, 17);
+            this.lblXChanges31.TabIndex = 17;
+            this.lblXChanges31.Text = "every";
+            // 
+            // cboCleaning3
+            // 
+            this.cboCleaning3.FormattingEnabled = true;
+            this.cboCleaning3.Location = new System.Drawing.Point(9, 178);
+            this.cboCleaning3.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCleaning3.Name = "cboCleaning3";
+            this.cboCleaning3.Size = new System.Drawing.Size(143, 24);
+            this.cboCleaning3.TabIndex = 13;
+            this.cboCleaning3.SelectedIndexChanged += new System.EventHandler(this.cboCleaning3_SelectedIndexChanged);
+            // 
+            // lblCleaning3
+            // 
+            this.lblCleaning3.AutoSize = true;
+            this.lblCleaning3.Location = new System.Drawing.Point(5, 158);
+            this.lblCleaning3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCleaning3.Name = "lblCleaning3";
+            this.lblCleaning3.Size = new System.Drawing.Size(67, 17);
+            this.lblCleaning3.TabIndex = 12;
+            this.lblCleaning3.Text = "Cleaning:";
+            // 
+            // lblS1
+            // 
+            this.lblS1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblS1.AutoSize = true;
+            this.lblS1.Location = new System.Drawing.Point(130, 121);
+            this.lblS1.Name = "lblS1";
+            this.lblS1.Size = new System.Drawing.Size(15, 17);
+            this.lblS1.TabIndex = 6;
+            this.lblS1.Text = "s";
+            // 
+            // nudPreheat3
+            // 
+            this.nudPreheat3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat3.Location = new System.Drawing.Point(9, 119);
+            this.nudPreheat3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPreheat3.Name = "nudPreheat3";
+            this.nudPreheat3.Size = new System.Drawing.Size(116, 22);
+            this.nudPreheat3.TabIndex = 12;
+            this.nudPreheat3.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat3
+            // 
+            this.lblPreheat3.AutoSize = true;
+            this.lblPreheat3.Location = new System.Drawing.Point(5, 98);
+            this.lblPreheat3.Name = "lblPreheat3";
+            this.lblPreheat3.Size = new System.Drawing.Size(116, 17);
+            this.lblPreheat3.TabIndex = 4;
+            this.lblPreheat3.Text = "Preheating Time:";
+            // 
+            // lblC1
+            // 
+            this.lblC1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblC1.AutoSize = true;
+            this.lblC1.Location = new System.Drawing.Point(130, 63);
+            this.lblC1.Name = "lblC1";
+            this.lblC1.Size = new System.Drawing.Size(23, 17);
+            this.lblC1.TabIndex = 3;
+            this.lblC1.Text = "°C";
+            // 
+            // lblTemp3
+            // 
+            this.lblTemp3.AutoSize = true;
+            this.lblTemp3.Location = new System.Drawing.Point(5, 23);
+            this.lblTemp3.Name = "lblTemp3";
+            this.lblTemp3.Size = new System.Drawing.Size(94, 34);
+            this.lblTemp3.TabIndex = 1;
+            this.lblTemp3.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp3
+            // 
+            this.nudTemp3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp3.DecimalPlaces = 1;
+            this.nudTemp3.Location = new System.Drawing.Point(9, 60);
+            this.nudTemp3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudTemp3.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp3.Name = "nudTemp3";
+            this.nudTemp3.Size = new System.Drawing.Size(116, 22);
+            this.nudTemp3.TabIndex = 11;
+            this.nudTemp3.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // cboTool2
+            // 
+            this.cboTool2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool2.FormattingEnabled = true;
+            this.cboTool2.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool2.Location = new System.Drawing.Point(192, 2);
+            this.cboTool2.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
+            this.cboTool2.Name = "cboTool2";
+            this.cboTool2.Size = new System.Drawing.Size(165, 24);
+            this.cboTool2.TabIndex = 5;
+            this.cboTool2.SelectedIndexChanged += new System.EventHandler(this.CboTool2_SelectedIndexChanged);
+            // 
+            // gbTool5
+            // 
+            this.gbTool5.Controls.Add(this.lblXChanges52);
+            this.gbTool5.Controls.Add(this.nudXChanges5);
+            this.gbTool5.Controls.Add(this.lblXChanges51);
+            this.gbTool5.Controls.Add(this.cboCleaning5);
+            this.gbTool5.Controls.Add(this.lblCleaning5);
+            this.gbTool5.Controls.Add(this.label14);
+            this.gbTool5.Controls.Add(this.nudPreheat5);
+            this.gbTool5.Controls.Add(this.lblPreheat5);
+            this.gbTool5.Controls.Add(this.label16);
+            this.gbTool5.Controls.Add(this.lblTemp5);
+            this.gbTool5.Controls.Add(this.nudTemp5);
+            this.gbTool5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool5.Enabled = false;
+            this.gbTool5.Location = new System.Drawing.Point(741, 37);
+            this.gbTool5.Margin = new System.Windows.Forms.Padding(9);
+            this.gbTool5.Name = "gbTool5";
+            this.gbTool5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTool5.Size = new System.Drawing.Size(167, 254);
+            this.gbTool5.TabIndex = 13;
+            this.gbTool5.TabStop = false;
+            this.gbTool5.Text = "Tool 5";
+            // 
+            // lblXChanges52
+            // 
+            this.lblXChanges52.AutoSize = true;
+            this.lblXChanges52.Enabled = false;
+            this.lblXChanges52.Location = new System.Drawing.Point(99, 218);
+            this.lblXChanges52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges52.Name = "lblXChanges52";
+            this.lblXChanges52.Size = new System.Drawing.Size(55, 17);
+            this.lblXChanges52.TabIndex = 24;
+            this.lblXChanges52.Text = "change";
+            // 
+            // nudXChanges5
+            // 
+            this.nudXChanges5.Enabled = false;
+            this.nudXChanges5.Location = new System.Drawing.Point(51, 215);
+            this.nudXChanges5.Margin = new System.Windows.Forms.Padding(4);
+            this.nudXChanges5.Name = "nudXChanges5";
+            this.nudXChanges5.Size = new System.Drawing.Size(47, 22);
+            this.nudXChanges5.TabIndex = 24;
+            // 
+            // lblXChanges51
+            // 
+            this.lblXChanges51.AutoSize = true;
+            this.lblXChanges51.Enabled = false;
+            this.lblXChanges51.Location = new System.Drawing.Point(5, 218);
+            this.lblXChanges51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges51.Name = "lblXChanges51";
+            this.lblXChanges51.Size = new System.Drawing.Size(43, 17);
+            this.lblXChanges51.TabIndex = 22;
+            this.lblXChanges51.Text = "every";
+            // 
+            // cboCleaning5
+            // 
+            this.cboCleaning5.FormattingEnabled = true;
+            this.cboCleaning5.Location = new System.Drawing.Point(9, 178);
+            this.cboCleaning5.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCleaning5.Name = "cboCleaning5";
+            this.cboCleaning5.Size = new System.Drawing.Size(143, 24);
+            this.cboCleaning5.TabIndex = 23;
+            this.cboCleaning5.SelectedIndexChanged += new System.EventHandler(this.cboCleaning5_SelectedIndexChanged);
+            // 
+            // lblCleaning5
+            // 
+            this.lblCleaning5.AutoSize = true;
+            this.lblCleaning5.Location = new System.Drawing.Point(5, 158);
+            this.lblCleaning5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCleaning5.Name = "lblCleaning5";
+            this.lblCleaning5.Size = new System.Drawing.Size(67, 17);
+            this.lblCleaning5.TabIndex = 20;
+            this.lblCleaning5.Text = "Cleaning:";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(128, 121);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 17);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "s";
+            // 
+            // nudPreheat5
+            // 
+            this.nudPreheat5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat5.Location = new System.Drawing.Point(9, 119);
+            this.nudPreheat5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPreheat5.Name = "nudPreheat5";
+            this.nudPreheat5.Size = new System.Drawing.Size(114, 22);
+            this.nudPreheat5.TabIndex = 22;
+            this.nudPreheat5.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat5
+            // 
+            this.lblPreheat5.AutoSize = true;
+            this.lblPreheat5.Location = new System.Drawing.Point(5, 98);
+            this.lblPreheat5.Name = "lblPreheat5";
+            this.lblPreheat5.Size = new System.Drawing.Size(116, 17);
+            this.lblPreheat5.TabIndex = 4;
+            this.lblPreheat5.Text = "Preheating Time:";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(128, 63);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 17);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "°C";
+            // 
+            // lblTemp5
+            // 
+            this.lblTemp5.AutoSize = true;
+            this.lblTemp5.Location = new System.Drawing.Point(5, 23);
+            this.lblTemp5.Name = "lblTemp5";
+            this.lblTemp5.Size = new System.Drawing.Size(94, 34);
+            this.lblTemp5.TabIndex = 1;
+            this.lblTemp5.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp5
+            // 
+            this.nudTemp5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp5.DecimalPlaces = 1;
+            this.nudTemp5.Location = new System.Drawing.Point(9, 60);
+            this.nudTemp5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudTemp5.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp5.Name = "nudTemp5";
+            this.nudTemp5.Size = new System.Drawing.Size(114, 22);
+            this.nudTemp5.TabIndex = 21;
+            this.nudTemp5.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // cboTool3
+            // 
+            this.cboTool3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool3.FormattingEnabled = true;
+            this.cboTool3.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool3.Location = new System.Drawing.Point(375, 2);
+            this.cboTool3.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
+            this.cboTool3.Name = "cboTool3";
+            this.cboTool3.Size = new System.Drawing.Size(165, 24);
+            this.cboTool3.TabIndex = 10;
+            this.cboTool3.SelectedIndexChanged += new System.EventHandler(this.CboTool3_SelectedIndexChanged);
+            // 
+            // gbTool4
+            // 
+            this.gbTool4.Controls.Add(this.lblXChanges42);
+            this.gbTool4.Controls.Add(this.nudXChanges4);
+            this.gbTool4.Controls.Add(this.lblXChanges41);
+            this.gbTool4.Controls.Add(this.cboCleaning4);
+            this.gbTool4.Controls.Add(this.lblCleaning4);
+            this.gbTool4.Controls.Add(this.label10);
+            this.gbTool4.Controls.Add(this.nudPreheat4);
+            this.gbTool4.Controls.Add(this.lblPreheat4);
+            this.gbTool4.Controls.Add(this.label12);
+            this.gbTool4.Controls.Add(this.lblTemp4);
+            this.gbTool4.Controls.Add(this.nudTemp4);
+            this.gbTool4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool4.Enabled = false;
+            this.gbTool4.Location = new System.Drawing.Point(558, 37);
+            this.gbTool4.Margin = new System.Windows.Forms.Padding(9);
+            this.gbTool4.Name = "gbTool4";
+            this.gbTool4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTool4.Size = new System.Drawing.Size(165, 254);
+            this.gbTool4.TabIndex = 12;
+            this.gbTool4.TabStop = false;
+            this.gbTool4.Text = "Tool 4";
+            // 
+            // lblXChanges42
+            // 
+            this.lblXChanges42.AutoSize = true;
+            this.lblXChanges42.Enabled = false;
+            this.lblXChanges42.Location = new System.Drawing.Point(99, 218);
+            this.lblXChanges42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges42.Name = "lblXChanges42";
+            this.lblXChanges42.Size = new System.Drawing.Size(55, 17);
+            this.lblXChanges42.TabIndex = 20;
+            this.lblXChanges42.Text = "change";
+            // 
+            // nudXChanges4
+            // 
+            this.nudXChanges4.Enabled = false;
+            this.nudXChanges4.Location = new System.Drawing.Point(51, 215);
+            this.nudXChanges4.Margin = new System.Windows.Forms.Padding(4);
+            this.nudXChanges4.Name = "nudXChanges4";
+            this.nudXChanges4.Size = new System.Drawing.Size(47, 22);
+            this.nudXChanges4.TabIndex = 19;
+            // 
+            // lblXChanges41
+            // 
+            this.lblXChanges41.AutoSize = true;
+            this.lblXChanges41.Enabled = false;
+            this.lblXChanges41.Location = new System.Drawing.Point(5, 218);
+            this.lblXChanges41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges41.Name = "lblXChanges41";
+            this.lblXChanges41.Size = new System.Drawing.Size(43, 17);
+            this.lblXChanges41.TabIndex = 18;
+            this.lblXChanges41.Text = "every";
+            // 
+            // cboCleaning4
+            // 
+            this.cboCleaning4.FormattingEnabled = true;
+            this.cboCleaning4.Location = new System.Drawing.Point(9, 178);
+            this.cboCleaning4.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCleaning4.Name = "cboCleaning4";
+            this.cboCleaning4.Size = new System.Drawing.Size(143, 24);
+            this.cboCleaning4.TabIndex = 18;
+            this.cboCleaning4.SelectedIndexChanged += new System.EventHandler(this.cboCleaning4_SelectedIndexChanged);
+            // 
+            // lblCleaning4
+            // 
+            this.lblCleaning4.AutoSize = true;
+            this.lblCleaning4.Location = new System.Drawing.Point(5, 158);
+            this.lblCleaning4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCleaning4.Name = "lblCleaning4";
+            this.lblCleaning4.Size = new System.Drawing.Size(67, 17);
+            this.lblCleaning4.TabIndex = 16;
+            this.lblCleaning4.Text = "Cleaning:";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(130, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(15, 17);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "s";
+            // 
+            // nudPreheat4
+            // 
+            this.nudPreheat4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat4.Location = new System.Drawing.Point(9, 119);
+            this.nudPreheat4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPreheat4.Name = "nudPreheat4";
+            this.nudPreheat4.Size = new System.Drawing.Size(116, 22);
+            this.nudPreheat4.TabIndex = 17;
+            this.nudPreheat4.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat4
+            // 
+            this.lblPreheat4.AutoSize = true;
+            this.lblPreheat4.Location = new System.Drawing.Point(5, 98);
+            this.lblPreheat4.Name = "lblPreheat4";
+            this.lblPreheat4.Size = new System.Drawing.Size(116, 17);
+            this.lblPreheat4.TabIndex = 4;
+            this.lblPreheat4.Text = "Preheating Time:";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(130, 63);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(23, 17);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "°C";
+            // 
+            // lblTemp4
+            // 
+            this.lblTemp4.AutoSize = true;
+            this.lblTemp4.Location = new System.Drawing.Point(5, 23);
+            this.lblTemp4.Name = "lblTemp4";
+            this.lblTemp4.Size = new System.Drawing.Size(94, 34);
+            this.lblTemp4.TabIndex = 1;
+            this.lblTemp4.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp4
+            // 
+            this.nudTemp4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp4.DecimalPlaces = 1;
+            this.nudTemp4.Location = new System.Drawing.Point(9, 60);
+            this.nudTemp4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudTemp4.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp4.Name = "nudTemp4";
+            this.nudTemp4.Size = new System.Drawing.Size(116, 22);
+            this.nudTemp4.TabIndex = 16;
+            this.nudTemp4.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // cboTool4
+            // 
+            this.cboTool4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool4.FormattingEnabled = true;
+            this.cboTool4.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool4.Location = new System.Drawing.Point(558, 2);
+            this.cboTool4.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
+            this.cboTool4.Name = "cboTool4";
+            this.cboTool4.Size = new System.Drawing.Size(165, 24);
+            this.cboTool4.TabIndex = 15;
+            this.cboTool4.SelectedIndexChanged += new System.EventHandler(this.CboTool4_SelectedIndexChanged);
+            // 
+            // gbTool1
+            // 
+            this.gbTool1.Controls.Add(this.lblXChanges12);
+            this.gbTool1.Controls.Add(this.nudXChanges1);
+            this.gbTool1.Controls.Add(this.lblXChanges11);
+            this.gbTool1.Controls.Add(this.cboCleaning1);
+            this.gbTool1.Controls.Add(this.lblCleaning1);
+            this.gbTool1.Controls.Add(this.label2);
+            this.gbTool1.Controls.Add(this.nudPreheat1);
+            this.gbTool1.Controls.Add(this.lblPreheat1);
+            this.gbTool1.Controls.Add(this.label4);
+            this.gbTool1.Controls.Add(this.lblTemp1);
+            this.gbTool1.Controls.Add(this.nudTemp1);
+            this.gbTool1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool1.Enabled = false;
+            this.gbTool1.Location = new System.Drawing.Point(9, 37);
+            this.gbTool1.Margin = new System.Windows.Forms.Padding(9);
+            this.gbTool1.Name = "gbTool1";
+            this.gbTool1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTool1.Size = new System.Drawing.Size(165, 254);
+            this.gbTool1.TabIndex = 10;
+            this.gbTool1.TabStop = false;
+            this.gbTool1.Text = "Tool 1";
+            // 
+            // lblXChanges12
+            // 
+            this.lblXChanges12.AutoSize = true;
+            this.lblXChanges12.Enabled = false;
+            this.lblXChanges12.Location = new System.Drawing.Point(99, 218);
+            this.lblXChanges12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges12.Name = "lblXChanges12";
+            this.lblXChanges12.Size = new System.Drawing.Size(55, 17);
+            this.lblXChanges12.TabIndex = 16;
+            this.lblXChanges12.Text = "change";
+            // 
+            // nudXChanges1
+            // 
+            this.nudXChanges1.Enabled = false;
+            this.nudXChanges1.Location = new System.Drawing.Point(51, 215);
+            this.nudXChanges1.Margin = new System.Windows.Forms.Padding(4);
+            this.nudXChanges1.Name = "nudXChanges1";
+            this.nudXChanges1.Size = new System.Drawing.Size(47, 22);
+            this.nudXChanges1.TabIndex = 4;
+            // 
+            // lblXChanges11
+            // 
+            this.lblXChanges11.AutoSize = true;
+            this.lblXChanges11.Enabled = false;
+            this.lblXChanges11.Location = new System.Drawing.Point(5, 218);
+            this.lblXChanges11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges11.Name = "lblXChanges11";
+            this.lblXChanges11.Size = new System.Drawing.Size(43, 17);
+            this.lblXChanges11.TabIndex = 14;
+            this.lblXChanges11.Text = "every";
+            // 
+            // cboCleaning1
+            // 
+            this.cboCleaning1.FormattingEnabled = true;
+            this.cboCleaning1.Location = new System.Drawing.Point(9, 178);
+            this.cboCleaning1.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCleaning1.Name = "cboCleaning1";
+            this.cboCleaning1.Size = new System.Drawing.Size(143, 24);
+            this.cboCleaning1.TabIndex = 3;
+            this.cboCleaning1.SelectedIndexChanged += new System.EventHandler(this.cboCleaning1_SelectedIndexChanged);
+            // 
+            // lblCleaning1
+            // 
+            this.lblCleaning1.AutoSize = true;
+            this.lblCleaning1.Location = new System.Drawing.Point(5, 158);
+            this.lblCleaning1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCleaning1.Name = "lblCleaning1";
+            this.lblCleaning1.Size = new System.Drawing.Size(67, 17);
+            this.lblCleaning1.TabIndex = 8;
+            this.lblCleaning1.Text = "Cleaning:";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(130, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "s";
+            // 
+            // nudPreheat1
+            // 
+            this.nudPreheat1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat1.Location = new System.Drawing.Point(9, 119);
+            this.nudPreheat1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPreheat1.Name = "nudPreheat1";
+            this.nudPreheat1.Size = new System.Drawing.Size(116, 22);
+            this.nudPreheat1.TabIndex = 2;
+            this.nudPreheat1.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat1
+            // 
+            this.lblPreheat1.AutoSize = true;
+            this.lblPreheat1.Location = new System.Drawing.Point(5, 98);
+            this.lblPreheat1.Name = "lblPreheat1";
+            this.lblPreheat1.Size = new System.Drawing.Size(116, 17);
+            this.lblPreheat1.TabIndex = 4;
+            this.lblPreheat1.Text = "Preheating Time:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(130, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "°C";
+            // 
+            // lblTemp1
+            // 
+            this.lblTemp1.AutoSize = true;
+            this.lblTemp1.Location = new System.Drawing.Point(5, 23);
+            this.lblTemp1.Name = "lblTemp1";
+            this.lblTemp1.Size = new System.Drawing.Size(94, 34);
+            this.lblTemp1.TabIndex = 1;
+            this.lblTemp1.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp1
+            // 
+            this.nudTemp1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp1.DecimalPlaces = 1;
+            this.nudTemp1.Location = new System.Drawing.Point(9, 60);
+            this.nudTemp1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudTemp1.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp1.Name = "nudTemp1";
+            this.nudTemp1.Size = new System.Drawing.Size(116, 22);
+            this.nudTemp1.TabIndex = 1;
+            this.nudTemp1.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // cboTool5
+            // 
+            this.cboTool5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboTool5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTool5.FormattingEnabled = true;
+            this.cboTool5.Items.AddRange(new object[] {
+            "Not present",
+            "Nozzle",
+            "Spindle"});
+            this.cboTool5.Location = new System.Drawing.Point(741, 2);
+            this.cboTool5.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
+            this.cboTool5.Name = "cboTool5";
+            this.cboTool5.Size = new System.Drawing.Size(167, 24);
+            this.cboTool5.TabIndex = 20;
+            this.cboTool5.SelectedIndexChanged += new System.EventHandler(this.CboTool5_SelectedIndexChanged);
+            // 
+            // gbTool2
+            // 
+            this.gbTool2.Controls.Add(this.lblXChanges22);
+            this.gbTool2.Controls.Add(this.nudXChanges2);
+            this.gbTool2.Controls.Add(this.lblXChanges21);
+            this.gbTool2.Controls.Add(this.cboCleaning2);
+            this.gbTool2.Controls.Add(this.lblCleaning2);
+            this.gbTool2.Controls.Add(this.label6);
+            this.gbTool2.Controls.Add(this.nudPreheat2);
+            this.gbTool2.Controls.Add(this.lblPreheat2);
+            this.gbTool2.Controls.Add(this.label8);
+            this.gbTool2.Controls.Add(this.lblTemp2);
+            this.gbTool2.Controls.Add(this.nudTemp2);
+            this.gbTool2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbTool2.Enabled = false;
+            this.gbTool2.Location = new System.Drawing.Point(192, 37);
+            this.gbTool2.Margin = new System.Windows.Forms.Padding(9);
+            this.gbTool2.Name = "gbTool2";
+            this.gbTool2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbTool2.Size = new System.Drawing.Size(165, 254);
+            this.gbTool2.TabIndex = 11;
+            this.gbTool2.TabStop = false;
+            this.gbTool2.Text = "Tool 2";
+            // 
+            // lblXChanges22
+            // 
+            this.lblXChanges22.AutoSize = true;
+            this.lblXChanges22.Enabled = false;
+            this.lblXChanges22.Location = new System.Drawing.Point(99, 218);
+            this.lblXChanges22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges22.Name = "lblXChanges22";
+            this.lblXChanges22.Size = new System.Drawing.Size(55, 17);
+            this.lblXChanges22.TabIndex = 19;
+            this.lblXChanges22.Text = "change";
+            // 
+            // nudXChanges2
+            // 
+            this.nudXChanges2.Enabled = false;
+            this.nudXChanges2.Location = new System.Drawing.Point(51, 215);
+            this.nudXChanges2.Margin = new System.Windows.Forms.Padding(4);
+            this.nudXChanges2.Name = "nudXChanges2";
+            this.nudXChanges2.Size = new System.Drawing.Size(47, 22);
+            this.nudXChanges2.TabIndex = 9;
+            // 
+            // lblXChanges21
+            // 
+            this.lblXChanges21.AutoSize = true;
+            this.lblXChanges21.Enabled = false;
+            this.lblXChanges21.Location = new System.Drawing.Point(5, 218);
+            this.lblXChanges21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblXChanges21.Name = "lblXChanges21";
+            this.lblXChanges21.Size = new System.Drawing.Size(43, 17);
+            this.lblXChanges21.TabIndex = 17;
+            this.lblXChanges21.Text = "every";
+            // 
+            // cboCleaning2
+            // 
+            this.cboCleaning2.FormattingEnabled = true;
+            this.cboCleaning2.Location = new System.Drawing.Point(9, 178);
+            this.cboCleaning2.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCleaning2.Name = "cboCleaning2";
+            this.cboCleaning2.Size = new System.Drawing.Size(143, 24);
+            this.cboCleaning2.TabIndex = 8;
+            this.cboCleaning2.SelectedIndexChanged += new System.EventHandler(this.cboCleaning2_SelectedIndexChanged);
+            // 
+            // lblCleaning2
+            // 
+            this.lblCleaning2.AutoSize = true;
+            this.lblCleaning2.Location = new System.Drawing.Point(5, 158);
+            this.lblCleaning2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCleaning2.Name = "lblCleaning2";
+            this.lblCleaning2.Size = new System.Drawing.Size(67, 17);
+            this.lblCleaning2.TabIndex = 9;
+            this.lblCleaning2.Text = "Cleaning:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(130, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 17);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "s";
+            // 
+            // nudPreheat2
+            // 
+            this.nudPreheat2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudPreheat2.Location = new System.Drawing.Point(9, 119);
+            this.nudPreheat2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPreheat2.Name = "nudPreheat2";
+            this.nudPreheat2.Size = new System.Drawing.Size(116, 22);
+            this.nudPreheat2.TabIndex = 7;
+            this.nudPreheat2.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // lblPreheat2
+            // 
+            this.lblPreheat2.AutoSize = true;
+            this.lblPreheat2.Location = new System.Drawing.Point(5, 98);
+            this.lblPreheat2.Name = "lblPreheat2";
+            this.lblPreheat2.Size = new System.Drawing.Size(116, 17);
+            this.lblPreheat2.TabIndex = 4;
+            this.lblPreheat2.Text = "Preheating Time:";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(130, 63);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(23, 17);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "°C";
+            // 
+            // lblTemp2
+            // 
+            this.lblTemp2.AutoSize = true;
+            this.lblTemp2.Location = new System.Drawing.Point(5, 23);
+            this.lblTemp2.Name = "lblTemp2";
+            this.lblTemp2.Size = new System.Drawing.Size(94, 34);
+            this.lblTemp2.TabIndex = 1;
+            this.lblTemp2.Text = "Standby\r\nTemperature:";
+            // 
+            // nudTemp2
+            // 
+            this.nudTemp2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTemp2.DecimalPlaces = 1;
+            this.nudTemp2.Location = new System.Drawing.Point(9, 60);
+            this.nudTemp2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudTemp2.Maximum = new decimal(new int[] {
+            290,
+            0,
+            0,
+            0});
+            this.nudTemp2.Name = "nudTemp2";
+            this.nudTemp2.Size = new System.Drawing.Size(116, 22);
+            this.nudTemp2.TabIndex = 6;
+            this.nudTemp2.Value = new decimal(new int[] {
+            175,
+            0,
+            0,
+            0});
+            // 
+            // awpWelcome
+            // 
+            this.awpWelcome.Controls.Add(this.lblVersion);
+            this.awpWelcome.Controls.Add(this.gbType);
+            this.awpWelcome.Controls.Add(this.gbMachine);
+            this.awpWelcome.Controls.Add(this.gbGeometry);
+            this.awpWelcome.Controls.Add(this.lblDescription);
+            this.awpWelcome.Header = false;
+            this.awpWelcome.HeaderBackgroundColor = System.Drawing.Color.White;
+            this.awpWelcome.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.awpWelcome.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpWelcome.HeaderImage")));
+            this.awpWelcome.HeaderImageVisible = true;
+            this.awpWelcome.HeaderTitle = "Welcome to Advanced Wizard";
+            this.awpWelcome.Location = new System.Drawing.Point(0, 0);
+            this.awpWelcome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.awpWelcome.Name = "awpWelcome";
+            this.awpWelcome.PreviousPage = 0;
+            this.awpWelcome.Size = new System.Drawing.Size(944, 526);
+            this.awpWelcome.SubTitle = "Your page description goes here";
+            this.awpWelcome.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
+            this.awpWelcome.TabIndex = 1;
+            this.awpWelcome.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpWelcome_PageShow);
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.Location = new System.Drawing.Point(781, 119);
+            this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(159, 43);
+            this.lblVersion.TabIndex = 30;
+            this.lblVersion.Text = "v1.05b - NIFTy edition";
+            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
+            // 
+            // gbType
+            // 
+            this.gbType.Controls.Add(this.rbAdditiveSubstractive);
+            this.gbType.Controls.Add(this.rbAdditive);
+            this.gbType.Location = new System.Drawing.Point(620, 219);
+            this.gbType.Margin = new System.Windows.Forms.Padding(9, 2, 9, 2);
+            this.gbType.Name = "gbType";
+            this.gbType.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbType.Size = new System.Drawing.Size(309, 151);
+            this.gbType.TabIndex = 29;
+            this.gbType.TabStop = false;
+            this.gbType.Text = "Manufacturing Type";
+            // 
+            // rbAdditiveSubstractive
+            // 
+            this.rbAdditiveSubstractive.AutoSize = true;
+            this.rbAdditiveSubstractive.Location = new System.Drawing.Point(23, 82);
+            this.rbAdditiveSubstractive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbAdditiveSubstractive.Name = "rbAdditiveSubstractive";
+            this.rbAdditiveSubstractive.Size = new System.Drawing.Size(173, 38);
+            this.rbAdditiveSubstractive.TabIndex = 9;
+            this.rbAdditiveSubstractive.Text = "Additive + Substractive\r\nManufacturing";
+            this.rbAdditiveSubstractive.UseVisualStyleBackColor = true;
+            // 
+            // rbAdditive
+            // 
+            this.rbAdditive.AutoSize = true;
+            this.rbAdditive.Checked = true;
+            this.rbAdditive.Location = new System.Drawing.Point(23, 41);
+            this.rbAdditive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbAdditive.Name = "rbAdditive";
+            this.rbAdditive.Size = new System.Drawing.Size(213, 21);
+            this.rbAdditive.TabIndex = 8;
+            this.rbAdditive.TabStop = true;
+            this.rbAdditive.Text = "Standard Print (additive only)";
+            this.rbAdditive.UseVisualStyleBackColor = true;
+            // 
+            // gbMachine
+            // 
+            this.gbMachine.Controls.Add(this.lstMachine);
+            this.gbMachine.Controls.Add(this.chkConfigureManually);
+            this.gbMachine.Location = new System.Drawing.Point(15, 219);
+            this.gbMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbMachine.Name = "gbMachine";
+            this.gbMachine.Padding = new System.Windows.Forms.Padding(9, 6, 9, 9);
+            this.gbMachine.Size = new System.Drawing.Size(381, 151);
+            this.gbMachine.TabIndex = 26;
+            this.gbMachine.TabStop = false;
+            this.gbMachine.Text = "Machine";
+            // 
+            // lstMachine
+            // 
+            this.lstMachine.Enabled = false;
+            this.lstMachine.FormattingEnabled = true;
+            this.lstMachine.ItemHeight = 16;
+            this.lstMachine.Items.AddRange(new object[] {
+            "Searching..."});
+            this.lstMachine.Location = new System.Drawing.Point(12, 28);
+            this.lstMachine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lstMachine.Name = "lstMachine";
+            this.lstMachine.Size = new System.Drawing.Size(267, 84);
+            this.lstMachine.TabIndex = 25;
+            this.lstMachine.SelectedIndexChanged += new System.EventHandler(this.LstMachine_SelectedIndexChanged);
+            // 
+            // chkConfigureManually
+            // 
+            this.chkConfigureManually.AutoSize = true;
+            this.chkConfigureManually.Location = new System.Drawing.Point(12, 118);
+            this.chkConfigureManually.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkConfigureManually.Name = "chkConfigureManually";
+            this.chkConfigureManually.Size = new System.Drawing.Size(151, 21);
+            this.chkConfigureManually.TabIndex = 26;
+            this.chkConfigureManually.Text = "Configure manually";
+            this.chkConfigureManually.UseVisualStyleBackColor = true;
+            this.chkConfigureManually.CheckedChanged += new System.EventHandler(this.ChkConfigureManually_CheckedChanged);
+            // 
+            // gbGeometry
+            // 
+            this.gbGeometry.Controls.Add(this.rbRotary);
+            this.gbGeometry.Controls.Add(this.rbTwoSided);
+            this.gbGeometry.Controls.Add(this.rbOneSided);
+            this.gbGeometry.Location = new System.Drawing.Point(405, 219);
+            this.gbGeometry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGeometry.Name = "gbGeometry";
+            this.gbGeometry.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbGeometry.Size = new System.Drawing.Size(203, 151);
+            this.gbGeometry.TabIndex = 28;
+            this.gbGeometry.TabStop = false;
+            this.gbGeometry.Text = "Geometry";
+            // 
+            // rbRotary
+            // 
+            this.rbRotary.AutoSize = true;
+            this.rbRotary.Location = new System.Drawing.Point(27, 103);
+            this.rbRotary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbRotary.Name = "rbRotary";
+            this.rbRotary.Size = new System.Drawing.Size(71, 21);
+            this.rbRotary.TabIndex = 2;
+            this.rbRotary.Text = "Rotary";
+            this.rbRotary.UseVisualStyleBackColor = true;
+            // 
+            // rbTwoSided
+            // 
+            this.rbTwoSided.AutoSize = true;
+            this.rbTwoSided.Location = new System.Drawing.Point(27, 69);
+            this.rbTwoSided.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbTwoSided.Name = "rbTwoSided";
+            this.rbTwoSided.Size = new System.Drawing.Size(96, 21);
+            this.rbTwoSided.TabIndex = 1;
+            this.rbTwoSided.Text = "Two-Sided";
+            this.rbTwoSided.UseVisualStyleBackColor = true;
+            // 
+            // rbOneSided
+            // 
+            this.rbOneSided.AutoSize = true;
+            this.rbOneSided.Checked = true;
+            this.rbOneSided.Location = new System.Drawing.Point(27, 33);
+            this.rbOneSided.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOneSided.Name = "rbOneSided";
+            this.rbOneSided.Size = new System.Drawing.Size(97, 21);
+            this.rbOneSided.TabIndex = 0;
+            this.rbOneSided.TabStop = true;
+            this.rbOneSided.Text = "One-Sided";
+            this.rbOneSided.UseVisualStyleBackColor = true;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(15, 135);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(598, 51);
+            this.lblDescription.TabIndex = 14;
+            this.lblDescription.Text = "Welcome to the Diabase toolpath generation wizard!\r\n\r\nPlease follow these instruc" +
+    "tions to generate a new toolpath for a working piece of your choice.";
+            // 
+            // advancedWizardPage1
+            // 
+            this.advancedWizardPage1.Header = true;
+            this.advancedWizardPage1.HeaderBackgroundColor = System.Drawing.Color.White;
+            this.advancedWizardPage1.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.advancedWizardPage1.HeaderImage = ((System.Drawing.Image)(resources.GetObject("advancedWizardPage1.HeaderImage")));
+            this.advancedWizardPage1.HeaderImageVisible = true;
+            this.advancedWizardPage1.HeaderTitle = "Welcome to Advanced Wizard";
+            this.advancedWizardPage1.Location = new System.Drawing.Point(0, 0);
+            this.advancedWizardPage1.Name = "advancedWizardPage1";
+            this.advancedWizardPage1.PreviousPage = 0;
+            this.advancedWizardPage1.Size = new System.Drawing.Size(200, 100);
+            this.advancedWizardPage1.SubTitle = "Your page description goes here";
+            this.advancedWizardPage1.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
+            this.advancedWizardPage1.TabIndex = 6;
+            // 
+            // awpProgress
+            // 
+            this.awpProgress.Controls.Add(this.btnSaveOverwrite);
+            this.awpProgress.Controls.Add(this.btnUploadPrint);
+            this.awpProgress.Controls.Add(this.btnUpload);
+            this.awpProgress.Controls.Add(this.btnSaveAs);
+            this.awpProgress.Controls.Add(this.pnlProgress);
+            this.awpProgress.Controls.Add(this.lblPleaseStandBy);
+            this.awpProgress.Header = true;
+            this.awpProgress.HeaderBackgroundColor = System.Drawing.Color.White;
+            this.awpProgress.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.awpProgress.HeaderImage = ((System.Drawing.Image)(resources.GetObject("awpProgress.HeaderImage")));
+            this.awpProgress.HeaderImageVisible = true;
+            this.awpProgress.HeaderTitle = "Welcome to Advanced Wizard";
+            this.awpProgress.Location = new System.Drawing.Point(0, 0);
+            this.awpProgress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.awpProgress.Name = "awpProgress";
+            this.awpProgress.PreviousPage = 0;
+            this.awpProgress.Size = new System.Drawing.Size(944, 526);
+            this.awpProgress.SubTitle = "Your page description goes here";
+            this.awpProgress.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
+            this.awpProgress.TabIndex = 4;
+            this.awpProgress.PageShow += new System.EventHandler<AdvancedWizardControl.EventArguments.WizardPageEventArgs>(this.AwpProgress_PageShow);
+            // 
+            // btnSaveOverwrite
+            // 
+            this.btnSaveOverwrite.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveOverwrite.Image")));
+            this.btnSaveOverwrite.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveOverwrite.Location = new System.Drawing.Point(645, 332);
+            this.btnSaveOverwrite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSaveOverwrite.Name = "btnSaveOverwrite";
+            this.btnSaveOverwrite.Size = new System.Drawing.Size(141, 38);
+            this.btnSaveOverwrite.TabIndex = 8;
+            this.btnSaveOverwrite.Text = "Save";
+            this.btnSaveOverwrite.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveOverwrite.UseVisualStyleBackColor = true;
+            this.btnSaveOverwrite.Visible = false;
+            this.btnSaveOverwrite.Click += new System.EventHandler(this.btnSaveOverwrite_Click);
+            // 
+            // btnUploadPrint
+            // 
+            this.btnUploadPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadPrint.Image")));
+            this.btnUploadPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUploadPrint.Location = new System.Drawing.Point(319, 332);
+            this.btnUploadPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUploadPrint.Name = "btnUploadPrint";
+            this.btnUploadPrint.Size = new System.Drawing.Size(141, 38);
+            this.btnUploadPrint.TabIndex = 7;
+            this.btnUploadPrint.Text = "Upload && Print";
+            this.btnUploadPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUploadPrint.UseVisualStyleBackColor = true;
+            this.btnUploadPrint.Visible = false;
+            this.btnUploadPrint.Click += new System.EventHandler(this.BtnUploadPrint_Click);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.Image = global::DiabasePrintingWizard.Properties.Resources.UploadFile_16x;
+            this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpload.Location = new System.Drawing.Point(159, 332);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(141, 38);
+            this.btnUpload.TabIndex = 6;
+            this.btnUpload.Text = "Upload";
+            this.btnUpload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Visible = false;
+            this.btnUpload.Click += new System.EventHandler(this.BtnUpload_Click);
+            // 
+            // btnSaveAs
+            // 
+            this.btnSaveAs.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveAs.Image")));
+            this.btnSaveAs.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveAs.Location = new System.Drawing.Point(481, 332);
+            this.btnSaveAs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSaveAs.Name = "btnSaveAs";
+            this.btnSaveAs.Size = new System.Drawing.Size(141, 38);
+            this.btnSaveAs.TabIndex = 5;
+            this.btnSaveAs.Text = "Save as...";
+            this.btnSaveAs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveAs.UseVisualStyleBackColor = true;
+            this.btnSaveAs.Visible = false;
+            this.btnSaveAs.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // pnlProgress
+            // 
+            this.pnlProgress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProgress.Controls.Add(this.lblProgress);
+            this.pnlProgress.Controls.Add(this.pbTotal);
+            this.pnlProgress.Controls.Add(this.pbStep);
+            this.pnlProgress.Location = new System.Drawing.Point(29, 182);
+            this.pnlProgress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlProgress.Name = "pnlProgress";
+            this.pnlProgress.Size = new System.Drawing.Size(894, 115);
+            this.pnlProgress.TabIndex = 4;
+            // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.Location = new System.Drawing.Point(13, 14);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(81, 17);
+            this.lblProgress.TabIndex = 5;
+            this.lblProgress.Text = "Initializing...";
+            // 
+            // pbTotal
+            // 
+            this.pbTotal.Location = new System.Drawing.Point(16, 74);
+            this.pbTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbTotal.Name = "pbTotal";
+            this.pbTotal.Size = new System.Drawing.Size(861, 23);
+            this.pbTotal.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pbTotal.TabIndex = 4;
+            // 
+            // pbStep
+            // 
+            this.pbStep.Location = new System.Drawing.Point(16, 38);
+            this.pbStep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbStep.Name = "pbStep";
+            this.pbStep.Size = new System.Drawing.Size(861, 23);
+            this.pbStep.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pbStep.TabIndex = 3;
+            // 
+            // lblPleaseStandBy
+            // 
+            this.lblPleaseStandBy.AutoSize = true;
+            this.lblPleaseStandBy.Location = new System.Drawing.Point(27, 148);
+            this.lblPleaseStandBy.Name = "lblPleaseStandBy";
+            this.lblPleaseStandBy.Size = new System.Drawing.Size(408, 17);
+            this.lblPleaseStandBy.TabIndex = 3;
+            this.lblPleaseStandBy.Text = "Please stand by while your G-Code Files are being processed...";
+            // 
             // btnNext
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2174,22 +2190,6 @@
             this.sfdFactory.Filter = "Simplify3D Factory Files (*.factory)|*.factory|All Files (*.*)|*.*";
             this.sfdFactory.RestoreDirectory = true;
             // 
-            // advancedWizardPage1
-            // 
-            this.advancedWizardPage1.Header = true;
-            this.advancedWizardPage1.HeaderBackgroundColor = System.Drawing.Color.White;
-            this.advancedWizardPage1.HeaderFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.advancedWizardPage1.HeaderImage = ((System.Drawing.Image)(resources.GetObject("advancedWizardPage1.HeaderImage")));
-            this.advancedWizardPage1.HeaderImageVisible = true;
-            this.advancedWizardPage1.HeaderTitle = "Welcome to Advanced Wizard";
-            this.advancedWizardPage1.Location = new System.Drawing.Point(0, 0);
-            this.advancedWizardPage1.Name = "advancedWizardPage1";
-            this.advancedWizardPage1.PreviousPage = 0;
-            this.advancedWizardPage1.Size = new System.Drawing.Size(200, 100);
-            this.advancedWizardPage1.SubTitle = "Your page description goes here";
-            this.advancedWizardPage1.SubTitleFont = new System.Drawing.Font("Tahoma", 8F);
-            this.advancedWizardPage1.TabIndex = 6;
-            // 
             // FrmMain
             // 
             this.AcceptButton = this.btnNext;
@@ -2211,14 +2211,25 @@
             this.Deactivate += new System.EventHandler(this.FrmMain_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.awContent.ResumeLayout(false);
-            this.awpWelcome.ResumeLayout(false);
-            this.awpWelcome.PerformLayout();
-            this.gbType.ResumeLayout(false);
-            this.gbType.PerformLayout();
-            this.gbMachine.ResumeLayout(false);
-            this.gbMachine.PerformLayout();
-            this.gbGeometry.ResumeLayout(false);
-            this.gbGeometry.PerformLayout();
+            this.awpActions.ResumeLayout(false);
+            this.gbIDRotaryPrinting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudModelID)).EndInit();
+            this.gbIslandCombining.ResumeLayout(false);
+            this.gbIslandCombining.PerformLayout();
+            this.gbRules.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomActions)).EndInit();
+            this.awpBottomSide.ResumeLayout(false);
+            this.gbBottomFiles.ResumeLayout(false);
+            this.gbBottomFiles.PerformLayout();
+            this.gbBottomSlicing.ResumeLayout(false);
+            this.gbBottomSlicing.PerformLayout();
+            this.tlpBottomFileButtons.ResumeLayout(false);
+            this.awpTopSide.ResumeLayout(false);
+            this.gbTopFiles.ResumeLayout(false);
+            this.gbTopFiles.PerformLayout();
+            this.gbTopSlicing.ResumeLayout(false);
+            this.gbTopSlicing.PerformLayout();
+            this.tlpTopFileButtons.ResumeLayout(false);
             this.awpMachineProperties.ResumeLayout(false);
             this.awpMachineProperties.PerformLayout();
             this.tlpHeads.ResumeLayout(false);
@@ -2247,29 +2258,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudXChanges2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreheat2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTemp2)).EndInit();
-            this.awpTopSide.ResumeLayout(false);
-            this.gbTopFiles.ResumeLayout(false);
-            this.gbTopFiles.PerformLayout();
-            this.gbTopSlicing.ResumeLayout(false);
-            this.gbTopSlicing.PerformLayout();
-            this.tlpTopFileButtons.ResumeLayout(false);
+            this.awpWelcome.ResumeLayout(false);
+            this.awpWelcome.PerformLayout();
+            this.gbType.ResumeLayout(false);
+            this.gbType.PerformLayout();
+            this.gbMachine.ResumeLayout(false);
+            this.gbMachine.PerformLayout();
+            this.gbGeometry.ResumeLayout(false);
+            this.gbGeometry.PerformLayout();
             this.awpProgress.ResumeLayout(false);
             this.awpProgress.PerformLayout();
             this.pnlProgress.ResumeLayout(false);
             this.pnlProgress.PerformLayout();
-            this.awpActions.ResumeLayout(false);
-            this.gbIDRotaryPrinting.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudModelID)).EndInit();
-            this.gbIslandCombining.ResumeLayout(false);
-            this.gbIslandCombining.PerformLayout();
-            this.gbRules.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomActions)).EndInit();
-            this.awpBottomSide.ResumeLayout(false);
-            this.gbBottomFiles.ResumeLayout(false);
-            this.gbBottomFiles.PerformLayout();
-            this.gbBottomSlicing.ResumeLayout(false);
-            this.gbBottomSlicing.PerformLayout();
-            this.tlpBottomFileButtons.ResumeLayout(false);
             this.pnlButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbBanner)).EndInit();
             this.ResumeLayout(false);

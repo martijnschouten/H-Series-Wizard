@@ -268,6 +268,16 @@ namespace DiabasePrintingWizard
                                         writeLine = false;
                                     }
                                 }
+                                if (mCode == 106)
+                                {
+                                    int? SParam = line.GetIValue('S');
+                                    if (SParam.HasValue)
+                                    {
+                                        segment.AddLine($"M106 P3 S{SParam}");
+                                    }
+                                    writeLine = false;
+                                }
+
                             }
                             else
                             {
