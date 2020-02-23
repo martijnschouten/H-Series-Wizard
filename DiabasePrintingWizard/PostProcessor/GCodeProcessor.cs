@@ -584,7 +584,7 @@ namespace DiabasePrintingWizard
                                     else if(isPrusa)
                                     {
                                         string temp_retract_length = retract_length_toolchange[previousSegment.Tool].ToString("F2", FrmMain.numberFormat);
-                                        string temp_speed = retract_speed[previousSegment.Tool].ToString(FrmMain.numberFormat);
+                                        string temp_speed = (retract_speed[previousSegment.Tool]*60).ToString(FrmMain.numberFormat);
                                         previousSegment.Lines.Insert(reverse, new GCodeLine("G1 E-" + temp_retract_length + " F" + temp_speed, retract_speed[previousSegment.Tool] / 60.0));
                                     }
                                 }
@@ -612,7 +612,7 @@ namespace DiabasePrintingWizard
                                 {
                                     double total_deretract_length = retract_length_toolchange[segment.Tool] + retract_restart_extra[segment.Tool];
                                     string deratract_length = total_deretract_length.ToString("F2", FrmMain.numberFormat);
-                                    string temp_speed = retract_speed[segment.Tool].ToString(FrmMain.numberFormat);
+                                    string temp_speed = (retract_speed[segment.Tool]*60).ToString(FrmMain.numberFormat);
                                     segment.Lines.Insert(forward, new GCodeLine("G1 E" + deratract_length + " F" + temp_speed, retract_speed[segment.Tool] / 60.0));
                                 }
                             }
@@ -886,7 +886,7 @@ namespace DiabasePrintingWizard
                         {
                             double total_deretract_length = retract_length_toolchange[segment.Tool] + retract_restart_extra[segment.Tool];
                             string deratract_length = total_deretract_length.ToString("F2", FrmMain.numberFormat);
-                            string temp_speed = retract_speed[segment.Tool].ToString(FrmMain.numberFormat);
+                            string temp_speed = (retract_speed[segment.Tool]*60).ToString(FrmMain.numberFormat);
                             replacementLines.Add(new GCodeLine("G1 E" + deratract_length + " F" + temp_speed, retract_speed[segment.Tool] / 60.0));
                         }
                   
