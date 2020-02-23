@@ -255,7 +255,7 @@
             this.awContent.NextButtonEnabled = true;
             this.awContent.NextButtonText = "Next >";
             this.awContent.ProcessKeys = false;
-            this.awContent.Size = new System.Drawing.Size(1144, 526);
+            this.awContent.Size = new System.Drawing.Size(944, 526);
             this.awContent.TabIndex = 11;
             this.awContent.TouchScreen = true;
             this.awContent.WizardPages.Add(this.awpWelcome);
@@ -1805,7 +1805,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(159, 43);
             this.lblVersion.TabIndex = 30;
-            this.lblVersion.Text = "v1.05b - NIFTy edition";
+            this.lblVersion.Text = "v1.05 - NIFTy edition v2";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 
@@ -2101,7 +2101,7 @@
             this.btnNext.Enabled = false;
             this.btnNext.Image = global::DiabasePrintingWizard.Properties.Resources.Forward_16x;
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNext.Location = new System.Drawing.Point(1018, 10);
+            this.btnNext.Location = new System.Drawing.Point(818, 10);
             this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(117, 39);
@@ -2118,7 +2118,7 @@
             this.btnBack.Enabled = false;
             this.btnBack.Image = global::DiabasePrintingWizard.Properties.Resources.Backward_16x;
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBack.Location = new System.Drawing.Point(896, 10);
+            this.btnBack.Location = new System.Drawing.Point(696, 10);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(117, 39);
@@ -2152,7 +2152,7 @@
             this.pnlButtons.Location = new System.Drawing.Point(0, 466);
             this.pnlButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(1144, 60);
+            this.pnlButtons.Size = new System.Drawing.Size(944, 60);
             this.pnlButtons.TabIndex = 12;
             // 
             // pbBanner
@@ -2196,7 +2196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1144, 526);
+            this.ClientSize = new System.Drawing.Size(944, 526);
             this.Controls.Add(this.pbBanner);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.awContent);
